@@ -1,6 +1,17 @@
-you can creat view use json data like this 
-根据json数据创建view，
-使用场景1：使用json创建本地视图，场景2：根据服务器返回的json数据创建视图。
+
+**根据json数据创建view，**
+
+
+>使用场景1：使用json创建本地视图，
+
+>场景2：根据服务器返回的json数据创建视图。
+
+
+
+
+>you can create view use json data like this
+
+```markdown
 {
   "view": "scrollView",
   "width": "match",
@@ -86,3 +97,11 @@ you can creat view use json data like this
     }
   ]
 }
+
+```
+
+
+
+
+
+
