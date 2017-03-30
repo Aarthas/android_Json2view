@@ -63,8 +63,7 @@ public class DynamicProperty {
         ENABLED,
         SELECTED,
         CLICKABLE,
-        SCALEX,
-        SCALEY,
+
         MINWIDTH,
         MINHEIGTH,
         VISIBILITY,
@@ -248,7 +247,7 @@ public class DynamicProperty {
      * @param varName
      * @return search in clazz of possible variable name (varName) and return its value
      */
-    public Object getValueInt(Class clazz, String varName) {
+    public static Object getValueInt(Class clazz, String varName) {
 
         java.lang.reflect.Field fieldRequested = null;
 

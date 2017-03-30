@@ -8,7 +8,6 @@ import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -22,7 +21,6 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by avocarrot on 11/12/2014.
@@ -152,14 +150,14 @@ public class DynamicHelper {
                     applyClickable(view, dynProp);
                 }
                 break;
-                case SCALEX: {
-                    applyScaleX(view, dynProp);
-                }
-                break;
-                case SCALEY: {
-                    applyScaleY(view, dynProp);
-                }
-                break;
+//                case SCALEX: {
+//                    applyScaleX(view, dynProp);
+//                }
+//                break;
+//                case SCALEY: {
+//                    applyScaleY(view, dynProp);
+//                }
+//                break;
                 case TAG: {
                     applyTag(view, dynProp);
                 }
@@ -542,30 +540,30 @@ public class DynamicHelper {
     /**
      * apply selected in view
      */
-    public static void applyScaleX(View view, DynamicProperty property) {
-        if (view != null) {
-            switch (property.type) {
-                case BOOLEAN: {
-                    view.setScaleX(property.getValueFloat());
-                }
-                break;
-            }
-        }
-    }
+//    public static void applyScaleX(View view, DynamicProperty property) {
+//        if (view != null) {
+//            switch (property.type) {
+//                case BOOLEAN: {
+//                    view.setScaleX(property.getValueFloat());
+//                }
+//                break;
+//            }
+//        }
+//    }
 
     /**
      * apply selected in view
      */
-    public static void applyScaleY(View view, DynamicProperty property) {
-        if (view != null) {
-            switch (property.type) {
-                case BOOLEAN: {
-                    view.setScaleY(property.getValueFloat());
-                }
-                break;
-            }
-        }
-    }
+//    public static void applyScaleY(View view, DynamicProperty property) {
+//        if (view != null) {
+//            switch (property.type) {
+//                case BOOLEAN: {
+//                    view.setScaleY(property.getValueFloat());
+//                }
+//                break;
+//            }
+//        }
+//    }
 
     /**
      *  apply visibility in view

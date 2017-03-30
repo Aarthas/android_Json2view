@@ -1,0 +1,76 @@
+{
+  "view": "ScrollView",
+  "width": "match",
+  "height": "match",
+  "background": "#f6f6f6",
+  "child": [
+
+    {
+      "view": "verticalLayout",
+      "width": "match",
+      "height": "match",
+      "background": "#f6f6f6",
+      "child": [
+        {
+          "view": "ImageView",
+          "width": "140",
+          "height": "140",
+          "src": "http://mat1.gtimg.com/sports/nba/logo/1602/24.png",
+          "background": "#999999",
+          "property": {
+          },
+          "child": [
+          ]
+        },
+        {
+          "view": "View",
+          "width": "match",
+          "unit": "px",
+          "height": "1",
+          "background": "#e1e1e1"
+        },
+        {
+          "view": "horizonLayout",
+          "width": "match",
+          "height": "wrap",
+          "child": [
+            {
+              "id": 1001,
+              "view": "TextView",
+              "width": "wrap",
+              "text": "bb",
+              "textColor": "#333333",
+              "height": "wrap",
+              "margin": "20",
+              "click": "myClick",
+              "background": "#cccccc",
+              "padding": "20"
+            },
+            {
+              "id": 1002,
+              "view": "TextView",
+              "width": "wrap",
+              "text": "cc",
+              "textColor": "#666666",
+              "height": "wrap",
+              "margin": "20",
+              "click": "myClick2",
+              "background": "#eeeeee",
+              "padding": "20"
+            }
+          ]
+        },
+        {
+          "view": "TextView",
+          "width": "wrap",
+          "text": "asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd",
+          "textColor": "#333333",
+          "height": "wrap",
+          "margin": "20",
+          "background": "#cccccc",
+          "padding": "20"
+        }
+      ]
+    }
+  ]
+}
