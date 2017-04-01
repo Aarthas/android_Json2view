@@ -201,9 +201,10 @@ public class YiewEngine {
 
         YiewBean yiew1 = YiewConfig.getMap().get(yiew.view);
         if (yiew1 != null) {
-            Log.d("syb", yiew1.toString());
+
+            Log.d("syb",yiew1.toString());
             Utils.copy(yiew1, yiew);
-            Log.d("syb", yiew1.toString());
+            Log.d("syb",yiew1.toString());
 
             View childView = createYiew(context, parent, yiew1);
             if (childView != null) {
@@ -213,6 +214,9 @@ public class YiewEngine {
 
         return null;
     }
+
+
+
 
     private static void addChild(Context context, YiewBean yiew, ViewGroup view) {
         if (yiew.child != null && yiew.child.size() > 0) {

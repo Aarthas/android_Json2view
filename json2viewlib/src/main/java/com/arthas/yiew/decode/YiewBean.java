@@ -23,16 +23,16 @@ public class YiewBean {
     public ArrayList<PropertyBean> propertys;
     public ArrayList<YiewBean> child;
 
-    public int padding;
-    public int paddingLeft;
-    public int paddingTop;
-    public int paddingRight;
-    public int paddingBottom;
-    public int margin;
-    public int marginLeft;
-    public int marginTop;
-    public int marginRight;
-    public int marginBottom;
+    public String padding;
+    public String paddingLeft;
+    public String paddingTop;
+    public String paddingRight;
+    public String paddingBottom;
+    public String margin;
+    public String marginLeft;
+    public String marginTop;
+    public String marginRight;
+    public String marginBottom;
 
     public String background;
     public String gravity;
@@ -52,7 +52,7 @@ public class YiewBean {
     public int maxLine;
     public String hintColor;
 
-    public int lineSpace;
+    public String lineSpace;
 
     // imageview
     public String scaleType;

@@ -32,8 +32,8 @@ public class DynamicHelper {
             view.setMaxLines(yiew.maxLine);
         if (yiew.hintColor != null)
             view.setHintTextColor(Color.parseColor(yiew.hintColor));
-        if (yiew.lineSpace != 0)
-            view.setLineSpacing(yiew.lineSpace,0);
+        if (yiew.lineSpace != null)
+            view.setLineSpacing(Utils.meature(yiew.lineSpace),1);
 
         if (yiew.gravity != null)
             view.setGravity((Integer) getValueInt(Gravity.class, yiew.gravity.toUpperCase()));

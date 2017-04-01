@@ -24,12 +24,12 @@ public class ViewProcess {
         if (yiew.tag != null) {
             view.setTag(yiew.tag);
         }
-        if (yiew.padding != 0) {
+        if (yiew.padding != null) {
 
-            int padding = Utils.dip2px(yiew.padding);
+            int padding = Utils.meatureWithUnit(yiew.padding);
             view.setPadding(padding, padding, padding, padding);
         } else {
-            view.setPadding(Utils.dip2px(yiew.paddingLeft), Utils.dip2px(yiew.paddingTop), Utils.dip2px(yiew.paddingRight), Utils.dip2px(yiew.paddingBottom));
+            view.setPadding(Utils.meatureWithUnit(yiew.paddingLeft), Utils.meatureWithUnit(yiew.paddingTop), Utils.meatureWithUnit(yiew.paddingRight), Utils.meatureWithUnit(yiew.paddingBottom));
         }
         if (yiew.background != null) {
 

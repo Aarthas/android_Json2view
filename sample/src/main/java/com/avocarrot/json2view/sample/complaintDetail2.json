@@ -84,7 +84,7 @@
         {
           "id": "101",
           "view": "TextView",
-          "text": "购买平台: wqrwer",
+          "text": "购买平台: ",
           "textColor": "#666666",
           "textSize": "14"
         },
@@ -120,7 +120,7 @@
       "child": [
         {
           "view": "ImageView",
-          "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
+          "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
           "width": "74dp",
           "height": "74dp",
           "margin": "5dp"
@@ -184,11 +184,13 @@
       ]
     },
     {
-      "view": "line"
-
+      "view": "View",
+      "width":"match",
+      "height":"2",
+      "background": "#111111"
     },
     {
-      "name": "mobile",
+      "name": "contact",
       "view": "RelativeLayout",
       "width": "match",
       "height": "48",
@@ -210,33 +212,6 @@
           "textColor": "#666666",
           "layout_alignParentRight": true,
           "marginRight": "24",
-          "layout_centerVertical": true
-        }
-      ]
-    },
-    {
-      "name": "attach",
-      "view": "View",
-      "width": "match",
-      "height": "16",
-      "background": "#f6f6f6"
-    },
-
-    {
-      "name": "mobile",
-      "view": "RelativeLayout",
-      "width": "match",
-      "height": "wrap",
-      "padding": "20",
-      "background": "#ffffff",
-
-      "child": [
-        {
-          "view": "TextView",
-          "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
-          "textColor": "#666666",
-          "lineSpace": "8",
-          "textSize": "14",
           "layout_centerVertical": true
         }
       ]

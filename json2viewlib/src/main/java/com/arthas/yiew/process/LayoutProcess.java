@@ -1,5 +1,6 @@
 package com.arthas.yiew.process;
 
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,11 +20,14 @@ public class LayoutProcess {
     public static void applyaLayout(View view, ViewGroup.LayoutParams params, YiewBean yiew) {
         if (params instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = ((ViewGroup.MarginLayoutParams) params);
-            if (yiew.margin != 0) {
-                int margin = Utils.dip2px(yiew.margin);
+            Log.d("syb","yiew.margin = "+yiew.margin);
+            if (yiew.margin != null) {
+                int margin = Utils.meatureWithUnit(yiew.margin);
                 p.setMargins(margin, margin, margin, margin);
+                Log.d("syb","p.setMargins1 = "+margin);
             } else {
-                p.setMargins(Utils.dip2px(yiew.marginLeft), Utils.dip2px(yiew.marginTop), Utils.dip2px(yiew.marginRight), Utils.dip2px(yiew.marginBottom));
+                p.setMargins(Utils.meatureWithUnit(yiew.marginLeft), Utils.meatureWithUnit(yiew.marginTop), Utils.meatureWithUnit(yiew.marginRight), Utils.meatureWithUnit(yiew.marginBottom));
+                Log.d("syb","p.setMargins2 = "+Utils.meatureWithUnit(yiew.marginTop));
             }
         }
 

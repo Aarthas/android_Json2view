@@ -46,10 +46,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
                         // s 即为所需要的结果
-                        Log.d("syb", s);
+//                        Log.d("syb", s);
                         YiewBean yiew_1 = gson.fromJson(s, YiewBean.class);
 
-
+                        Log.d("syb","yiew_1.margin"+ yiew_1.child.get(0).margin);
+                        Log.d("syb","yiew_1.margin"+ (yiew_1.child.get(0).margin!=null));
                         View createmyiew = YiewEngine.createYiew(context, null, yiew_1);
 
                         createmyiew.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
