@@ -40,7 +40,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     private void load() {
-        OkGo.get("http://193.0.1.157:8080/complaintDetail.json")     // 请求方式和请求url
+        OkGo.get("http://7xpkr5.com1.z0.glb.clouddn.com/complaintDetail.json")     // 请求方式和请求url
 
                 .execute(new StringCallback() {
                     @Override
