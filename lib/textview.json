@@ -3,16 +3,54 @@
   "width": "match",
   "height": "match",
   "background": "#f6f6f6",
+  "weight": 1,
+
   "child": [
+    {
+      "view": "RelativeLayout",
+      "width": "match",
+      "height": "48",
+      "background": "#ffffff",
+      "property": {
+      },
+      "child": [
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "客户投诉",
+          "textColor": "#999999",
+          "height": "wrap",
+          "layout_centerInParent": true
+        },
+        {
+          "id": 1002,
+          "view": "TextView",
+          "width": "100",
+          "height": "48",
+          "text": "刷续",
+          "textColor": "#666666",
+
+          "gravity":"center",
+
+          "click": "refresh",
+          "background": "#999999",
+          "layout_alignParentRight":true
+        }
+
+
+      ]
+    },
+
     {
       "view": "TextView",
       "width": "match",
-      "height": "40",
+      "height": "48",
       "gravity": "CENTER",
       "text": "aa",
       "textSize": 18,
 
-      "textColor": "#333333",
+      "textColor": "#999999",
 
       "property": {
       },

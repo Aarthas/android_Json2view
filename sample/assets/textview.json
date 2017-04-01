@@ -1,0 +1,99 @@
+{
+  "view": "verticalLayout",
+  "width": "match",
+  "height": "match",
+  "background": "#f6f6f6",
+
+
+  "child": [
+    {
+      "view": "RelativeLayout",
+      "width": "match",
+      "height": "48",
+      "background": "#ffffff",
+      "property": {
+      },
+      "child": [
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "客户投诉",
+          "textColor": "#999999",
+          "height": "wrap",
+          "layout_centerInParent": true
+        },
+        {
+          "id": 1002,
+          "view": "TextView",
+          "width": "100",
+          "height": "48",
+          "text": "刷续",
+          "textColor": "#666666",
+
+          "gravity":"center",
+
+          "click": "refresh",
+          "background": "#999999",
+          "layout_alignParentRight":true
+        }
+
+
+      ]
+    },
+
+    {
+      "view": "TextView",
+      "width": "match",
+      "height": "48",
+      "gravity": "CENTER",
+      "text": "aa",
+      "textSize": 18,
+
+      "textColor": "#999999",
+
+      "property": {
+      },
+      "child": [
+      ]
+    },
+    {
+      "view": "View",
+      "width": "match",
+      "unit": "px",
+      "height": "1",
+      "background": "#e1e1e1"
+    },
+    {
+      "view": "horizonLayout",
+      "width": "match",
+      "height": "wrap",
+      "child": [
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "bb",
+          "textColor": "#333333",
+          "height": "wrap",
+          "margin": "20",
+          "click": "myClick",
+          "background": "#cccccc",
+          "padding": "20"
+        },
+        {
+          "id": 1002,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "cc",
+          "textColor": "#666666",
+          "height": "wrap",
+          "margin": "20",
+          "click": "myClick2",
+          "background": "#eeeeee",
+          "padding": "20"
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,8 @@ import android.content.res.Resources;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 
+import com.arthas.yiew.decode.YiewBean;
+
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -22,8 +24,7 @@ public class Utils {
     }
 
 
-
-    public static ViewGroup.LayoutParams createLayoutParams(ViewGroup viewGroup, Yiew yiew) {
+    public static ViewGroup.LayoutParams createLayoutParams(ViewGroup viewGroup, YiewBean yiew) {
         ViewGroup.LayoutParams params = null;
         if (viewGroup != null) {
             try {
@@ -35,17 +36,67 @@ public class Utils {
                 String layoutParamsClassname = layoutClass.getName() + "$LayoutParams";
                 Class layoutParamsClass = Class.forName(layoutParamsClassname);
                 /* create the actual layoutParams object */
-                params = (ViewGroup.LayoutParams) layoutParamsClass.getConstructor(Integer.TYPE, Integer.TYPE).newInstance(new Object[]{yiew.getWidth(), yiew.getHeight()});
+                params = (ViewGroup.LayoutParams) layoutParamsClass.getConstructor(Integer.TYPE, Integer.TYPE).
+                        newInstance(new Object[]{Utils.getWidth(yiew), Utils.getHeight(yiew)});
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
         if (params == null) {
-            params = new ViewGroup.LayoutParams(yiew.getWidth(), yiew.getHeight());
+            params = new ViewGroup.LayoutParams(Utils.getWidth(yiew), Utils.getHeight(yiew));
         }
 
 
         return params;
+    }
+
+    private static int getHeight(YiewBean yiew) {
+//        Log.d("syb", "getHeight=" + yiew.height);
+        int meature = meature(yiew.height);
+//        Log.d("syb", "getHeight=" + meature);
+        return meature;
+    }
+
+    private static int getWidth(YiewBean yiew) {
+//        Log.d("syb", "getWidth=" + yiew.width);
+        int meature = meature(yiew.width);
+//        Log.d("syb", "getWidth=" + meature);
+        return meature;
+    }
+
+    public static int meature(String meature) {
+//        Log.d("syb","line"+unit);
+//        Log.d("syb","view"+view);
+        try {
+
+            if (meature == null || meature.equals("")) {
+                return -2;
+            }
+
+            if (meature.equals("match")) {
+                return -1;
+            } else if (meature.equals("wrap")) {
+                return -2;
+            } else {
+
+                if (meature.endsWith("dp")) {
+                    String substring = meature.substring(0, meature.length() - 2);
+                    return Utils.dip2px(Integer.valueOf(substring));
+                } else if (meature.endsWith("dip")) {
+                    String substring = meature.substring(0, meature.length() - 3);
+                    return Utils.dip2px(Integer.valueOf(substring));
+                } else if (meature.endsWith("px")) {
+                    String substring = meature.substring(0, meature.length() - 2);
+                    return Integer.valueOf(substring);
+                } else {
+                    return Utils.dip2px(Integer.valueOf(meature));
+                }
+
+
+            }
+        } catch (Exception e) {
+            return -2;
+        }
     }
 
 
@@ -137,7 +188,6 @@ public class Utils {
     }
 
 
-
     private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
     public static int generateViewId() {
@@ -149,6 +199,148 @@ public class Utils {
             if (sNextGeneratedId.compareAndSet(result, newValue)) {
                 return result;
             }
+        }
+    }
+
+    public static void copy(YiewBean yiew1, YiewBean yiew) {
+
+        if (yiew.width != null) {
+            yiew1.width=yiew.width;
+        }
+        if (yiew.height != null) {
+            yiew1.height=yiew.height;
+        }
+        if (yiew.id != 0) {
+            yiew1.id=yiew.id;
+        }
+        if (yiew.click != null) {
+            yiew1.click=yiew.click;
+        }
+        if (yiew.visibility != null) {
+            yiew1.visibility=yiew.visibility;
+        }
+        if (yiew.tag != null) {
+            yiew1.tag=yiew.tag;
+        }
+        if (yiew.propertys != null ) {
+            yiew1.propertys=yiew.propertys;
+        }
+        if (yiew.child != null ) {
+            yiew1.child=yiew.child;
+        }
+        if (yiew.padding != 0) {
+            yiew1.padding=yiew.padding;
+        }
+        if (yiew.paddingLeft != 0) {
+            yiew1.paddingLeft=yiew.paddingLeft;
+        }
+        if (yiew.paddingTop != 0) {
+            yiew1.paddingTop=yiew.paddingTop;
+        }
+        if (yiew.paddingRight != 0) {
+            yiew1.paddingRight=yiew.paddingRight;
+        }
+        if (yiew.paddingBottom != 0) {
+            yiew1.paddingBottom=yiew.paddingBottom;
+        }
+        if (yiew.margin != 0) {
+            yiew1.margin=yiew.margin;
+        }
+        if (yiew.marginLeft != 0) {
+            yiew1.marginLeft=yiew.marginLeft;
+        }
+        if (yiew.marginTop != 0) {
+            yiew1.marginTop=yiew.marginTop;
+        }
+        if (yiew.marginRight != 0) {
+            yiew1.marginRight=yiew.marginRight;
+        }
+        if (yiew.marginBottom != 0) {
+            yiew1.marginBottom=yiew.marginBottom;
+        }
+        if (yiew.background != null) {
+            yiew1.background=yiew.background;
+        }
+        if (yiew.gravity != null) {
+            yiew1.gravity=yiew.gravity;
+        }
+        if (yiew.layout_gravity != null) {
+            yiew1.layout_gravity=yiew.layout_gravity;
+        }
+        if (yiew.weight != 0) {
+            yiew1.weight=yiew.weight;
+        }
+        if (yiew.text != null) {
+            yiew1.text=yiew.text;
+        }
+        if (yiew.textSize != 0) {
+            yiew1.textSize=yiew.textSize;
+        }
+        if (yiew.textColor != null) {
+            yiew1.textColor=yiew.textColor;
+        }
+        if (yiew.hint != null) {
+            yiew1.hint=yiew.hint;
+        }
+        if (yiew.maxLine != 0) {
+            yiew1.maxLine=yiew.maxLine;
+        }
+        if (yiew.hintColor != null) {
+            yiew1.hintColor=yiew.hintColor;
+        }
+        if (yiew.scaleType != null) {
+            yiew1.scaleType=yiew.scaleType;
+        }
+        if (yiew.src != null) {
+            yiew1.src=yiew.src;
+        }
+        if (yiew.layout_alignParentRight) {
+            yiew1.layout_alignParentRight=yiew.layout_alignParentRight;
+        }
+        if (yiew.layout_alignParentLeft) {
+            yiew1.layout_alignParentLeft=yiew.layout_alignParentLeft;
+        }
+        if (yiew.layout_alignParentTop) {
+            yiew1.layout_alignParentTop=yiew.layout_alignParentTop;
+        }
+        if (yiew.layout_alignParentBottom) {
+            yiew1.layout_alignParentBottom=yiew.layout_alignParentBottom;
+        }
+        if (yiew.layout_centerInParent) {
+            yiew1.layout_centerInParent=yiew.layout_centerInParent;
+        }
+        if (yiew.layout_centerHorizontal) {
+            yiew1.layout_centerHorizontal=yiew.layout_centerHorizontal;
+        }
+        if (yiew.layout_centerVertical) {
+            yiew1.layout_centerVertical=yiew.layout_centerVertical;
+        }
+        if (yiew.layout_toLeftOf != 0) {
+            yiew1.layout_toLeftOf=yiew.layout_toLeftOf;
+        }
+        if (yiew.layout_toRightOf != 0) {
+            yiew1.layout_toRightOf=yiew.layout_toRightOf;
+        }
+        if (yiew.layout_above != 0) {
+            yiew1.layout_above=yiew.layout_above;
+        }
+        if (yiew.layout_below != 0) {
+            yiew1.layout_below=yiew.layout_below;
+        }
+        if (yiew.layout_alignLeft != 0) {
+            yiew1.layout_alignLeft=yiew.layout_alignLeft;
+        }
+        if (yiew.layout_alignRight != 0) {
+            yiew1.layout_alignRight=yiew.layout_alignRight;
+        }
+        if (yiew.layout_alignTop != 0) {
+            yiew1.layout_alignTop=yiew.layout_alignTop;
+        }
+        if (yiew.layout_alignBottom != 0) {
+            yiew1.layout_alignBottom=yiew.layout_alignBottom;
+        }
+        if (yiew.layout_alignBaseline != 0) {
+            yiew1.layout_alignBaseline=yiew.layout_alignBaseline;
         }
     }
 }

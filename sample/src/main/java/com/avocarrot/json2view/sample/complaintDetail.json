@@ -1,0 +1,156 @@
+{
+  "view": "verticalLayout",
+  "width": "match",
+  "height": "match",
+  "background": "#f6f6f6",
+  "child": [
+    {
+      "view": "RelativeLayout",
+      "width": "match",
+      "height": "48",
+      "background": "#ffffff",
+      "click": "refresh",
+      "property": {
+      },
+      "child": [
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "刷新",
+          "textColor": "#999999",
+          "height": "wrap",
+          "layout_centerInParent": true
+        }
+      ]
+    },
+    {
+      "view": "View",
+      "width": "match",
+      "height": "16",
+      "background": "#f6f6f6"
+    },
+    {
+      "view": "RelativeLayout",
+      "width": "match",
+      "height": "48",
+      "background": "#ffffff",
+      "paddingLeft": "15",
+      "paddingRight": "15",
+      "child": [
+        {
+          "view": "ImageView",
+          "src": "http://onpxz5rdd.bkt.clouddn.com/ic_service_black.png",
+          "width": "16dp",
+          "height": "16dp",
+          "layout_centerVertical": true
+        },
+        {
+          "view": "TextView",
+          "text": "舒服舒服",
+          "textColor": "#444444",
+          "marginLeft": "24",
+          "textSize": "14",
+          "layout_centerVertical": true
+        },
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "close",
+          "textColor": "#444444",
+          "layout_alignParentRight": "true",
+          "layout_centerVertical": true
+        }
+      ]
+    },
+    {
+      "view": "line"
+    },
+    {
+      "view": "RelativeLayout",
+      "width": "match",
+      "height": "48",
+      "background": "#ffffff",
+      "paddingLeft": "15",
+      "paddingRight": "15",
+      "child": [
+        {
+          "view": "ImageView",
+          "src": "http://onpxz5rdd.bkt.clouddn.com/ic_service_black.png",
+          "width": "16dp",
+          "height": "16dp",
+          "layout_centerVertical": true
+        },
+        {
+          "view": "TextView",
+          "text": "舒服舒服",
+          "textColor": "#444444",
+          "marginLeft": "24",
+          "textSize": "14",
+          "layout_centerVertical": true
+        },
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "close",
+          "textColor": "#444444",
+          "layout_alignParentRight": "true",
+          "layout_centerVertical": true
+        }
+      ]
+    },
+    {
+      "view": "TextView",
+      "width": "match",
+      "height": "48",
+      "gravity": "CENTER",
+      "text": "aa",
+      "textSize": 18,
+      "textColor": "#999999",
+      "property": {
+      },
+      "child": [
+      ]
+    },
+    {
+      "view": "View",
+      "width": "match",
+      "unit": "px",
+      "height": "1",
+      "background": "#e1e1e1"
+    },
+    {
+      "view": "horizonLayout",
+      "width": "match",
+      "height": "wrap",
+      "child": [
+        {
+          "id": 1001,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "bb",
+          "textColor": "#333333",
+          "height": "wrap",
+          "margin": "20",
+          "click": "myClick",
+          "background": "#cccccc",
+          "padding": "20"
+        },
+        {
+          "id": 1002,
+          "view": "TextView",
+          "width": "wrap",
+          "text": "cc",
+          "textColor": "#666666",
+          "height": "wrap",
+          "margin": "20",
+          "click": "myClick2",
+          "background": "#eeeeee",
+          "padding": "20"
+        }
+      ]
+    }
+  ]
+}

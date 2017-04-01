@@ -1,4 +1,4 @@
-package com.arthas.yiew;
+package com.arthas.yiew.decode;
 
 public class PropertyBean {
 

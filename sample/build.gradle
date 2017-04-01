@@ -30,7 +30,9 @@ dependencies {
 //    compile project(':json2view')
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.lzy.net:okgo:2.1.4'
 //    compile project(':yiewlib')
     compile project(path: ':json2viewlib')
+    compile 'com.lzy.net:okgo:2.1.4'
 //    compile project(path: ':yiewlib')
 }

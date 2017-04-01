@@ -1,1 +1,1 @@
-include ':sample', ':json2view', ':utils', ':json2viewlib'
+include ':sample', ':json2view', ':utils', ':json2viewlib', ':lib'
