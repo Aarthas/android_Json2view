@@ -33,4 +33,11 @@ public class Yiew extends YiewBean {
         child.add(yiew);
     }
 
+    public static Yiew create(String type, String width, String height) {
+        Yiew yiew = new Yiew();
+        yiew.view = type;
+        yiew.width = width;
+        yiew.height = height;
+        return yiew;
+    }
 }

@@ -1,12 +1,17 @@
 package com.avocarrot.json2view.sample;
 
 import android.app.Application;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.arthas.yiew.ImageProcess;
+import com.arthas.yiew.IProcess;
+import com.arthas.yiew.ImageAdapter;
 import com.arthas.yiew.YiewConfig;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.decode.Yiew;
+import com.arthas.yiew.decode.YiewBean;
 import com.bumptech.glide.Glide;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
@@ -36,7 +41,7 @@ public class App extends Application {
                 //可以全局统一设置缓存模式,默认是不使用缓存,可以不传,具体其他模式看 github 介绍 https://github.com/jeasonlzy/
                 .setCacheMode(CacheMode.NO_CACHE);
 
-        ImageProcess imageAdapter = new ImageProcess() {
+        ImageAdapter imageAdapter = new ImageAdapter() {
 
             @Override
             public void display(ImageView view, String src, YiewBean yiew) {
@@ -46,16 +51,37 @@ public class App extends Application {
                         .into(view);
             }
         };
-        YiewConfig.setImageProcess(imageAdapter);
+        YiewConfig.setImageAdapter(imageAdapter);
 
-        Yiew yiew = new Yiew();
-        yiew.view = "View";
-        yiew.width = Yiew.MATCH;
-        yiew.height = "1px";
 
-        yiew.background = "#dddddd";
+        YiewConfig.Component("head", new IProcess() {
 
-        YiewConfig.Component("line", yiew);
+            @Override
+            public View createYiew(Context context, ViewGroup parent, YiewBean yiew) {
+                Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
+
+                Yiew TextView =Yiew.create(Yiew.TextView,Yiew.WRAP,"48dp") ;
+                RelativeLayout.addChild(TextView);
+                TextView.layout_centerInParent=true;
+                TextView.background = "#dddddd";
+                TextView.text="sdfsdf";
+                View yiew1 = YiewEngine.createYiew(context, parent, RelativeLayout);
+                return yiew1;
+            }
+        });
+
+        YiewConfig.Component("line", new IProcess() {
+
+            @Override
+            public View createYiew(Context context, ViewGroup parent, YiewBean yiew) {
+
+                Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
+                dv.background = "#dddddd";
+                View yiew1 = YiewEngine.createYiew(context, parent, dv);
+                return yiew1;
+            }
+        });
+
 
 
     }

@@ -1,7 +1,6 @@
 package com.arthas.yiew;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
@@ -152,14 +151,10 @@ public class YiewEngine {
                 break;
         }
 
-        YiewBean yiew1 = YiewConfig.getMap().get(yiew.view);
-        if (yiew1 != null) {
+        IProcess process = YiewConfig.getMap().get(yiew.view);
+        if (process != null) {
 
-            Log.d("syb",yiew1.toString());
-            Utils.copy(yiew1, yiew);
-            Log.d("syb",yiew1.toString());
-
-            View childView = createYiew(context, parent, yiew1);
+            View childView = process.createYiew(context, parent, yiew);
             if (childView != null) {
                 return childView;
             }

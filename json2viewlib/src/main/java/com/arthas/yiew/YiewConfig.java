@@ -1,8 +1,5 @@
 package com.arthas.yiew;
 
-import com.arthas.yiew.decode.YiewBean;
-import com.arthas.yiew.decode.Yiew;
-
 import java.util.HashMap;
 
 /**
@@ -12,28 +9,25 @@ import java.util.HashMap;
 public class YiewConfig {
 
 
-    private static ImageProcess imageAdapter;
+    private static ImageAdapter imageAdapter;
 
-    public static void setImageProcess(ImageProcess imageAdapter) {
+    public static void setImageAdapter(ImageAdapter imageAdapter) {
         YiewConfig.imageAdapter = imageAdapter;
     }
 
-    public static ImageProcess getImageProcess() {
+    public static ImageAdapter getImageProcess() {
         return imageAdapter;
     }
 
-    static HashMap<String, YiewBean> map = new HashMap();
+    static HashMap<String, IProcess> map = new HashMap();
 
-    public static void Component(String name, YiewBean line) {
+    public static void Component(String name, IProcess line) {
         map.put(name, line);
     }
 
-    public static void Component(String name, Yiew yiew) {
 
-        map.put(name, yiew);
-    }
 
-    public static HashMap<String, YiewBean> getMap() {
+    public static HashMap<String, IProcess> getMap() {
         return map;
     }
 }

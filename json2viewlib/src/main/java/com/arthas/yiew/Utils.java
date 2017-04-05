@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.arthas.yiew.decode.YiewBean;
@@ -354,4 +355,9 @@ public class Utils {
             yiew1.layout_alignBaseline = yiew.layout_alignBaseline;
         }
     }
+
+    /**
+     * Created by zhangyn on 17/4/5.
+     */
+
 }
