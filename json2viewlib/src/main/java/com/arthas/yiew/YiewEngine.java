@@ -173,10 +173,11 @@ public class YiewEngine {
 
 
     }
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew )
-    {
-        return  createView(context,parent,yiew,null);
+
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
+        return createView(context, parent, yiew, null);
     }
+
     public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
 
         switch (yiew.view) {
@@ -184,30 +185,31 @@ public class YiewEngine {
             case Yiew.verticalLayout: {
 
 
-                View view = VerticalLayoutProcess.createView(context, parent, yiew);
+                View view = VerticalLayoutProcess.createView(context, parent, yiew, yiewStore);
 
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
                     addChild(context, yiew, group, yiewStore);
                 }
-                if (yiew.name != null && yiewStore != null) {
-
-                    yiewStore.put(yiew.name, view);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew,view);
                 }
+
+
                 return view;
 
             }
 
             case Yiew.horizonLayout: {
-                View view = HorizonLayoutProcess.createView(context, parent, yiew);
+                View view = HorizonLayoutProcess.createView(context, parent, yiew, yiewStore);
 
 
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
                     addChild(context, yiew, group, yiewStore);
                 }
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
                 return view;
 
@@ -215,40 +217,39 @@ public class YiewEngine {
 
 
             case Yiew.TextView: {
-                View view = TextViewProcess.createView(context, parent, yiew);
+                View view = TextViewProcess.createView(context, parent, yiew, yiewStore);
 
 
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
                 return view;
             }
 
             case Yiew.ImageView: {
-                View view = ImageViewProcess.createView(context, parent, yiew);
+                View view = ImageViewProcess.createView(context, parent, yiew, yiewStore);
 
 
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
                 return view;
 
             }
             case Yiew.View: {
-                View view = DvProcess.createYiew(context, parent, yiew);
+                View view = DvProcess.createYiew(context, parent, yiew, yiewStore);
 
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
                 return view;
 
             }
             case Yiew.ScrollView: {
-                View view = ScrollViewProcess.createView(context, parent, yiew);
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                View view = ScrollViewProcess.createView(context, parent, yiew, yiewStore);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
-
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
                     addChild(context, yiew, group, yiewStore);
@@ -290,9 +291,9 @@ public class YiewEngine {
 //
 //            }
             case Yiew.RelativeLayout: {
-                View view = RelativeLayoutProcess.createView(context, parent, yiew);
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                View view = RelativeLayoutProcess.createView(context, parent, yiew, yiewStore);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
 
                 if (view instanceof ViewGroup) {
@@ -303,10 +304,10 @@ public class YiewEngine {
             }
 
             case Yiew.FrameLayout: {
-                View view = FrameLayoutProcess.createView(context, parent, yiew);
+                View view = FrameLayoutProcess.createView(context, parent, yiew, yiewStore);
 
-                if (yiew.name != null && yiewStore != null) {
-                    yiewStore.put(yiew.name, view);
+                if (yiewStore != null) {
+                    yiewStore.put(yiew, view);
                 }
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
@@ -320,12 +321,12 @@ public class YiewEngine {
                 break;
         }
 
-        IProcess process = YiewConfig.getMap().get(yiew.view);
+        IProcess process = YiewConfig.findProcess(yiew.view);
         if (process != null) {
 
-            View childView = process.createView(context, parent, yiew);
-            if (yiew.name != null && yiewStore != null) {
-                yiewStore.put(yiew.name, childView);
+            View childView = process.createView(context, parent, yiew, yiewStore);
+            if (yiewStore != null) {
+                yiewStore.put(yiew, childView);
             }
 
             if (childView != null) {

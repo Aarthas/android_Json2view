@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
@@ -60,9 +61,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
                         setContentView(aa);
 
-                        View titlebar = yiewStore.getView("titlebar");
-                        Log.d("syb","titlebar"+titlebar);
-
+                        TextView platform = (TextView) yiewStore.getView("platform");
+                        Log.d("syb","platform = "+platform);
+                        Log.d("syb","platform = "+platform.getText());
+                        Log.d("syb","id  ="+platform.getId());
 
                     }
                 });

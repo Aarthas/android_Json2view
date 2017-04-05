@@ -15,7 +15,6 @@
       },
       "child": [
         {
-          "id": 1001,
           "view": "TextView",
           "width": "wrap",
           "text": "刷新",
@@ -57,7 +56,7 @@
           "layout_centerVertical": true
         },
         {
-          "id": 1001,
+
           "view": "TextView",
           "width": "wrap",
           "text": "close",
@@ -82,28 +81,29 @@
       "paddingBottom": "16",
       "child": [
         {
-          "id": "101",
+          "name": "platform",
           "view": "TextView",
           "text": "购买平台:   wqrwer",
           "textColor": "#666666",
           "textSize": "14"
         },
         {
+          "name": "content1",
           "id": "102",
           "view": "TextView",
           "text": "阿萨德啊:   ",
           "textColor": "#666666",
           "marginTop": "12",
           "textSize": "14",
-          "layout_below": "101"
+          "below": "@platform"
         },
         {
           "view": "TextView",
           "text": "订单号订单号订单号订单号订单号订单号订单号",
           "textColor": "#666666",
           "textSize": "14",
-          "layout_alignTop": "102",
-          "layout_toRightOf": "102"
+          "alignTop": "@content1",
+          "toRightOf": "@content1"
         }
       ]
     },

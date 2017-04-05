@@ -7,6 +7,7 @@ import android.widget.ImageView;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewConfig;
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -16,16 +17,16 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class ImageViewProcess {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
 
 
         ImageView view = new ImageView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
+        ViewProcess.applyView(view, yiew,yiewStore);
+        LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
 
-        LayoutProcess.applyaLayout(view, params, yiew);
-        ViewProcess.applyView(view, yiew);
         applyImageView(view, yiew);
 
 
@@ -41,7 +42,7 @@ public class ImageViewProcess {
     public static void applyImageView(ImageView view, YiewBean yiew) {
 //        Log.d("syb", "yiew.src" + yiew.src);
         if (yiew.src != null) {
-            YiewConfig.getImageProcess().display(view, yiew.src, yiew);
+            YiewConfig.getImageAdapter().display(view, yiew.src, yiew);
 
 
         }

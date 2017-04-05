@@ -10,6 +10,7 @@ import com.arthas.yiew.IProcess;
 import com.arthas.yiew.ImageAdapter;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
 import com.bumptech.glide.Glide;
@@ -57,7 +58,7 @@ public class App extends Application {
         YiewConfig.Component("head", new IProcess() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, YiewBean yiew) {
+            public View createView(Context context, ViewGroup parent, YiewBean yiew,YiewStore yiewStore) {
                 Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
 
                 Yiew TextView =Yiew.create(Yiew.TextView,Yiew.WRAP,"48dp") ;
@@ -73,7 +74,7 @@ public class App extends Application {
         YiewConfig.Component("line", new IProcess() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, YiewBean yiew) {
+            public View createView(Context context, ViewGroup parent, YiewBean yiew,YiewStore yiewStore) {
 
                 Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
                 dv.background = "#dddddd";

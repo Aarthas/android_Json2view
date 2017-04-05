@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.arthas.yiew.Utils;
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -18,14 +19,14 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class TextViewProcess {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
         TextView view = new TextView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
+        ViewProcess.applyView(view, yiew,yiewStore);
+        LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
 
-        LayoutProcess.applyaLayout(view, params, yiew);
-        ViewProcess.applyView(view, yiew);
         applyTextView(view, yiew);
 
 

@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.arthas.yiew.Utils;
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.PropertyBean;
 import com.arthas.yiew.decode.YiewBean;
 
@@ -17,9 +18,21 @@ import java.util.List;
  */
 
 public class ViewProcess {
-    public static void applyView(final View view, final YiewBean yiew) {
+    public static void applyView(final View view, final YiewBean yiew, YiewStore yiewStore) {
+//        if (yiew.name != null) {
+//            yiewStore.putView(yiew.name, view);
+//
+//
+//
+//            if (yiew.id == 0) {
+//                yiew.id = Utils.generateViewId();
+//            }
+//            view.setId(yiew.id);
+//            yiewStore.yiews.put(yiew.name, yiew);
+//        }
         if (yiew.id != 0) {
             view.setId(yiew.id);
+
         }
         if (yiew.tag != null) {
             view.setTag(yiew.tag);

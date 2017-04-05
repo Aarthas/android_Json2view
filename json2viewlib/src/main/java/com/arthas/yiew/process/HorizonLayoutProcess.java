@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.arthas.yiew.Utils;
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -18,16 +19,16 @@ import static com.arthas.yiew.Utils.getValueInt;
  */
 
 public class HorizonLayoutProcess  {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
 
         LinearLayout view = new LinearLayout(context);
         view.setOrientation(LinearLayout.HORIZONTAL);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
+        ViewProcess.applyView(view, yiew,yiewStore);
+        LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
 
-        LayoutProcess.applyaLayout(view, params, yiew);
-        ViewProcess.applyView(view, yiew);
         applyLinearLayout(view, yiew);
 
 
