@@ -12,32 +12,32 @@ public class MyClass6 {
         for (Field declaredField : declaredFields) {
             String name = declaredField.getName();
             if (declaredField.getType() == String.class) {
-                System.out.println(" if (yiew."+name+" != null) {");
-                System.out.println("  yiew1."+name+"=yiew."+name+";");
+                System.out.println(" if (from."+name+" != null) {");
+                System.out.println("  to."+name+"=from."+name+";");
                 System.out.println(" }");
 
             }
             if (declaredField.getType() == int.class) {
 
 
-                System.out.println(" if (yiew."+name+" != 0) {");
-                System.out.println("  yiew1."+name+"=yiew."+name+";");
+                System.out.println(" if (from."+name+" != 0) {");
+                System.out.println("  to."+name+"=from."+name+";");
                 System.out.println(" }");
             }
             if (declaredField.getType() == boolean.class) {
 
 
-                System.out.println(" if (yiew."+name+") {");
-                System.out.println("  yiew1."+name+"=yiew."+name+";");
+                System.out.println(" if (from."+name+") {");
+                System.out.println("  to."+name+"=from."+name+";");
                 System.out.println("}");
 
             }
             if (declaredField.getType() == ArrayList.class) {
 
 
-                System.out.println(" if (yiew."+name+" != null ) {");
-                System.out.println("  yiew1."+name+"=yiew."+name+";");
-                System.out.println("}");
+//                System.out.println(" if (yiew."+name+" != null ) {");
+//                System.out.println("  yiew1."+name+"=yiew."+name+";");
+//                System.out.println("}");
             }
 
         }

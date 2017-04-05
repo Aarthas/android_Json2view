@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class YiewBean {
 
 
+    public String name;
 
     // view
     public String view;
@@ -24,16 +25,16 @@ public class YiewBean {
     public ArrayList<PropertyBean> propertys;
     public ArrayList<YiewBean> child;
 
-    public int padding;
-    public int paddingLeft;
-    public int paddingTop;
-    public int paddingRight;
-    public int paddingBottom;
-    public int margin;
-    public int marginLeft;
-    public int marginTop;
-    public int marginRight;
-    public int marginBottom;
+    public String padding;
+    public String paddingLeft;
+    public String paddingTop;
+    public String paddingRight;
+    public String paddingBottom;
+    public String margin;
+    public String marginLeft;
+    public String marginTop;
+    public String marginRight;
+    public String marginBottom;
 
     public String background;
     public String gravity;
@@ -41,7 +42,6 @@ public class YiewBean {
     // linearlayout
     public String layout_gravity;
     public int weight;
-
 
 
     // textview
@@ -54,6 +54,8 @@ public class YiewBean {
     public int maxLine;
     public String hintColor;
 
+    public String lineSpace;
+
     // imageview
     public String scaleType;
     public String src;
@@ -64,21 +66,38 @@ public class YiewBean {
     public boolean layout_alignParentLeft;
     public boolean layout_alignParentTop;
     public boolean layout_alignParentBottom;
+
     public boolean layout_centerInParent;
     public boolean layout_centerHorizontal;
     public boolean layout_centerVertical;
+
     public int layout_toLeftOf;
     public int layout_toRightOf;
     public int layout_above;
     public int layout_below;
+
     public int layout_alignLeft;
     public int layout_alignRight;
     public int layout_alignTop;
     public int layout_alignBottom;
+
+
+
+
+
     public int layout_alignBaseline;
 
 
-
+    //advance
+    public String alignBaseline;
+    public String below;
+    public String alignBottom;
+    public String toLeftOf;
+    public String toRightOf;
+    public String above;
+    public String alignLeft;
+    public String alignRight;
+    public String alignTop;
 
 
 

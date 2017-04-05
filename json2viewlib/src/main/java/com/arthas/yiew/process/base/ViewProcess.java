@@ -30,6 +30,11 @@ public class ViewProcess {
 //            view.setId(yiew.id);
 //            yiewStore.yiews.put(yiew.name, yiew);
 //        }
+        if (yiewStore != null) {
+            yiewStore.put(yiew, view);
+        }
+
+
         if (yiew.id != 0) {
             view.setId(yiew.id);
 

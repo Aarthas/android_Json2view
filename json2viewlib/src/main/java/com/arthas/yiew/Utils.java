@@ -213,147 +213,172 @@ public class Utils {
         }
     }
 
-//    public static void copy(YiewBean yiew1, YiewBean yiew) {
-//
-//        if (yiew.width != null) {
-//            yiew1.width = yiew.width;
-//        }
-//        if (yiew.height != null) {
-//            yiew1.height = yiew.height;
-//        }
-//        if (yiew.id != 0) {
-//            yiew1.id = yiew.id;
-//        }
-//        if (yiew.click != null) {
-//            yiew1.click = yiew.click;
-//        }
-//        if (yiew.visibility != null) {
-//            yiew1.visibility = yiew.visibility;
-//        }
-//        if (yiew.tag != null) {
-//            yiew1.tag = yiew.tag;
-//        }
-//        if (yiew.propertys != null) {
-//            yiew1.propertys = yiew.propertys;
-//        }
-//        if (yiew.child != null) {
-//            yiew1.child = yiew.child;
-//        }
-//        if (yiew.padding != null) {
-//            yiew1.padding = yiew.padding;
-//        }
-//        if (yiew.paddingLeft != null) {
-//            yiew1.paddingLeft = yiew.paddingLeft;
-//        }
-//        if (yiew.paddingTop != null) {
-//            yiew1.paddingTop = yiew.paddingTop;
-//        }
-//        if (yiew.paddingRight != null) {
-//            yiew1.paddingRight = yiew.paddingRight;
-//        }
-//        if (yiew.paddingBottom != null) {
-//            yiew1.paddingBottom = yiew.paddingBottom;
-//        }
-//        if (yiew.margin != null) {
-//            yiew1.margin = yiew.margin;
-//        }
-//        if (yiew.marginLeft != null) {
-//            yiew1.marginLeft = yiew.marginLeft;
-//        }
-//        if (yiew.marginTop != null) {
-//            yiew1.marginTop = yiew.marginTop;
-//        }
-//        if (yiew.marginRight != null) {
-//            yiew1.marginRight = yiew.marginRight;
-//        }
-//        if (yiew.marginBottom != null) {
-//            yiew1.marginBottom = yiew.marginBottom;
-//        }
-//        if (yiew.background != null) {
-//            yiew1.background = yiew.background;
-//        }
-//        if (yiew.gravity != null) {
-//            yiew1.gravity = yiew.gravity;
-//        }
-//        if (yiew.layout_gravity != null) {
-//            yiew1.layout_gravity = yiew.layout_gravity;
-//        }
-//        if (yiew.weight != 0) {
-//            yiew1.weight = yiew.weight;
-//        }
-//        if (yiew.text != null) {
-//            yiew1.text = yiew.text;
-//        }
-//        if (yiew.textSize != 0) {
-//            yiew1.textSize = yiew.textSize;
-//        }
-//        if (yiew.textColor != null) {
-//            yiew1.textColor = yiew.textColor;
-//        }
-//        if (yiew.hint != null) {
-//            yiew1.hint = yiew.hint;
-//        }
-//        if (yiew.maxLine != 0) {
-//            yiew1.maxLine = yiew.maxLine;
-//        }
-//        if (yiew.hintColor != null) {
-//            yiew1.hintColor = yiew.hintColor;
-//        }
-//        if (yiew.scaleType != null) {
-//            yiew1.scaleType = yiew.scaleType;
-//        }
-//        if (yiew.src != null) {
-//            yiew1.src = yiew.src;
-//        }
-//        if (yiew.layout_alignParentRight) {
-//            yiew1.layout_alignParentRight = yiew.layout_alignParentRight;
-//        }
-//        if (yiew.layout_alignParentLeft) {
-//            yiew1.layout_alignParentLeft = yiew.layout_alignParentLeft;
-//        }
-//        if (yiew.layout_alignParentTop) {
-//            yiew1.layout_alignParentTop = yiew.layout_alignParentTop;
-//        }
-//        if (yiew.layout_alignParentBottom) {
-//            yiew1.layout_alignParentBottom = yiew.layout_alignParentBottom;
-//        }
-//        if (yiew.layout_centerInParent) {
-//            yiew1.layout_centerInParent = yiew.layout_centerInParent;
-//        }
-//        if (yiew.layout_centerHorizontal) {
-//            yiew1.layout_centerHorizontal = yiew.layout_centerHorizontal;
-//        }
-//        if (yiew.layout_centerVertical) {
-//            yiew1.layout_centerVertical = yiew.layout_centerVertical;
-//        }
-//        if (yiew.layout_toLeftOf != 0) {
-//            yiew1.layout_toLeftOf = yiew.layout_toLeftOf;
-//        }
-//        if (yiew.layout_toRightOf != 0) {
-//            yiew1.layout_toRightOf = yiew.layout_toRightOf;
-//        }
-//        if (yiew.layout_above != 0) {
-//            yiew1.layout_above = yiew.layout_above;
-//        }
-//        if (yiew.layout_below != 0) {
-//            yiew1.layout_below = yiew.layout_below;
-//        }
-//        if (yiew.layout_alignLeft != 0) {
-//            yiew1.layout_alignLeft = yiew.layout_alignLeft;
-//        }
-//        if (yiew.layout_alignRight != 0) {
-//            yiew1.layout_alignRight = yiew.layout_alignRight;
-//        }
-//        if (yiew.layout_alignTop != 0) {
-//            yiew1.layout_alignTop = yiew.layout_alignTop;
-//        }
-//        if (yiew.layout_alignBottom != 0) {
-//            yiew1.layout_alignBottom = yiew.layout_alignBottom;
-//        }
-//        if (yiew.layout_alignBaseline != 0) {
-//            yiew1.layout_alignBaseline = yiew.layout_alignBaseline;
-//        }
-//    }
+    public static void copy(YiewBean to, YiewBean from) {
+
+
+        if (from.width != null) {
+            to.width=from.width;
+        }
+        if (from.height != null) {
+            to.height=from.height;
+        }
+        if (from.id != 0) {
+            to.id=from.id;
+        }
+        if (from.click != null) {
+            to.click=from.click;
+        }
+        if (from.visibility != null) {
+            to.visibility=from.visibility;
+        }
+        if (from.tag != null) {
+            to.tag=from.tag;
+        }
+        if (from.padding != null) {
+            to.padding=from.padding;
+        }
+        if (from.paddingLeft != null) {
+            to.paddingLeft=from.paddingLeft;
+        }
+        if (from.paddingTop != null) {
+            to.paddingTop=from.paddingTop;
+        }
+        if (from.paddingRight != null) {
+            to.paddingRight=from.paddingRight;
+        }
+        if (from.paddingBottom != null) {
+            to.paddingBottom=from.paddingBottom;
+        }
+        if (from.margin != null) {
+            to.margin=from.margin;
+        }
+        if (from.marginLeft != null) {
+            to.marginLeft=from.marginLeft;
+        }
+        if (from.marginTop != null) {
+            to.marginTop=from.marginTop;
+        }
+        if (from.marginRight != null) {
+            to.marginRight=from.marginRight;
+        }
+        if (from.marginBottom != null) {
+            to.marginBottom=from.marginBottom;
+        }
+        if (from.background != null) {
+            to.background=from.background;
+        }
+        if (from.gravity != null) {
+            to.gravity=from.gravity;
+        }
+        if (from.layout_gravity != null) {
+            to.layout_gravity=from.layout_gravity;
+        }
+        if (from.weight != 0) {
+            to.weight=from.weight;
+        }
+        if (from.text != null) {
+            to.text=from.text;
+        }
+        if (from.textSize != 0) {
+            to.textSize=from.textSize;
+        }
+        if (from.textColor != null) {
+            to.textColor=from.textColor;
+        }
+        if (from.hint != null) {
+            to.hint=from.hint;
+        }
+        if (from.maxLine != 0) {
+            to.maxLine=from.maxLine;
+        }
+        if (from.hintColor != null) {
+            to.hintColor=from.hintColor;
+        }
+        if (from.lineSpace != null) {
+            to.lineSpace=from.lineSpace;
+        }
+        if (from.scaleType != null) {
+            to.scaleType=from.scaleType;
+        }
+        if (from.src != null) {
+            to.src=from.src;
+        }
+        if (from.layout_alignParentRight) {
+            to.layout_alignParentRight=from.layout_alignParentRight;
+        }
+        if (from.layout_alignParentLeft) {
+            to.layout_alignParentLeft=from.layout_alignParentLeft;
+        }
+        if (from.layout_alignParentTop) {
+            to.layout_alignParentTop=from.layout_alignParentTop;
+        }
+        if (from.layout_alignParentBottom) {
+            to.layout_alignParentBottom=from.layout_alignParentBottom;
+        }
+        if (from.layout_centerInParent) {
+            to.layout_centerInParent=from.layout_centerInParent;
+        }
+        if (from.layout_centerHorizontal) {
+            to.layout_centerHorizontal=from.layout_centerHorizontal;
+        }
+        if (from.layout_centerVertical) {
+            to.layout_centerVertical=from.layout_centerVertical;
+        }
+        if (from.layout_toLeftOf != 0) {
+            to.layout_toLeftOf=from.layout_toLeftOf;
+        }
+        if (from.layout_toRightOf != 0) {
+            to.layout_toRightOf=from.layout_toRightOf;
+        }
+        if (from.layout_above != 0) {
+            to.layout_above=from.layout_above;
+        }
+        if (from.layout_below != 0) {
+            to.layout_below=from.layout_below;
+        }
+        if (from.layout_alignLeft != 0) {
+            to.layout_alignLeft=from.layout_alignLeft;
+        }
+        if (from.layout_alignRight != 0) {
+            to.layout_alignRight=from.layout_alignRight;
+        }
+        if (from.layout_alignTop != 0) {
+            to.layout_alignTop=from.layout_alignTop;
+        }
+        if (from.layout_alignBottom != 0) {
+            to.layout_alignBottom=from.layout_alignBottom;
+        }
+        if (from.layout_alignBaseline != 0) {
+            to.layout_alignBaseline=from.layout_alignBaseline;
+        }
+        if (from.alignBaseline != null) {
+            to.alignBaseline=from.alignBaseline;
+        }
+        if (from.below != null) {
+            to.below=from.below;
+        }
+        if (from.alignBottom != null) {
+            to.alignBottom=from.alignBottom;
+        }
+        if (from.toLeftOf != null) {
+            to.toLeftOf=from.toLeftOf;
+        }
+        if (from.toRightOf != null) {
+            to.toRightOf=from.toRightOf;
+        }
+        if (from.above != null) {
+            to.above=from.above;
+        }
+        if (from.alignLeft != null) {
+            to.alignLeft=from.alignLeft;
+        }
+        if (from.alignRight != null) {
+            to.alignRight=from.alignRight;
+        }
+        if (from.alignTop != null) {
+            to.alignTop=from.alignTop;
+        }
+    }
 
 
 }
