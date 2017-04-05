@@ -62,9 +62,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                         setContentView(aa);
 
                         TextView platform = (TextView) yiewStore.getView("platform");
-                        Log.d("syb","platform = "+platform);
-                        Log.d("syb","platform = "+platform.getText());
-                        Log.d("syb","id  ="+platform.getId());
+//                        Log.d("syb","platform = "+platform);
+//                        Log.d("syb","platform = "+platform.getText());
+//                        Log.d("syb","id  ="+platform.getId());
 
                     }
                 });

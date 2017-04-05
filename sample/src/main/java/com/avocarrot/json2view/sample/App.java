@@ -71,6 +71,8 @@ public class App extends Application {
             }
         });
 
+
+
         YiewConfig.Component("line", new IProcess() {
 
             @Override

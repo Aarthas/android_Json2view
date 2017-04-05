@@ -159,7 +159,7 @@ public class YiewEngine {
 //    }
 
 
-    private static void addChild(Context context, YiewBean yiew, ViewGroup view, YiewStore yiewStore) {
+    public static void addChild(Context context, YiewBean yiew, ViewGroup view, YiewStore yiewStore) {
 
         if (yiew.child != null && yiew.child.size() > 0) {
             for (YiewBean yiew1 : yiew.child) {

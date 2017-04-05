@@ -1,5 +1,5 @@
 {
-  "view": "verticalLayout",
+  "view": "scrollView",
   "width": "match",
   "height": "match",
   "background": "#f6f6f6",
@@ -223,7 +223,7 @@
     },
 
     {
-      "name": "mobile",
+
       "view": "RelativeLayout",
       "width": "match",
       "height": "wrap",
@@ -240,6 +240,30 @@
           "layout_centerVertical": true
         }
       ]
+    },
+    {
+      "view": "TextView",
+      "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
+      "textColor": "#666666",
+      "lineSpace": "8",
+      "textSize": "14",
+      "layout_centerVertical": true
+    },
+    {
+      "view": "TextView",
+      "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
+      "textColor": "#666666",
+      "lineSpace": "8",
+      "textSize": "14",
+      "layout_centerVertical": true
+    },
+    {
+      "view": "TextView",
+      "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
+      "textColor": "#666666",
+      "lineSpace": "8",
+      "textSize": "14",
+      "layout_centerVertical": true
     }
 
   ]
