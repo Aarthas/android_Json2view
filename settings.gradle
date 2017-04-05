@@ -1,1 +1,1 @@
-include ':sample', ':json2view', ':utils', ':json2viewlib', ':lib'
+include ':sample', ':json2view', ':utils', ':json2viewlib', ':javaCodeGenerate'
