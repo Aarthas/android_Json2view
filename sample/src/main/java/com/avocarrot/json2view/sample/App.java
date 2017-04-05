@@ -55,17 +55,22 @@ public class App extends Application {
         YiewConfig.setImageAdapter(imageAdapter);
 
 
-        YiewConfig.Component("head", new IProcess() {
+        YiewConfig.Component("refreshBar", new IProcess() {
 
             @Override
             public View createView(Context context, ViewGroup parent, YiewBean yiew,YiewStore yiewStore) {
+
+
                 Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
 
-                Yiew TextView =Yiew.create(Yiew.TextView,Yiew.WRAP,"48dp") ;
+                Yiew TextView =Yiew.create(Yiew.TextView,"200dp",Yiew.MATCH) ;
                 RelativeLayout.addChild(TextView);
                 TextView.layout_centerInParent=true;
-                TextView.background = "#dddddd";
-                TextView.text="sdfsdf";
+                TextView.text="刷新";
+                TextView.gravity="center";
+                TextView.click="refresh";
+                TextView.textColor="#333333";
+                TextView.background="#ffffff";
                 View yiew1 = YiewEngine.createView(context, parent, RelativeLayout,null);
                 return yiew1;
             }

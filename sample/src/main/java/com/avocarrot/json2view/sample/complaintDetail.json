@@ -5,25 +5,9 @@
   "background": "#f6f6f6",
   "child": [
     {
-      "name": "titlebar",
-      "view": "RelativeLayout",
-      "width": "match",
-      "height": "48",
-      "background": "#ffffff",
-      "click": "refresh",
-      "property": {
-      },
-      "child": [
-        {
-          "view": "TextView",
-          "width": "wrap",
-          "text": "刷新",
-          "textColor": "#999999",
-          "height": "wrap",
-          "layout_centerInParent": true
-        }
-      ]
+      "view": "refreshBar"
     },
+
     {
       "name": "dv",
       "view": "View",
