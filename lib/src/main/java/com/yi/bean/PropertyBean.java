@@ -1,4 +1,4 @@
-package com.example;
+package com.yi.bean;
 
 public class PropertyBean {
 

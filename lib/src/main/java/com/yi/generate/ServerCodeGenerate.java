@@ -1,4 +1,7 @@
-package com.example;
+package com.yi.generate;
+
+import com.yi.bean.YiewBean;
+
 
 import com.google.gson.Gson;
 
@@ -10,13 +13,13 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public class MyClass4 {
+public class ServerCodeGenerate {
 
 
     public static void main(String[] args) throws Exception, IllegalAccessException {
 
 
-        File file = new File("lib/textview.json");
+        File file = new File("lib/complaintDetail.json");
 //        file.createNewFile();
 
         String s = readFile(file);
@@ -25,7 +28,7 @@ public class MyClass4 {
 
         YiewBean yiewBean = gson.fromJson(s, YiewBean.class);
 //        YiewEngine.createmyiew(yiewBean)
-        int level = 0;
+
 
         create(null,"yiew_1", yiewBean);
 

@@ -1,9 +1,12 @@
-package com.example;
+package com.yi.generate;
+
+
+import com.yi.bean.YiewBean;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-public class MyClass6 {
+public class UtilCopyMethod {
 
 
     public static void main(String[] args) throws Exception, IllegalAccessException {
