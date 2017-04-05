@@ -3,7 +3,7 @@ package com.avocarrot.json2view.sample;
 import android.app.Application;
 import android.widget.ImageView;
 
-import com.arthas.yiew.process.ImageProcess;
+import com.arthas.yiew.ImageProcess;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.decode.Yiew;

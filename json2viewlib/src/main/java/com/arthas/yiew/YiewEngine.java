@@ -4,17 +4,20 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
-import com.arthas.yiew.process.LayoutProcess;
-import com.arthas.yiew.process.ViewProcess;
+import com.arthas.yiew.process.DvProcess;
+import com.arthas.yiew.process.FrameLayoutProcess;
+import com.arthas.yiew.process.HorizonLayoutProcess;
+import com.arthas.yiew.process.ImageViewProcess;
+import com.arthas.yiew.process.RelativeLayoutProcess;
+import com.arthas.yiew.process.ScrollViewProcess;
+import com.arthas.yiew.process.TextViewProcess;
+import com.arthas.yiew.process.VerticalLayoutProcess;
+import com.arthas.yiew.process.base.LayoutProcess;
+import com.arthas.yiew.process.base.ViewProcess;
 
 
 /**
@@ -32,102 +35,60 @@ public class YiewEngine {
             case Yiew.verticalLayout: {
 
 
-                LinearLayout view = new LinearLayout(context);
-                view.setOrientation(LinearLayout.VERTICAL);
+                View view = VerticalLayoutProcess.process(context, parent, yiew);
 
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
-
-
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-                DynamicHelper.applyLinearLayout(view, yiew);
-
-
-                addChild(context, yiew, view);
+                if (view instanceof  ViewGroup) {
+                    ViewGroup group = (ViewGroup) view;
+                    addChild(context, yiew, group);
+                }
                 return view;
 
             }
 
             case Yiew.horizonLayout: {
-                LinearLayout view = new LinearLayout(context);
-                view.setOrientation(LinearLayout.HORIZONTAL);
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
+                View view = HorizonLayoutProcess.process(context, parent, yiew);
 
 
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-                DynamicHelper.applyLinearLayout(view, yiew);
 
-
-                addChild(context, yiew, view);
+                if (view instanceof  ViewGroup) {
+                    ViewGroup group = (ViewGroup) view;
+                    addChild(context, yiew, group);
+                }
                 return view;
 
             }
 
 
             case Yiew.TextView: {
-                TextView view = new TextView(context);
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
-
-
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-
-                DynamicHelper.applyTextView(view, yiew);
+                View view = TextViewProcess.process(context, parent, yiew);
 
 
                 return view;
             }
 
             case Yiew.ImageView: {
-                ImageView view = new ImageView(context);
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
+                View view = ImageViewProcess.process(context, parent, yiew);
 
-
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-                DynamicHelper.applyImageView(view, yiew);
 
 
                 return view;
 
             }
             case Yiew.View: {
-                View view = new View(context);
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
-
-
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
+                View view = DvProcess.process(context, parent, yiew);
 
 
                 return view;
 
             }
             case Yiew.ScrollView: {
-                ScrollView view = new ScrollView(context);
-
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
-
-                view.setVerticalFadingEdgeEnabled(false);
-                view.setOverScrollMode(ScrollView.OVER_SCROLL_NEVER);
-                view.setFadingEdgeLength(0);
-
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-
-                view.setVerticalFadingEdgeEnabled(false);
-                view.setOverScrollMode(ScrollView.OVER_SCROLL_NEVER);
-                view.setFadingEdgeLength(0);
+                View view = ScrollViewProcess.process(context, parent, yiew);
 
 
-                addChild(context, yiew, view);
+                if (view instanceof  ViewGroup) {
+                    ViewGroup group = (ViewGroup) view;
+                    addChild(context, yiew, group);
+                }
                 return view;
 
             }
@@ -165,32 +126,24 @@ public class YiewEngine {
 
             }
             case Yiew.RelativeLayout: {
-                RelativeLayout view = new RelativeLayout(context);
-
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
+                View view = RelativeLayoutProcess.process(context, parent, yiew);
 
 
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-                DynamicHelper.applyRelativeLayout(view, yiew);
-
-                addChild(context, yiew, view);
+                if (view instanceof  ViewGroup) {
+                    ViewGroup group = (ViewGroup) view;
+                    addChild(context, yiew, group);
+                }
                 return view;
             }
 
             case Yiew.FrameLayout: {
-                FrameLayout view = new FrameLayout(context);
-
-                ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-                view.setLayoutParams(params);
+                View view = FrameLayoutProcess.process(context, parent, yiew);
 
 
-                LayoutProcess.applyaLayout(view, params, yiew);
-                ViewProcess.applyView(view, yiew);
-
-
-                addChild(context, yiew, view);
+                if (view instanceof  ViewGroup) {
+                    ViewGroup group = (ViewGroup) view;
+                    addChild(context, yiew, group);
+                }
                 return view;
             }
 
@@ -219,14 +172,17 @@ public class YiewEngine {
 
 
     private static void addChild(Context context, YiewBean yiew, ViewGroup view) {
-        if (yiew.child != null && yiew.child.size() > 0) {
-            for (YiewBean yiew1 : yiew.child) {
-                View childView = createYiew(context, view, yiew1);
-                if (childView != null) {
-                    view.addView(childView);
-                }
 
+            if (yiew.child != null && yiew.child.size() > 0) {
+                for (YiewBean yiew1 : yiew.child) {
+                    View childView = createYiew(context, view, yiew1);
+                    if (childView != null) {
+                        view.addView(childView);
+                    }
+
+                }
             }
-        }
+
+
     }
 }

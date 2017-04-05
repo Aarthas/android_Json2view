@@ -17,14 +17,14 @@ public class Yiew extends YiewBean {
     public static final String scrollView = "scrollView";
     public static final String RelativeLayout = "RelativeLayout";
     public static final String FrameLayout = "FrameLayout";
-    public static final String LinearLayout= "LinearLayout";;
 
 
 
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
 
-    public void addChild(Yiew yiew) {
+
+    public void addChild(Yiewv2 yiew) {
         if (child == null)
         {
             child = new ArrayList<>();
@@ -32,5 +32,14 @@ public class Yiew extends YiewBean {
         }
         child.add(yiew);
     }
+
+    public void invalid() {
+    }
+
+
+
+
+
+
 
 }
