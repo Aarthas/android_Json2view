@@ -13,7 +13,7 @@ import com.arthas.yiew.process.base.ViewProcess;
 /**
  * Created by zhangyn on 17/4/5.
  */
-public class DvProcess {
+public class SimpleViewProcess {
     public static View createYiew(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
 
         View view = new View(context);

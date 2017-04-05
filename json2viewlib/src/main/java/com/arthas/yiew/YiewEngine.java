@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
-import com.arthas.yiew.process.DvProcess;
+import com.arthas.yiew.process.SimpleViewProcess;
 import com.arthas.yiew.process.FrameLayoutProcess;
 import com.arthas.yiew.process.HorizonLayoutProcess;
 import com.arthas.yiew.process.ImageViewProcess;
@@ -237,7 +237,7 @@ public class YiewEngine {
 
             }
             case Yiew.View: {
-                View view = DvProcess.createYiew(context, parent, yiew, yiewStore);
+                View view = SimpleViewProcess.createYiew(context, parent, yiew, yiewStore);
 
 //                if (yiewStore != null) {
 //                    yiewStore.put(yiew, view);
