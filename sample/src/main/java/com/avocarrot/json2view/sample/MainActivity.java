@@ -30,11 +30,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 //        YiewBean pane = gson.fromJson(json, YiewBean.class);
 //
-//        View createYiew = YiewEngine.createYiew(this, null, pane);
+//        View createView = YiewEngine.createView(this, null, pane);
 //
-//        createYiew.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
+//        createView.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 //
-//        setContentView(createYiew);
+//        setContentView(createView);
 
 
         load();
@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
                         Log.d("syb","yiew_1.margin"+ yiew_1.child.get(0).margin);
                         Log.d("syb","yiew_1.margin"+ (yiew_1.child.get(0).margin!=null));
-                        View createmyiew = YiewEngine.createYiew(context, null, yiew_1);
+                        View createmyiew = YiewEngine.createView(context, null, yiew_1);
 
                         createmyiew.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 

@@ -147,12 +147,12 @@ public class Yiewv2 extends Yiew {
 //                verticalLayoutyiew.width = "match";
 //                verticalLayoutyiew.height = "match";
 //                verticalLayoutyiew.view = "verticalLayout";
-//                ViewGroup verticalLayout = (ViewGroup) createYiew(context, view, verticalLayoutyiew);
+//                ViewGroup verticalLayout = (ViewGroup) createView(context, view, verticalLayoutyiew);
 //                view.addView(verticalLayout);
 //
 //                if (yiew.child != null && yiew.child.size() > 0) {
 //                    for (YiewBean yiew1 : yiew.child) {
-//                        View childView = createYiew(context, verticalLayout, yiew1);
+//                        View childView = createView(context, verticalLayout, yiew1);
 //                        if (childView != null)
 //                            verticalLayout.addView(childView);
 //                    }

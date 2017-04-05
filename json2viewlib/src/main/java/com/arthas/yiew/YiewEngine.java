@@ -26,7 +26,7 @@ import com.arthas.yiew.process.base.ViewProcess;
 public class YiewEngine {
 
 
-    public static View createYiew(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
 
 
         switch (yiew.view) {
@@ -110,12 +110,12 @@ public class YiewEngine {
                 verticalLayoutyiew.width = "match";
                 verticalLayoutyiew.height = "match";
                 verticalLayoutyiew.view = "verticalLayout";
-                ViewGroup verticalLayout = (ViewGroup) createYiew(context, view, verticalLayoutyiew);
+                ViewGroup verticalLayout = (ViewGroup) createView(context, view, verticalLayoutyiew);
                 view.addView(verticalLayout);
 
                 if (yiew.child != null && yiew.child.size() > 0) {
                     for (YiewBean yiew1 : yiew.child) {
-                        View childView = createYiew(context, verticalLayout, yiew1);
+                        View childView = createView(context, verticalLayout, yiew1);
                         if (childView != null)
                             verticalLayout.addView(childView);
                     }
@@ -170,7 +170,7 @@ public class YiewEngine {
 
             if (yiew.child != null && yiew.child.size() > 0) {
                 for (YiewBean yiew1 : yiew.child) {
-                    View childView = createYiew(context, view, yiew1);
+                    View childView = createView(context, view, yiew1);
                     if (childView != null) {
                         view.addView(childView);
                     }
