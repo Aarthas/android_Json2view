@@ -15,7 +15,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class ScrollViewProcess {
-    public static View process(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
         ScrollView view = new ScrollView(context);
 
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);

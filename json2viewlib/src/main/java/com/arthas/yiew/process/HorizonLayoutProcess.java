@@ -18,7 +18,7 @@ import static com.arthas.yiew.Utils.getValueInt;
  */
 
 public class HorizonLayoutProcess  {
-    public static View process(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
 
         LinearLayout view = new LinearLayout(context);
         view.setOrientation(LinearLayout.HORIZONTAL);

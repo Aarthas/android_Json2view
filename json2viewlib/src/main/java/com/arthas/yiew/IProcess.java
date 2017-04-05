@@ -7,5 +7,5 @@ import android.view.ViewGroup;
 import com.arthas.yiew.decode.YiewBean;
 
 public  interface IProcess {
-        View createYiew(Context context, ViewGroup parent, YiewBean yiew);
+        View createView(Context context, ViewGroup parent, YiewBean yiew);
     }

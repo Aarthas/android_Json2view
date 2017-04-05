@@ -15,7 +15,7 @@ public class Process implements IProcess {
 
 
     @Override
-    public View createYiew(Context context, ViewGroup parent, YiewBean yiew) {
+    public View createView(Context context, ViewGroup parent, YiewBean yiew) {
         return null;
     }
 }

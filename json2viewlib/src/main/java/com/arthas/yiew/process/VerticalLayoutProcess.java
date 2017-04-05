@@ -17,7 +17,7 @@ import static com.arthas.yiew.Utils.getValueInt;
  * Created by zhangyn on 17/4/5.
  */
 public class VerticalLayoutProcess {
-    public static View process(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
 
         LinearLayout view = new LinearLayout(context);
         view.setOrientation(LinearLayout.VERTICAL);

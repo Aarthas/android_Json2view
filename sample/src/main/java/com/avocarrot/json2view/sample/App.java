@@ -57,7 +57,7 @@ public class App extends Application {
         YiewConfig.Component("head", new IProcess() {
 
             @Override
-            public View createYiew(Context context, ViewGroup parent, YiewBean yiew) {
+            public View createView(Context context, ViewGroup parent, YiewBean yiew) {
                 Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
 
                 Yiew TextView =Yiew.create(Yiew.TextView,Yiew.WRAP,"48dp") ;
@@ -73,7 +73,7 @@ public class App extends Application {
         YiewConfig.Component("line", new IProcess() {
 
             @Override
-            public View createYiew(Context context, ViewGroup parent, YiewBean yiew) {
+            public View createView(Context context, ViewGroup parent, YiewBean yiew) {
 
                 Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
                 dv.background = "#dddddd";

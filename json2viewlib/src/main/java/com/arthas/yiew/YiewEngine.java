@@ -34,7 +34,7 @@ public class YiewEngine {
             case Yiew.verticalLayout: {
 
 
-                View view = VerticalLayoutProcess.process(context, parent, yiew);
+                View view = VerticalLayoutProcess.createView(context, parent, yiew);
 
                 if (view instanceof  ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
@@ -45,7 +45,7 @@ public class YiewEngine {
             }
 
             case Yiew.horizonLayout: {
-                View view = HorizonLayoutProcess.process(context, parent, yiew);
+                View view = HorizonLayoutProcess.createView(context, parent, yiew);
 
 
 
@@ -59,14 +59,14 @@ public class YiewEngine {
 
 
             case Yiew.TextView: {
-                View view = TextViewProcess.process(context, parent, yiew);
+                View view = TextViewProcess.createView(context, parent, yiew);
 
 
                 return view;
             }
 
             case Yiew.ImageView: {
-                View view = ImageViewProcess.process(context, parent, yiew);
+                View view = ImageViewProcess.createView(context, parent, yiew);
 
 
 
@@ -74,14 +74,14 @@ public class YiewEngine {
 
             }
             case Yiew.View: {
-                View view = DvProcess.process(context, parent, yiew);
+                View view = DvProcess.createYiew(context, parent, yiew);
 
 
                 return view;
 
             }
             case Yiew.ScrollView: {
-                View view = ScrollViewProcess.process(context, parent, yiew);
+                View view = ScrollViewProcess.createView(context, parent, yiew);
 
 
                 if (view instanceof  ViewGroup) {
@@ -125,7 +125,7 @@ public class YiewEngine {
 
             }
             case Yiew.RelativeLayout: {
-                View view = RelativeLayoutProcess.process(context, parent, yiew);
+                View view = RelativeLayoutProcess.createView(context, parent, yiew);
 
 
                 if (view instanceof  ViewGroup) {
@@ -136,7 +136,7 @@ public class YiewEngine {
             }
 
             case Yiew.FrameLayout: {
-                View view = FrameLayoutProcess.process(context, parent, yiew);
+                View view = FrameLayoutProcess.createView(context, parent, yiew);
 
 
                 if (view instanceof  ViewGroup) {
@@ -154,7 +154,7 @@ public class YiewEngine {
         IProcess process = YiewConfig.getMap().get(yiew.view);
         if (process != null) {
 
-            View childView = process.createYiew(context, parent, yiew);
+            View childView = process.createView(context, parent, yiew);
             if (childView != null) {
                 return childView;
             }

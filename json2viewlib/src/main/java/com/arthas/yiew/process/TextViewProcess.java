@@ -18,7 +18,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class TextViewProcess {
-    public static View process(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
         TextView view = new TextView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);

@@ -15,7 +15,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class FrameLayoutProcess {
-    public static View process(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
         FrameLayout view = new FrameLayout(context);
 
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);

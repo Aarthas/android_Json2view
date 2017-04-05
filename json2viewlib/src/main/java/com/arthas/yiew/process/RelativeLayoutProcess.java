@@ -15,7 +15,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class RelativeLayoutProcess {
-    public static View process(Context context, ViewGroup parent, YiewBean yiew) {
+    public static View createView(Context context, ViewGroup parent, YiewBean yiew) {
 
         RelativeLayout view = new RelativeLayout(context);
 
