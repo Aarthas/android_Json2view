@@ -4,10 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.YiewEngine;
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.YiewBean;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
@@ -57,7 +56,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
 //                        View createmyiew = YiewEngine.createView(context, null, yiew_1);
                         View aa = YiewEngine.createView(context, null, yiew_1, yiewStore);
-                        aa.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
+//                        aa.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 
                         setContentView(aa);
 

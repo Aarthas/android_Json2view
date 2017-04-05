@@ -84,14 +84,14 @@
         {
           "id": "101",
           "view": "TextView",
-          "text": "购买平台: wqrwer",
+          "text": "购买平台:   wqrwer",
           "textColor": "#666666",
           "textSize": "14"
         },
         {
           "id": "102",
           "view": "TextView",
-          "text": "购买平台:   ",
+          "text": "阿萨德啊:   ",
           "textColor": "#666666",
           "marginTop": "12",
           "textSize": "14",
