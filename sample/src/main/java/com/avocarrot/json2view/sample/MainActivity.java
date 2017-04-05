@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
+import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.decode.YiewBean;
 import com.google.gson.Gson;
@@ -52,11 +53,16 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
                         Log.d("syb","yiew_1.margin"+ yiew_1.child.get(0).margin);
                         Log.d("syb","yiew_1.margin"+ (yiew_1.child.get(0).margin!=null));
-                        View createmyiew = YiewEngine.createView(context, null, yiew_1);
+                        YiewStore yiewStore = new YiewStore();
 
-                        createmyiew.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
+//                        View createmyiew = YiewEngine.createView(context, null, yiew_1);
+                        View aa = YiewEngine.createView(context, null, yiew_1, yiewStore);
+                        aa.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
 
-                        setContentView(createmyiew);
+                        setContentView(aa);
+
+                        View titlebar = yiewStore.getView("titlebar");
+                        Log.d("syb","titlebar"+titlebar);
 
 
                     }

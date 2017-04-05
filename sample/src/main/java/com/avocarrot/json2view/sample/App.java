@@ -65,7 +65,7 @@ public class App extends Application {
                 TextView.layout_centerInParent=true;
                 TextView.background = "#dddddd";
                 TextView.text="sdfsdf";
-                View yiew1 = YiewEngine.createView(context, parent, RelativeLayout);
+                View yiew1 = YiewEngine.createView(context, parent, RelativeLayout,null);
                 return yiew1;
             }
         });
@@ -77,7 +77,7 @@ public class App extends Application {
 
                 Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
                 dv.background = "#dddddd";
-                View yiew1 = YiewEngine.createView(context, parent, dv);
+                View yiew1 = YiewEngine.createView(context, parent, dv,null);
                 return yiew1;
             }
         });

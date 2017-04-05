@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 
 public class YiewBean {
-
+    public String name;
 
     // view
     public String view;
@@ -80,6 +80,7 @@ public class YiewBean {
     public int layout_alignBottom;
 
     public int layout_alignBaseline;
+
 
 
     @Override
