@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.decode.Yiew;
+import com.google.android.flexbox.FlexboxLayout;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -35,8 +36,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 //
 //        setContentView(createView);
 
+        setContentView(R.layout.flexlayout);
+        FlexboxLayout flexboxLayout = null;
 
-        load();
+//        load();
     }
 
     private void load() {
