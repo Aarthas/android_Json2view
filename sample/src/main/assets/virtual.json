@@ -13,22 +13,26 @@
       "height": "match",
       "child": [
         {
-          "view": "group"
-        },
-
-        {
           "view": "group",
           "background": "#f6f6f6",
           "text": "普通事件"
         },
         {
-          "name": "contact",
+          "view": "group",
+          "background": "#56b0f5",
+          "text": "事件,点击更改联系人的电话",
+          "textColor": "#fff",
+          "click": "change"
+        },
+        {
+          "name": "contactPane",
           "view": "RelativeLayout",
           "width": "match",
           "height": "48",
           "background": "#ffffff",
           "child": [
             {
+              "name": "contact",
               "view": "TextView",
               "text": "联系人",
               "textColor": "#666666",
@@ -37,9 +41,10 @@
               "layout_centerVertical": true
             },
             {
+              "name": "phone",
               "view": "TextView",
               "width": "wrap",
-              "text": "my god",
+              "text": "电话",
               "textColor": "#666666",
               "layout_alignParentRight": true,
               "marginRight": "24",

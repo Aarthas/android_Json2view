@@ -1,11 +1,11 @@
 package com.avocarrot.json2view.sample;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 
-import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.bean.Yiew;
 import com.lzy.okgo.OkGo;
@@ -18,6 +18,7 @@ public class VirtualVNodeActivity extends AppCompatActivity {
 
 
     private VirtualVNodeActivity context;
+    private Yiew yiew_1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,6 @@ public class VirtualVNodeActivity extends AppCompatActivity {
 
 
         context = this;
-
-
 
 
         load();
@@ -39,7 +38,7 @@ public class VirtualVNodeActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        Yiew yiew_1 = Util.gson.fromJson(s, Yiew.class);
+                        yiew_1 = Util.gson.fromJson(s, Yiew.class);
 
                         View contentView = YiewEngine.createView(context, null, yiew_1, null);
 
@@ -57,10 +56,23 @@ public class VirtualVNodeActivity extends AppCompatActivity {
 
     }
 
-    public void showToast() {
+    public void change() {
 
-        LogUtils.d("showToast");
-        Toast.makeText(context, "showToast", 1).show();
+        Yiew contactPane = yiew_1.getYiewStore().getYiewByName("contactPane");
+        contactPane.getView().setBackgroundColor(Color.parseColor("#ff4CAF50"));
+
+        //更新虚拟节点
+        Yiew contact = yiew_1.getYiewStore().getYiewByName("contact");
+        contact.text = "arthas";
+        contact.textColor="#fff";
+        contact.invalid();
+
+
+        //通过yiew得到View
+        Yiew phone = yiew_1.getYiewStore().getYiewByName("phone");
+        TextView phoneview = (TextView) phone.getView();
+        phoneview.setText("12933249");
+        phoneview.setTextColor(Color.parseColor("#ffffff"));
 
     }
 
