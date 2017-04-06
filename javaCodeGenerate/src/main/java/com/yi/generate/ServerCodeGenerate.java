@@ -30,7 +30,7 @@ public class ServerCodeGenerate {
 //        YiewEngine.createmyiew(yiewBean)
 
 
-        create(null,"yiew_1", yiewBean);
+        create(null, "yiew_1", yiewBean);
 
 //        int count = 0;
 //        if (yiewBean!= null)
@@ -49,7 +49,7 @@ public class ServerCodeGenerate {
 
     }
 
-    private static void create(String parentName,String yiewName, YiewBean yiewBean) throws IllegalAccessException {
+    private static void create(String parentName, String yiewName, YiewBean yiewBean) throws IllegalAccessException {
 
 
         System.out.println(" Yiew " + yiewName + " = new Yiew();");
@@ -101,7 +101,7 @@ public class ServerCodeGenerate {
 
                 System.out.println("\n");
                 String childName = yiewName + "_" + (i + 1);
-                create(yiewName,childName, yiewBean1);
+                create(yiewName, childName, yiewBean1);
 
 
             }
@@ -129,9 +129,13 @@ public class ServerCodeGenerate {
             e.getMessage();
         } finally {
             try {
-                if (isr != null) isr.close();
-                if (fileInputStream != null) fileInputStream.close();
-                if (input != null) input.close();
+                if (isr != null)
+                    isr.close();
+                if (fileInputStream != null)
+                    fileInputStream.close();
+                if (input != null)
+                    input.close();
+
             } catch (Exception e2) {
                 e2.getMessage();
             }

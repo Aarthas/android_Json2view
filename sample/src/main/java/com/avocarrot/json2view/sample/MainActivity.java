@@ -51,8 +51,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 //                        Log.d("syb", s);
                         YiewBean yiew_1 = gson.fromJson(s, YiewBean.class);
 
-                        Log.d("syb","yiew_1.margin"+ yiew_1.child.get(0).margin);
-                        Log.d("syb","yiew_1.margin"+ (yiew_1.child.get(0).margin!=null));
+                        Log.d("syb","get yiewbean");
+
                         YiewStore yiewStore = new YiewStore();
 
 //                        View createmyiew = YiewEngine.createView(context, null, yiew_1);
