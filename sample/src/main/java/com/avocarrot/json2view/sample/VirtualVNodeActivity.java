@@ -61,7 +61,7 @@ public class VirtualVNodeActivity extends AppCompatActivity {
         Yiew contactPane = yiew_1.getYiewStore().getYiewByName("contactPane");
         contactPane.getView().setBackgroundColor(Color.parseColor("#ff4CAF50"));
 
-        //更新虚拟节点
+        //更新虚拟节点  目前只做了textview
         Yiew contact = yiew_1.getYiewStore().getYiewByName("contact");
         contact.text = "arthas";
         contact.textColor="#fff";
