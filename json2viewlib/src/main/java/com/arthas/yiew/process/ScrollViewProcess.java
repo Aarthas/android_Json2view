@@ -7,7 +7,7 @@ import android.widget.ScrollView;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 
@@ -16,7 +16,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class ScrollViewProcess {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
         ScrollView view = new ScrollView(context);
 
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);

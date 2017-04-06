@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.YiewStore;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.decode.Yiew;
 import com.google.gson.Gson;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -49,22 +47,26 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     public void onSuccess(String s, Call call, Response response) {
                         // s 即为所需要的结果
 //                        Log.d("syb", s);
-                        YiewBean yiew_1 = gson.fromJson(s, YiewBean.class);
+                        Yiew yiew_1 = gson.fromJson(s, Yiew.class);
 
                         Log.d("syb","get yiewbean");
 
-                        YiewStore yiewStore = new YiewStore();
+
 
 //                        View createmyiew = YiewEngine.createView(context, null, yiew_1);
-                        View aa = YiewEngine.createView(context, null, yiew_1, yiewStore);
-//                        aa.setLayoutParams(new WindowManager.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT));
+
+                        View aa = YiewEngine.createView(context, null, yiew_1, null);
+
 
                         setContentView(aa);
 
-                        TextView platform = (TextView) yiewStore.getView("platform");
-//                        Log.d("syb","platform = "+platform);
-//                        Log.d("syb","platform = "+platform.getText());
-//                        Log.d("syb","id  ="+platform.getId());
+                        Yiew platform1 = yiew_1.getYiewStore().getYiewByName("platform");
+                        platform1.text = "werwetwert";
+                        platform1.textColor="#111111";
+                        platform1.invalid();
+//                        platform.setText("sdcsd");
+
+
 
                     }
                 });

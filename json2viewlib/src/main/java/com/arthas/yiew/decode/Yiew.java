@@ -1,5 +1,8 @@
 package com.arthas.yiew.decode;
 
+import com.arthas.yiew.YiewEngine;
+import com.arthas.yiew.YiewStore;
+
 import java.util.ArrayList;
 
 /**
@@ -32,6 +35,23 @@ public class Yiew extends YiewBean {
         }
         child.add(yiew);
     }
+
+    public transient YiewStore yiewStore;
+
+    public YiewStore getYiewStore() {
+        return yiewStore;
+    }
+
+
+    public  android.view.View getView() {
+        return yiewStore.getView(name);
+    }
+
+    public void invalid() {
+        YiewEngine.invalid(this);
+
+    }
+
 
     public static Yiew create(String type, String width, String height) {
         Yiew yiew = new Yiew();

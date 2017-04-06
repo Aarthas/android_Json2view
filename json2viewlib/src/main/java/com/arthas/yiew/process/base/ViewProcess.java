@@ -8,6 +8,7 @@ import android.view.View;
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.PropertyBean;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
 
 import java.lang.reflect.Method;
@@ -18,21 +19,13 @@ import java.util.List;
  */
 
 public class ViewProcess {
-    public static void applyView(final View view, final YiewBean yiew, YiewStore yiewStore) {
-//        if (yiew.name != null) {
-//            yiewStore.putView(yiew.name, view);
-//
-//
-//
-//            if (yiew.id == 0) {
-//                yiew.id = Utils.generateViewId();
-//            }
-//            view.setId(yiew.id);
-//            yiewStore.yiews.put(yiew.name, yiew);
-//        }
+    public static void applyView(final View view, final Yiew yiew, YiewStore yiewStore) {
+
+
         if (yiewStore != null) {
             yiewStore.put(yiew, view);
         }
+
 
 
         if (yiew.id != 0) {

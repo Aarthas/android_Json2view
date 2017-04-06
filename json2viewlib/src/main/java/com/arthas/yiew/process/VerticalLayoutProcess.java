@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -18,7 +19,7 @@ import static com.arthas.yiew.Utils.getValueInt;
  * Created by zhangyn on 17/4/5.
  */
 public class VerticalLayoutProcess {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
 
         LinearLayout view = new LinearLayout(context);
         view.setOrientation(LinearLayout.VERTICAL);

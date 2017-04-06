@@ -9,6 +9,7 @@ import com.arthas.yiew.IProcess;
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -19,7 +20,7 @@ import com.arthas.yiew.process.base.ViewProcess;
 
 public class ScrollProcess  implements IProcess {
     @Override
-    public View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
+    public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
         ScrollView view = new ScrollView(context);
 //
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
@@ -34,11 +35,11 @@ public class ScrollProcess  implements IProcess {
         view.setFadingEdgeLength(0);
 
 
-        YiewBean verticalLayoutyiew = new YiewBean();
+        Yiew verticalLayoutyiew = new Yiew();
         verticalLayoutyiew.width = "match";
         verticalLayoutyiew.height = "match";
         verticalLayoutyiew.view = "verticalLayout";
-        ViewGroup verticalLayout = (ViewGroup) YiewEngine.createView(context, view, verticalLayoutyiew);
+        ViewGroup verticalLayout = (ViewGroup) YiewEngine.createView(context, view, verticalLayoutyiew,yiewStore);
         view.addView(verticalLayout);
 
 

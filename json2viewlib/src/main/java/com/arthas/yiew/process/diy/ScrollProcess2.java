@@ -9,7 +9,6 @@ import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.decode.Yiew;
-import com.arthas.yiew.decode.YiewBean;
 
 /**
  * Created by zhangyn on 17/4/5.
@@ -17,7 +16,7 @@ import com.arthas.yiew.decode.YiewBean;
 
 public class ScrollProcess2 implements IProcess {
     @Override
-    public View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
+    public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
         Yiew ScrollView = Yiew.create(Yiew.ScrollView, Yiew.MATCH, Yiew.MATCH);
         Utils.copy(ScrollView,yiew);
         Yiew verticalLayout = Yiew.create(Yiew.verticalLayout, Yiew.MATCH, Yiew.MATCH);

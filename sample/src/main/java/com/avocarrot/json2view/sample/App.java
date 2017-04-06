@@ -58,7 +58,7 @@ public class App extends Application {
         YiewConfig.Component("refreshBar", new IProcess() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, YiewBean yiew,YiewStore yiewStore) {
+            public View createView(Context context, ViewGroup parent, Yiew yiew,YiewStore yiewStore) {
 
 
                 Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
@@ -81,7 +81,7 @@ public class App extends Application {
         YiewConfig.Component("line", new IProcess() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, YiewBean yiew,YiewStore yiewStore) {
+            public View createView(Context context, ViewGroup parent, Yiew yiew,YiewStore yiewStore) {
 
                 Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
                 dv.background = "#dddddd";

@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -19,13 +20,26 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class TextViewProcess {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
         TextView view = new TextView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
         ViewProcess.applyView(view, yiew,yiewStore);
         LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
+
+        applyTextView(view, yiew);
+
+
+        return view;
+    }
+
+    public static View refresh(Yiew yiew) {
+        TextView view = (TextView) yiew.getYiewStore().getView(yiew.name);
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+
+        ViewProcess.applyView(view, yiew,yiew.getYiewStore());
+        LayoutProcess.applyaLayout(view, params, yiew,yiew.getYiewStore());
 
         applyTextView(view, yiew);
 

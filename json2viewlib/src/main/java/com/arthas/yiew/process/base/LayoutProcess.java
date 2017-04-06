@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.decode.YiewBean;
 
 /**
@@ -93,6 +94,7 @@ public class LayoutProcess {
 //            if (yiew.layout_alignBaseline != 0)
 //                params1.addRule(RelativeLayout.ALIGN_BASELINE, yiew.layout_alignBaseline);
 //
+
             if (yiew.below != null) {
 
                 int advanceId = getAdvanceId(yiew.below, yiewStore);
@@ -175,7 +177,7 @@ public class LayoutProcess {
             return id;
         } else if (verb.startsWith("@")) {
             String name = verb.substring(1);
-            YiewBean aa = yiewStore.getYiewByName(name);
+            Yiew aa = yiewStore.getYiewByName(name);
             if (aa != null) {
                 return aa.id;
             }

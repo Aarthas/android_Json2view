@@ -7,7 +7,7 @@ import android.widget.RelativeLayout;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.decode.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 
@@ -16,7 +16,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class RelativeLayoutProcess {
-    public static View createView(Context context, ViewGroup parent, YiewBean yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
 
         RelativeLayout view = new RelativeLayout(context);
 

@@ -2,7 +2,7 @@ package com.arthas.yiew;
 
 import android.view.View;
 
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.decode.Yiew;
 
 import java.util.HashMap;
 
@@ -13,8 +13,10 @@ public class YiewStore {
 
 
     HashMap<String, View> hashMap = new HashMap();
-    HashMap<String, Integer> ids = new HashMap();
-    public HashMap<String, YiewBean> yiews = new HashMap();
+
+    //有name的会缓存
+    public HashMap<String, Yiew> yiews = new HashMap();
+
 
     public void putView(String name, View view) {
 
@@ -22,25 +24,17 @@ public class YiewStore {
 
     }
 
-    public void putId(String name, Integer id) {
-
-        ids.put(name, id);
-
-    }
 
     public View getView(String name) {
         return hashMap.get(name);
     }
 
-    public Integer getIdByName(String name) {
-        return ids.get(name);
-    }
 
-    public YiewBean getYiewByName(String name) {
+    public Yiew getYiewByName(String name) {
         return yiews.get(name);
     }
 
-    public void put(YiewBean yiew, View view) {
+    public void put(Yiew yiew, View view) {
 
         if (yiew.name != null) {
             putView(yiew.name, view);
