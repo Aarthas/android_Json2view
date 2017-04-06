@@ -24,9 +24,17 @@ public class JsonFromLocalActivity extends AppCompatActivity {
 
         context = this;
 
+        String s = Util.readFile(context, "complaintDetail.json");
+        Yiew yiew_1 = Util.gson.fromJson(s, Yiew.class);
 
 
-        load();
+        View contentView = YiewEngine.createView(context, null, yiew_1, null);
+
+        setContentView(contentView);
+
+
+
+//        load();
     }
 
     private void load() {
