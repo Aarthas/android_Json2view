@@ -1,15 +1,14 @@
 package com.arthas.yiew.process.base;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
-import com.arthas.yiew.decode.PropertyBean;
-import com.arthas.yiew.decode.Yiew;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.bean.PropertyBean;
+import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.YiewBean;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -44,9 +43,9 @@ public class ViewProcess {
         }
         if (yiew.background != null) {
 
-            if (yiew.background.startsWith("#")) {
-                view.setBackgroundColor(Color.parseColor(yiew.background));
-            }
+
+                view.setBackgroundColor(Utils.parseColor(yiew.background));
+
         }
 
 

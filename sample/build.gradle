@@ -37,4 +37,5 @@ dependencies {
     compile 'com.lzy.net:okgo:2.1.4'
     compile 'com.google.android:flexbox:0.2.6'
 //    compile project(path: ':yiewlib')
+    compile 'com.apkfuns.logutils:library:1.5.1.1'
 }

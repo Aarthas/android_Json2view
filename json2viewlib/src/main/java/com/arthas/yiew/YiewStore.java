@@ -2,7 +2,7 @@ package com.arthas.yiew;
 
 import android.view.View;
 
-import com.arthas.yiew.decode.Yiew;
+import com.arthas.yiew.bean.Yiew;
 
 import java.util.HashMap;
 

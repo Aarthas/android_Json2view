@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewStore;
-import com.arthas.yiew.decode.Yiew;
+import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 

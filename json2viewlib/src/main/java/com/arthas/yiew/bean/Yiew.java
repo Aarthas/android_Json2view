@@ -1,4 +1,4 @@
-package com.arthas.yiew.decode;
+package com.arthas.yiew.bean;
 
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
@@ -27,6 +27,13 @@ public class Yiew extends YiewBean {
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
 
+
+    public transient Yiew parentNode;
+
+
+    public transient YiewStore yiewStore;
+
+
     public void addChild(Yiew yiew) {
         if (child == null)
         {
@@ -36,7 +43,7 @@ public class Yiew extends YiewBean {
         child.add(yiew);
     }
 
-    public transient YiewStore yiewStore;
+
 
     public YiewStore getYiewStore() {
         return yiewStore;

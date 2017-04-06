@@ -2,7 +2,7 @@ package com.arthas.yiew;
 
 import android.widget.ImageView;
 
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.bean.YiewBean;
 
 /**
  * Created by zhangyn on 17/3/30.

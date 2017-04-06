@@ -2,6 +2,8 @@ package com.avocarrot.json2view.sample;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -11,10 +13,12 @@ import java.io.InputStreamReader;
  */
 
 public class Util {
+    public final static   Gson gson = new Gson();
+
     /**
      * Helper function to load file from assets
      */
-    private String readFile(String fileName, Context context) {
+    public static String readFile( Context context,String fileName) {
         StringBuilder returnString = new StringBuilder();
         InputStream fIn = null;
         InputStreamReader isr = null;

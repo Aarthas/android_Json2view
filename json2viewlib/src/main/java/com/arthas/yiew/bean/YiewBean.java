@@ -1,4 +1,4 @@
-package com.arthas.yiew.decode;
+package com.arthas.yiew.bean;
 
 import java.util.ArrayList;
 

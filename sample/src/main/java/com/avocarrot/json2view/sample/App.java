@@ -6,13 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.IProcess;
 import com.arthas.yiew.ImageAdapter;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
-import com.arthas.yiew.decode.Yiew;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.YiewBean;
 import com.bumptech.glide.Glide;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
@@ -39,8 +40,13 @@ public class App extends Application {
                 .setReadTimeOut(OkGo.DEFAULT_MILLISECONDS)     //全局的读取超时时间
                 .setWriteTimeOut(OkGo.DEFAULT_MILLISECONDS)    //全局的写入超时时间
 
-                //可以全局统一设置缓存模式,默认是不使用缓存,可以不传,具体其他模式看 github 介绍 https://github.com/jeasonlzy/
                 .setCacheMode(CacheMode.NO_CACHE);
+
+        LogUtils.getLogConfig()
+                .configAllowLog(true)
+                .configTagPrefix("MyAppName")
+                .configShowBorders(true)
+                .configFormatTag("%d{HH:mm:ss:SSS} %t %c{-5}");
 
         ImageAdapter imageAdapter = new ImageAdapter() {
 
@@ -63,7 +69,7 @@ public class App extends Application {
 
                 Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
 
-                Yiew TextView =Yiew.create(Yiew.TextView,"200dp",Yiew.MATCH) ;
+                Yiew TextView =Yiew.create(Yiew.TextView,Yiew.MATCH,Yiew.MATCH) ;
                 RelativeLayout.addChild(TextView);
                 TextView.layout_centerInParent=true;
                 TextView.text="刷新";
@@ -71,6 +77,9 @@ public class App extends Application {
                 TextView.click="refresh";
                 TextView.textColor="#333333";
                 TextView.background="#ffffff";
+
+
+
                 View yiew1 = YiewEngine.createView(context, parent, RelativeLayout,null);
                 return yiew1;
             }

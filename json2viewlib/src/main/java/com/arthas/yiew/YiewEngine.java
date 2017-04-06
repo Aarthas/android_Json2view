@@ -4,8 +4,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arthas.yiew.decode.Yiew;
-import com.arthas.yiew.decode.YiewBean;
+import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.YiewBean;
 import com.arthas.yiew.process.FrameLayoutProcess;
 import com.arthas.yiew.process.HorizonLayoutProcess;
 import com.arthas.yiew.process.ImageViewProcess;
@@ -27,8 +27,9 @@ public class YiewEngine {
 
         if (yiew.child != null && yiew.child.size() > 0) {
             for (YiewBean child : yiew.child) {
-                Yiew   child1 =    (Yiew) child;
+                Yiew child1 = (Yiew) child;
                 child1.yiewStore = yiew.yiewStore;
+                child1.parentNode = yiew;
                 View childView = createView(context, view, child1, yiewStore);
                 if (childView != null) {
                     view.addView(childView);

@@ -1,0 +1,66 @@
+{
+  "view": "scrollView",
+  "width": "match",
+  "height": "match",
+  "background": "#f6f6f6",
+  "child": [
+    {
+      "view": "refreshBar"
+    },
+    {
+      "view": "line"
+    },
+    {
+      "name": "ver",
+      "view": "verticalLayout",
+      "width": "match",
+      "height": "match",
+      "gravity": "center",
+      "textSize": "18",
+
+      "textColor": "#fff",
+      "child": [
+        {
+          "view": "TextView",
+          "width": "250dp",
+          "height": "100dp",
+          "text": "从本地加载json文件渲染视图",
+          "gravity": "center",
+          "margin": "10",
+          "background": "#ff03A9F4",
+          "click": "goJsonFromLocalActivity"
+        },
+        {
+          "view": "TextView",
+          "width": "250dp",
+          "height": "100dp",
+          "text": "从网络加载json文件渲染视图",
+          "margin": "10",
+          "gravity": "center",
+          "background": "#ffF44336",
+          "click": "goJsonFromNetActivity"
+        },
+        {
+          "view": "TextView",
+          "width": "250dp",
+          "height": "100dp",
+          "text": "使用Yiew代码创建视图",
+          "margin": "10",
+          "gravity": "center",
+          "background": "#ff4CAF50",
+          "click": "goYiewCodeActivity"
+        },
+        {
+          "view": "TextView",
+          "width": "250dp",
+          "height": "100dp",
+          "text": "更多用法",
+          "margin": "10",
+          "gravity": "center",
+          "background": "#ffFFEB3B",
+          "click": "goJsonFromLocalActivity"
+        }
+      ]
+    }
+  ]
+}
