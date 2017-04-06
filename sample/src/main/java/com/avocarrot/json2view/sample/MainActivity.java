@@ -100,5 +100,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(context,YiewCodeActivity.class));
     }
 
+    public void goFeatureActivity() {
+        startActivity(new Intent(context,FeatureActivity.class));
+    }
 
 }

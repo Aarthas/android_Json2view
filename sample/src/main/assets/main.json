@@ -54,11 +54,11 @@
           "view": "TextView",
           "width": "250dp",
           "height": "100dp",
-          "text": "更多用法",
+          "text": "自定义component 用法 \n与 click事件\n与 图片展示",
           "margin": "10",
           "gravity": "center",
           "background": "#ffFFEB3B",
-          "click": "goJsonFromLocalActivity"
+          "click": "goFeatureActivity"
         }
       ]
     }
