@@ -103,5 +103,8 @@ public class MainActivity extends AppCompatActivity {
     public void goFeatureActivity() {
         startActivity(new Intent(context,FeatureActivity.class));
     }
+    public void goVirtualVNodeActivity() {
+        startActivity(new Intent(context,VirtualVNodeActivity.class));
+    }
 
 }

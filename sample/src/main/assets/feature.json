@@ -81,7 +81,11 @@
             }
           ]
         },
-
+        {
+          "view": "group",
+          "background": "#f6f6f6",
+          "text": "application里，全局定义了一些component组件，查看代码便知"
+        },
 
         {
           "view": "group",
