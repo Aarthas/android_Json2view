@@ -1,5 +1,6 @@
 package com.yi.generate;
 
+import com.yi.bean.Yiew;
 import com.yi.bean.YiewBean;
 
 
@@ -19,14 +20,14 @@ public class ServerCodeGenerate {
     public static void main(String[] args) throws Exception, IllegalAccessException {
 
 
-        File file = new File("lib/complaintDetail.json");
+        File file = new File("javaCodeGenerate/complaintDetail.json");
 //        file.createNewFile();
 
         String s = readFile(file);
         System.out.println(s);
         Gson gson = new Gson();
 
-        YiewBean yiewBean = gson.fromJson(s, YiewBean.class);
+        Yiew yiewBean = gson.fromJson(s, Yiew.class);
 //        YiewEngine.createmyiew(yiewBean)
 
 
@@ -91,7 +92,7 @@ public class ServerCodeGenerate {
 
         }
 
-        ArrayList<YiewBean> child = yiewBean.child;
+        ArrayList<Yiew> child = yiewBean.child;
 //                    System.out.println(child);
         if (child != null) {
             for (int i = 0; i < child.size(); i++) {

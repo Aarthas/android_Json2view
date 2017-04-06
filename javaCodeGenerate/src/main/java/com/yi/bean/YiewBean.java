@@ -21,7 +21,7 @@ public class YiewBean {
 
     public String tag;
     public ArrayList<PropertyBean> propertys;
-    public ArrayList<YiewBean> child;
+    public ArrayList<Yiew> child;
 
     public String padding;
     public String paddingLeft;

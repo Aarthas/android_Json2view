@@ -24,6 +24,11 @@ public class Yiew extends YiewBean {
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
 
+
+    public transient Yiew parentNode;
+
+
+
     public void addChild(Yiew yiew) {
         if (child == null)
         {
@@ -32,6 +37,9 @@ public class Yiew extends YiewBean {
         }
         child.add(yiew);
     }
+
+
+
 
     public static Yiew create(String type, String width, String height) {
         Yiew yiew = new Yiew();
