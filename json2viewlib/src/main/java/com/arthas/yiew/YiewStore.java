@@ -11,10 +11,10 @@ import java.util.HashMap;
  */
 public class YiewStore {
 
-
+    //有name的会缓存View
     HashMap<String, View> hashMap = new HashMap();
 
-    //有name的会缓存
+    //有name的会缓存Yiew
     public HashMap<String, Yiew> yiews = new HashMap();
 
 
