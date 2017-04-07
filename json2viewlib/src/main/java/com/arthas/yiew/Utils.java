@@ -378,6 +378,11 @@ public class Utils {
         if (from.alignTop != null) {
             to.alignTop = from.alignTop;
         }
+        if (from.data != null) {
+            to.data = from.data;
+        }
+
+
     }
 
 

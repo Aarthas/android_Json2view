@@ -59,17 +59,23 @@ public class TextViewProcess {
             if (yiew.lineSpace == null)
                 yiew.lineSpace = yiew.parentNode.lineSpace;
 
-            if (yiew.text == null)
-                yiew.text = yiew.parentNode.text;
-
-            if (yiew.hint == null)
-                yiew.hint = yiew.parentNode.hint;
+//            if (yiew.text == null)
+//                yiew.text = yiew.parentNode.text;
+//
+//            if (yiew.hint == null)
+//                yiew.hint = yiew.parentNode.hint;
 
         }
 
 
         if (yiew.text != null)
-            view.setText(yiew.text);
+            if (yiew.text.startsWith("&")) {
+                String keyname = yiew.text.substring(1);
+                Object data = yiew.getData(keyname, yiew.text);
+                yiew.text = data.toString();
+            }
+
+        view.setText(yiew.text);
         if (yiew.textColor != null)
             view.setTextColor(Utils.parseColor(yiew.textColor));
         if (yiew.textSize != 0)

@@ -1,4 +1,9 @@
+
 {
+  "head": {
+    "process": "AndroidLayout"
+  },
+  "template":{
   "view": "verticalLayout",
   "width": "match",
   "height": "match",
@@ -59,4 +64,4 @@
       ]
     }
   ]
-}
+}}

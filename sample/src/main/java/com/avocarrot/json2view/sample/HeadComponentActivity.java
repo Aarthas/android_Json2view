@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.Main;
+import com.arthas.yiew.bean.YiewResp;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -28,7 +28,6 @@ public class HeadComponentActivity extends AppCompatActivity {
 
 
 
-
         load();
     }
 
@@ -39,9 +38,9 @@ public class HeadComponentActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        Yiew yiew_1 = Util.gson.fromJson(s, Yiew.class);
+                        YiewResp yiewResp = Util.gson.fromJson(s, YiewResp.class);
 
-                        View contentView = YiewEngine.createView(context, null, yiew_1, null);
+                        View contentView = Main.startProcess(context, yiewResp);
 
                         setContentView(contentView);
 

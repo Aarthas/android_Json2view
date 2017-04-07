@@ -7,8 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.YiewEngine;
+import com.arthas.yiew.Main;
 import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.YiewResp;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -44,22 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        setContentView(aa);
 
-        OkGo.get("http://193.0.1.157:8080/main.json")     // 请求方式和请求url
-
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(String s, Call call, Response response) {
-
-                        Yiew yiew_1 = Util.gson.fromJson(s, Yiew.class);
-
-                        View aa = YiewEngine.createView(context, null, yiew_1, null);
-
-                        setContentView(aa);
-
-
-
-                    }
-                });
+       load();
     }
 
     private void load() {
@@ -69,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        Yiew yiew_1 = Util.gson.fromJson(s, Yiew.class);
+                        YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
 
-                        View aa = YiewEngine.createView(context, null, yiew_1, null);
+                        View aa = Main.startProcess(context,  yiew_1 );
 
                         setContentView(aa);
 
@@ -91,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jumpToActivity(Yiew yiew) {
-        HashMap data = yiew.getData();
+        HashMap data = yiew.data;
         LogUtils.d(data);
         Object name = data.get("name");
         LogUtils.d(name);

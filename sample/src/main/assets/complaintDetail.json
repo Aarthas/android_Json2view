@@ -1,263 +1,263 @@
 {
-  "view": "verticalLayout",
-  "width": "match",
-  "height": "match",
-  "background": "#f6f6f6",
-  "child": [
-    {
-      "view": "refreshBar"
-    },
-    {
-      "view": "scrollView",
-      "width": "match",
-      "height": "match",
-      "child": [
-        {
-          "view": "verticalLayout",
-          "width": "match",
-          "height": "wrap",
-          "background": "#f6f6f6",
-          "gravity": "center",
-          "child": [
-            {
-              "view": "TextView",
-              "text": "页面的简单使用",
-              "textColor": "#444444",
-              "padding": "16",
-              "textSize": "16"
-
-
-            },
-            {
-              "view": "TextView",
-              "text": "从assets/complaintDetail.json加载数据",
-              "textColor": "#444444",
-              "padding": "16",
-              "gravity": "center",
-              "textSize": "14",
-
-              "click": "gotoDataSource"
-
-
-            }
-          ]
-        },
-        {
-          "name": "head1",
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "48",
-          "background": "#ffffff",
-          "paddingLeft": "16",
-          "paddingRight": "16",
-          "child": [
-            {
-              "view": "ImageView",
-              "src": "http://onpxz5rdd.bkt.clouddn.com/ic_service_black.png",
-              "width": "16dp",
-              "height": "16dp",
-              "layout_centerVertical": true
-            },
-            {
-              "view": "TextView",
-              "text": "接受部门",
-              "textColor": "#444444",
-              "marginLeft": "24",
-              "textSize": "14",
-              "layout_centerVertical": true
-            },
-            {
-              "view": "TextView",
-              "width": "wrap",
-              "text": "状态",
-              "textColor": "#444444",
-              "layout_alignParentRight": "true",
-              "layout_centerVertical": true
-            }
-          ]
-        },
-        {
-          "view": "line"
-        },
-        {
-          "name": "pane",
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "wrap",
-          "background": "#ffffff",
-          "paddingLeft": "16",
-          "paddingRight": "16",
-          "paddingTop": "16",
-          "paddingBottom": "16",
-          "child": [
-            {
-              "name": "platform",
-              "view": "TextView",
-              "text": "平台:   wqrwer",
-              "textColor": "#666666",
-              "textSize": "14"
-            },
-            {
-              "name": "content1",
-              "id": "102",
-              "view": "TextView",
-              "text": "内容:   ",
-              "textColor": "#666666",
-              "marginTop": "12",
-              "textSize": "14",
-              "below": "@platform"
-            },
-            {
-              "view": "TextView",
-              "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
-              "textColor": "#666666",
-              "textSize": "14",
-              "lineSpace": "18dp",
-              "alignTop": "@content1",
-              "toRightOf": "@content1"
-            }
-          ]
-        },
-        {
-          "name": "imagePane",
-          "view": "horizonLayout",
-          "width": "match_parent",
-          "height": "wrap_content",
-          "background": "#ffffff",
-          "paddingLeft": "12dp",
-          "paddingRight": "12dp",
-          "paddingTop": "16",
-          "paddingBottom": "10dp",
-          "child": [
-            {
-              "view": "ImageView",
-              "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
-              "width": "74dp",
-              "height": "74dp",
-              "margin": "5dp"
-            },
-            {
-              "view": "ImageView",
-              "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-              "width": "74dp",
-              "height": "74dp",
-              "margin": "5dp"
-            },
-            {
-              "view": "ImageView",
-              "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-              "width": "74dp",
-              "height": "74dp",
-              "margin": "5dp"
-            },
-            {
-              "view": "ImageView",
-              "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-              "width": "74dp",
-              "height": "74dp",
-              "margin": "5dp"
-            }
-          ]
-        },
-        {
-          "name": "dv",
-          "view": "View",
-          "width": "match",
-          "height": "16",
-          "background": "#f6f6f6"
-        },
-        {
-          "name": "contact",
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "48",
-          "background": "#ffffff",
-          "child": [
-            {
-              "view": "TextView",
-              "text": "联系人",
-              "textColor": "#666666",
-              "marginLeft": "24",
-              "textSize": "14",
-              "layout_centerVertical": true
-            },
-            {
-              "view": "TextView",
-              "width": "wrap",
-              "text": "my god",
-              "textColor": "#666666",
-              "layout_alignParentRight": true,
-              "marginRight": "24",
-              "layout_centerVertical": true
-            }
-          ]
-        },
-        {
-          "view": "line"
-        },
-        {
-          "name": "mobile",
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "48",
-          "background": "#ffffff",
-          "child": [
-            {
-              "view": "TextView",
-              "text": "手机",
-              "textColor": "#666666",
-              "marginLeft": "24",
-              "textSize": "14",
-              "layout_centerVertical": true
-            },
-            {
-              "view": "TextView",
-              "width": "wrap",
-              "text": "132943...",
-              "textColor": "#666666",
-              "layout_alignParentRight": true,
-              "marginRight": "24",
-              "layout_centerVertical": true
-            }
-          ]
-        },
-        {
-          "view": "View",
-          "width": "match",
-          "height": "16",
-          "background": "#f6f6f6"
-        },
-        {
-          "view": "verticalLayout",
-          "width": "match",
-          "height": "wrap",
-          "padding": "20",
-          "background": "#ffffff",
-          "child": [
-            {
-              "name": "attach1",
-              "view": "TextView",
-              "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
-              "textColor": "#666666",
-              "lineSpace": "18dp",
-              "textSize": "14"
-            },
-            {
-              "view": "View",
-              "width": "match",
-              "height": "36"
-            },
-            {
-              "view": "TextView",
-              "text": "测试ScrollView\n测试ScrollView\n测试ScrollView\n测试ScrollView\n",
-              "textColor": "#666666",
-              "lineSpace": "18dp",
-              "textSize": "14",
-              "below": "@attach1"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "head": {
+    "process": "AndroidLayout"
+  },
+  "template": {
+    "view": "verticalLayout",
+    "width": "match",
+    "height": "match",
+    "background": "#f6f6f6",
+    "child": [
+      {
+        "view": "refreshBar"
+      },
+      {
+        "view": "scrollView",
+        "width": "match",
+        "height": "match",
+        "child": [
+          {
+            "view": "verticalLayout",
+            "width": "match",
+            "height": "wrap",
+            "background": "#f6f6f6",
+            "gravity": "center",
+            "child": [
+              {
+                "view": "TextView",
+                "text": "页面的简单使用",
+                "textColor": "#444444",
+                "padding": "16",
+                "textSize": "16"
+              },
+              {
+                "view": "TextView",
+                "text": "从assets/complaintDetail.json加载数据",
+                "textColor": "#444444",
+                "padding": "16",
+                "gravity": "center",
+                "textSize": "14",
+                "click": "gotoDataSource"
+              }
+            ]
+          },
+          {
+            "name": "head1",
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "48",
+            "background": "#ffffff",
+            "paddingLeft": "16",
+            "paddingRight": "16",
+            "child": [
+              {
+                "view": "ImageView",
+                "src": "http://onpxz5rdd.bkt.clouddn.com/ic_service_black.png",
+                "width": "16dp",
+                "height": "16dp",
+                "layout_centerVertical": true
+              },
+              {
+                "view": "TextView",
+                "text": "接受部门",
+                "textColor": "#444444",
+                "marginLeft": "24",
+                "textSize": "14",
+                "layout_centerVertical": true
+              },
+              {
+                "view": "TextView",
+                "width": "wrap",
+                "text": "状态",
+                "textColor": "#444444",
+                "layout_alignParentRight": "true",
+                "layout_centerVertical": true
+              }
+            ]
+          },
+          {
+            "view": "line"
+          },
+          {
+            "name": "pane",
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "wrap",
+            "background": "#ffffff",
+            "paddingLeft": "16",
+            "paddingRight": "16",
+            "paddingTop": "16",
+            "paddingBottom": "16",
+            "child": [
+              {
+                "name": "platform",
+                "view": "TextView",
+                "text": "平台:   wqrwer",
+                "textColor": "#666666",
+                "textSize": "14"
+              },
+              {
+                "name": "content1",
+                "id": "102",
+                "view": "TextView",
+                "text": "内容:   ",
+                "textColor": "#666666",
+                "marginTop": "12",
+                "textSize": "14",
+                "below": "@platform"
+              },
+              {
+                "view": "TextView",
+                "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
+                "textColor": "#666666",
+                "textSize": "14",
+                "lineSpace": "18dp",
+                "alignTop": "@content1",
+                "toRightOf": "@content1"
+              }
+            ]
+          },
+          {
+            "name": "imagePane",
+            "view": "horizonLayout",
+            "width": "match_parent",
+            "height": "wrap_content",
+            "background": "#ffffff",
+            "paddingLeft": "12dp",
+            "paddingRight": "12dp",
+            "paddingTop": "16",
+            "paddingBottom": "10dp",
+            "child": [
+              {
+                "view": "ImageView",
+                "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              },
+              {
+                "view": "ImageView",
+                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              },
+              {
+                "view": "ImageView",
+                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              },
+              {
+                "view": "ImageView",
+                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              }
+            ]
+          },
+          {
+            "name": "dv",
+            "view": "View",
+            "width": "match",
+            "height": "16",
+            "background": "#f6f6f6"
+          },
+          {
+            "name": "contact",
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "48",
+            "background": "#ffffff",
+            "child": [
+              {
+                "view": "TextView",
+                "text": "联系人",
+                "textColor": "#666666",
+                "marginLeft": "24",
+                "textSize": "14",
+                "layout_centerVertical": true
+              },
+              {
+                "view": "TextView",
+                "width": "wrap",
+                "text": "my god",
+                "textColor": "#666666",
+                "layout_alignParentRight": true,
+                "marginRight": "24",
+                "layout_centerVertical": true
+              }
+            ]
+          },
+          {
+            "view": "line"
+          },
+          {
+            "name": "mobile",
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "48",
+            "background": "#ffffff",
+            "child": [
+              {
+                "view": "TextView",
+                "text": "手机",
+                "textColor": "#666666",
+                "marginLeft": "24",
+                "textSize": "14",
+                "layout_centerVertical": true
+              },
+              {
+                "view": "TextView",
+                "width": "wrap",
+                "text": "132943...",
+                "textColor": "#666666",
+                "layout_alignParentRight": true,
+                "marginRight": "24",
+                "layout_centerVertical": true
+              }
+            ]
+          },
+          {
+            "view": "View",
+            "width": "match",
+            "height": "16",
+            "background": "#f6f6f6"
+          },
+          {
+            "view": "verticalLayout",
+            "width": "match",
+            "height": "wrap",
+            "padding": "20",
+            "background": "#ffffff",
+            "child": [
+              {
+                "name": "attach1",
+                "view": "TextView",
+                "text": "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！",
+                "textColor": "#666666",
+                "lineSpace": "18dp",
+                "textSize": "14"
+              },
+              {
+                "view": "View",
+                "width": "match",
+                "height": "36"
+              },
+              {
+                "view": "TextView",
+                "text": "测试ScrollView\n测试ScrollView\n测试ScrollView\n测试ScrollView\n",
+                "textColor": "#666666",
+                "lineSpace": "18dp",
+                "textSize": "14",
+                "below": "@attach1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

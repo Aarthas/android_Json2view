@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.arthas.yiew.YiewEngine;
+import com.arthas.yiew.Main;
 import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.YiewResp;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -38,10 +39,9 @@ public class VirtualVNodeActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        yiew_1 = Util.gson.fromJson(s, Yiew.class);
+                        YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
 
-                        View contentView = YiewEngine.createView(context, null, yiew_1, null);
-
+                        View contentView = Main.startProcess(context,  yiew_1 );
                         setContentView(contentView);
 
 

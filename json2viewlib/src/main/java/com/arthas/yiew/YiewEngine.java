@@ -23,13 +23,17 @@ import com.arthas.yiew.process.VerticalLayoutProcess;
 public class YiewEngine {
 
 
-    public static void addChild(Context context, Yiew yiew, ViewGroup view, YiewStore yiewStore) {
+    public static void addChild(Context context, Yiew parentYiew, ViewGroup view, YiewStore yiewStore) {
 
-        if (yiew.child != null && yiew.child.size() > 0) {
-            for (YiewBean child : yiew.child) {
+        if (parentYiew.child != null && parentYiew.child.size() > 0) {
+            for (YiewBean child : parentYiew.child) {
                 Yiew child1 = (Yiew) child;
-                child1.yiewStore = yiew.yiewStore;
-                child1.parentNode = yiew;
+                child1.yiewStore = parentYiew.yiewStore;
+                if (child1.data == null) {
+                    child1.data = parentYiew.data;
+                }
+
+                child1.parentNode = parentYiew;
                 View childView = createView(context, view, child1, yiewStore);
                 if (childView != null) {
                     view.addView(childView);
@@ -43,16 +47,6 @@ public class YiewEngine {
 
 
     public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
-
-        if (yiew.yiewStore == null) {
-            if (yiewStore == null) {
-                yiewStore = new YiewStore();
-                yiew.yiewStore = yiewStore;
-            } else {
-                yiew.yiewStore = yiewStore;
-            }
-
-        }
 
 
         switch (yiew.view) {
@@ -182,4 +176,6 @@ public class YiewEngine {
 
         TextViewProcess.refresh(yiewBean);
     }
+
+
 }

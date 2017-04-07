@@ -1,6 +1,7 @@
 package com.arthas.yiew.bean;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by zhangyn on 17/3/29.
@@ -22,6 +23,7 @@ public class YiewBean {
     public String tag;
     public ArrayList<PropertyBean> propertys;
     public ArrayList<Yiew> child;
+    public HashMap<String,String> data;
 
     public String padding;
     public String paddingLeft;

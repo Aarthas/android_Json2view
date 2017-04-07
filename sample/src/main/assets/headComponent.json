@@ -1,9 +1,9 @@
 {
   "head": {
-    "process": "yiewEngine",
+    "process": "AndroidLayout",
     "component": [
       {
-        "name": "group2",
+        "name": "AA",
         "template": {
           "view": "RelativeLayout",
           "width": "match",
@@ -13,7 +13,7 @@
             {
               "name": "contact",
               "view": "TextView",
-              "text": "联系人",
+              "text": "AA",
               "textColor": "#666666",
               "marginLeft": "24",
               "textSize": "14",
@@ -39,7 +39,7 @@
         "height": "match",
         "child": [
           {
-            "view": "group"
+            "view": "AA"
           },
           {
             "view": "group",
