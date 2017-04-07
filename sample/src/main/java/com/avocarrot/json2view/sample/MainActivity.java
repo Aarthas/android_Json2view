@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jumpToActivity(Yiew yiew) {
-        HashMap data = yiew.data;
+        HashMap data = yiew.getData();
         LogUtils.d(data);
         Object name = data.get("name");
         LogUtils.d(name);
@@ -102,28 +102,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-    }
-
-
-
-    public void goJsonFromLocalActivity() {
-        startActivity(new Intent(context,JsonFromLocalActivity.class));
-    }
-
-    public void goJsonFromNetActivity() {
-        startActivity(new Intent(context,JsonFromNetActivity.class));
-    }
-
-
-    public void goYiewCodeActivity() {
-        startActivity(new Intent(context,YiewCodeActivity.class));
-    }
-
-    public void goFeatureActivity() {
-        startActivity(new Intent(context,FeatureActivity.class));
-    }
-    public void goVirtualVNodeActivity() {
-        startActivity(new Intent(context,VirtualVNodeActivity.class));
     }
 
 }

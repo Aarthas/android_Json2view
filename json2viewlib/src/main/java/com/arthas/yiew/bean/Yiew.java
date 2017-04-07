@@ -28,7 +28,11 @@ public class Yiew extends YiewBean {
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
 
-    public HashMap data;
+    private HashMap data;
+
+    public HashMap getData() {
+        return data;
+    }
 
     public transient Yiew parentNode;
 
