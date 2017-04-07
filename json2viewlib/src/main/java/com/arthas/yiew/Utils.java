@@ -7,6 +7,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 
+import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.bean.YiewBean;
 
 import java.util.concurrent.atomic.AtomicInteger;
@@ -279,7 +280,7 @@ public class Utils {
         if (from.text != null) {
             to.text = from.text;
         }
-        if (from.textSize != 0) {
+        if (from.textSize != null) {
             to.textSize = from.textSize;
         }
         if (from.textColor != null) {
@@ -402,5 +403,23 @@ public class Utils {
         }
 
         return 0;
+    }
+
+    public static String getValueStringIfDataExist(Yiew yiew, String text, String defaultValue) {
+
+            String keyname = text.substring(1);
+            String data = yiew.getData(keyname, defaultValue);
+            return data;
+
+
+    }
+
+    public static int getValueIntIfDataExist(Yiew yiew, String text, int defaultValue) {
+        if (text.startsWith("&")) {
+            String keyname = text.substring(1);
+            int data = yiew.getDataInt(keyname, defaultValue);
+            return data;
+        }
+        return defaultValue;
     }
 }

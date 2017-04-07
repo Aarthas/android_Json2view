@@ -47,7 +47,7 @@ public class YiewBean {
     // textview
     public String text;
 
-    public int textSize;
+    public String textSize;
     public String textColor;
 
     public String hint;

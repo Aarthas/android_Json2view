@@ -48,16 +48,21 @@ public class TextViewProcess {
     public static void applyTextView(TextView view, Yiew yiew) {
 
         if (yiew.parentNode != null) {
-            if (yiew.textSize == 0)
+            if (yiew.textSize == null) {
                 yiew.textSize = yiew.parentNode.textSize;
-            if (yiew.textColor == null)
+            }
+            if (yiew.textColor == null) {
                 yiew.textColor = yiew.parentNode.textColor;
-            if (yiew.maxLine == 0)
+            }
+            if (yiew.maxLine == 0) {
                 yiew.maxLine = yiew.parentNode.maxLine;
-            if (yiew.hintColor == null)
+            }
+            if (yiew.hintColor == null) {
                 yiew.hintColor = yiew.parentNode.hintColor;
-            if (yiew.lineSpace == null)
+            }
+            if (yiew.lineSpace == null) {
                 yiew.lineSpace = yiew.parentNode.lineSpace;
+            }
 
 //            if (yiew.text == null)
 //                yiew.text = yiew.parentNode.text;
@@ -68,29 +73,56 @@ public class TextViewProcess {
         }
 
 
-        if (yiew.text != null)
-            if (yiew.text.startsWith("&")) {
-                String keyname = yiew.text.substring(1);
-                Object data = yiew.getData(keyname, yiew.text);
-                yiew.text = data.toString();
+        if (yiew.text != null) {
+            yiew.text = Utils.getValueStringIfDataExist(yiew, yiew.text, yiew.text);
+            view.setText(yiew.text);
+        }
+
+
+        if (yiew.textColor != null) {
+            if (yiew.textColor.startsWith("&")) {
+                yiew.textColor = Utils.getValueStringIfDataExist(yiew, yiew.textColor, null);
+                if (yiew.textColor != null) {
+                    view.setTextColor(Utils.parseColor(yiew.textColor));
+                }
+            } else {
+                view.setTextColor(Utils.parseColor(yiew.textColor));
             }
 
-        view.setText(yiew.text);
-        if (yiew.textColor != null)
-            view.setTextColor(Utils.parseColor(yiew.textColor));
-        if (yiew.textSize != 0)
-            view.setTextSize(TypedValue.COMPLEX_UNIT_SP, yiew.textSize);
-        if (yiew.hint != null)
-            view.setHint(yiew.hint);
-        if (yiew.maxLine != 0)
-            view.setMaxLines(yiew.maxLine);
-        if (yiew.hintColor != null)
-            view.setHintTextColor(Utils.parseColor(yiew.hintColor));
-        if (yiew.lineSpace != null)
-            view.setLineSpacing(Utils.meature(yiew.lineSpace), 1);
 
-        if (yiew.gravity != null)
+        }
+        if (yiew.textSize != null) {
+            int textSize = 0;
+            if (yiew.textSize.startsWith("&")) {
+                yiew.textSize = Utils.getValueStringIfDataExist(yiew, yiew.textSize, null);
+                if (yiew.textSize != null) {
+                    textSize = Integer.parseInt(yiew.textSize.trim());
+                }
+            } else {
+                textSize = Integer.parseInt(yiew.textSize.trim());
+            }
+            if (textSize != 0) {
+                view.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
+            }
+
+
+        }
+        if (yiew.hint != null) {
+            view.setHint(yiew.hint);
+        }
+        if (yiew.maxLine != 0) {
+            view.setMaxLines(yiew.maxLine);
+        }
+        if (yiew.hintColor != null) {
+            view.setHintTextColor(Utils.parseColor(yiew.hintColor));
+        }
+        if (yiew.lineSpace != null) {
+            view.setLineSpacing(Utils.meature(yiew.lineSpace), 1);
+        }
+
+        if (yiew.gravity != null) {
             view.setGravity((Integer) Utils.getValueInt(Gravity.class, yiew.gravity.toUpperCase()));
+        }
 
 
     }

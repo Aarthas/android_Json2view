@@ -9,7 +9,6 @@ import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewBean;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 
@@ -40,10 +39,19 @@ public class ImageViewProcess {
 
 
 
-    public static void applyImageView(ImageView view, YiewBean yiew) {
+    public static void applyImageView(ImageView view, Yiew yiew) {
 //        Log.d("syb", "yiew.src" + yiew.src);
         if (yiew.src != null) {
-            YiewConfig.getImageAdapter().display(view, yiew.src, yiew);
+            if (yiew.src.startsWith("&")) {
+                yiew.src = Utils.getValueStringIfDataExist(yiew, yiew.src, null);
+                if (yiew.src != null) {
+                    YiewConfig.getImageAdapter().display(view, yiew.src, yiew);
+                }
+            }else{
+                YiewConfig.getImageAdapter().display(view, yiew.src, yiew);
+            }
+
+
 
 
         }

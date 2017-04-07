@@ -42,7 +42,7 @@ public class ViewProcess {
         }
         if (yiew.background != null) {
 
-
+            yiew.background = Utils.getValueStringIfDataExist(yiew, yiew.background, yiew.background);
             view.setBackgroundColor(Utils.parseColor(yiew.background));
 
         }
@@ -75,6 +75,9 @@ public class ViewProcess {
 
         }
         if (yiew.visibility != null) {
+            if (yiew.visibility.startsWith("&")) {
+                yiew.visibility = Utils.getValueStringIfDataExist(yiew, yiew.visibility, "");
+            }
             switch (yiew.visibility) {
                 case "gone": {
                     view.setVisibility(View.GONE);

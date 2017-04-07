@@ -74,7 +74,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_1_1.view = "TextView";
         yiew_1_2_1_1.padding = "16";
         yiew_1_2_1_1.text = "页面的简单使用";
-        yiew_1_2_1_1.textSize = 16;
+        yiew_1_2_1_1.textSize = "16";
         yiew_1_2_1_1.textColor = "#444444";
 
 
@@ -85,7 +85,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_1_2.padding = "16";
         yiew_1_2_1_2.gravity = "center";
         yiew_1_2_1_2.text = "从assets/complaintDetail.json加载数据";
-        yiew_1_2_1_2.textSize = 14;
+        yiew_1_2_1_2.textSize = "14";
         yiew_1_2_1_2.textColor = "#444444";
 
 
@@ -114,7 +114,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_2_2.view = "TextView";
         yiew_1_2_2_2.marginLeft = "24";
         yiew_1_2_2_2.text = "接受部门";
-        yiew_1_2_2_2.textSize = 14;
+        yiew_1_2_2_2.textSize =" 14";
         yiew_1_2_2_2.textColor = "#444444";
         yiew_1_2_2_2.layout_centerVertical = true;
 
@@ -152,7 +152,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4_1.name = "platform";
         yiew_1_2_4_1.view = "TextView";
         yiew_1_2_4_1.text = "平台:   wqrwer";
-        yiew_1_2_4_1.textSize = 14;
+        yiew_1_2_4_1.textSize = "14";
         yiew_1_2_4_1.textColor = "#666666";
 
 
@@ -163,7 +163,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4_2.id = 102;
         yiew_1_2_4_2.marginTop = "12";
         yiew_1_2_4_2.text = "内容:   ";
-        yiew_1_2_4_2.textSize = 14;
+        yiew_1_2_4_2.textSize = "14  ";
         yiew_1_2_4_2.textColor = "#666666";
         yiew_1_2_4_2.below = "@platform";
 
@@ -172,7 +172,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4.addChild(yiew_1_2_4_3);
         yiew_1_2_4_3.view = "TextView";
         yiew_1_2_4_3.text = "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！";
-        yiew_1_2_4_3.textSize = 14;
+        yiew_1_2_4_3.textSize =" 14";
         yiew_1_2_4_3.textColor = "#666666";
         yiew_1_2_4_3.lineSpace = "18dp";
         yiew_1_2_4_3.toRightOf = "@content1";
@@ -251,7 +251,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_7_1.view = "TextView";
         yiew_1_2_7_1.marginLeft = "24";
         yiew_1_2_7_1.text = "联系人";
-        yiew_1_2_7_1.textSize = 14;
+        yiew_1_2_7_1.textSize =" 14";
         yiew_1_2_7_1.textColor = "#666666";
         yiew_1_2_7_1.layout_centerVertical = true;
 
@@ -286,7 +286,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_9_1.view = "TextView";
         yiew_1_2_9_1.marginLeft = "24";
         yiew_1_2_9_1.text = "手机";
-        yiew_1_2_9_1.textSize = 14;
+        yiew_1_2_9_1.textSize = "14";
         yiew_1_2_9_1.textColor = "#666666";
         yiew_1_2_9_1.layout_centerVertical = true;
 
@@ -324,7 +324,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_11_1.name = "attach1";
         yiew_1_2_11_1.view = "TextView";
         yiew_1_2_11_1.text = "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！";
-        yiew_1_2_11_1.textSize = 14;
+        yiew_1_2_11_1.textSize =" 14";
         yiew_1_2_11_1.textColor = "#666666";
         yiew_1_2_11_1.lineSpace = "18dp";
 

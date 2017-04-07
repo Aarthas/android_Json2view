@@ -44,7 +44,29 @@ public class Yiew extends YiewBean {
             }
             return s;
         }
+    }
+    public int getDataInt(String key,int defaultValue) {
+        if (data==null)
+        {
+            return 0;
+        }else
+        {
+            String s = data.get(key);
+            if (s== null){
+                return defaultValue;
+            }
+            else
+            {
+                try {
+                    int i = Integer.parseInt(s);
+                    return  i;
+                }catch (Exception e){
+                    return  defaultValue;
+                }
 
+            }
+
+        }
     }
 
 
