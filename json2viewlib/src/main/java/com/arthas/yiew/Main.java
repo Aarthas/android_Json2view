@@ -31,7 +31,10 @@ public class Main {
                         @Override
                         public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
                             yiew.view = template.view;
+                            yiew.child = template.child;
+
                             Utils.copy(yiew, template);
+
                             yiew.rootComponet = yiew;
 
                             Log.d("syb","componet_0 "+yiew);

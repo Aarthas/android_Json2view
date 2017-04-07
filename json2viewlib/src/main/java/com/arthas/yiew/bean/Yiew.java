@@ -25,12 +25,11 @@ public class Yiew extends YiewBean {
 
     @Override
     public String toString() {
-        return "view="+view;
+        return "view=" + view;
     }
 
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
-    public Yiew rootComponet;
 
 
     public String getData(String key, String defaultValue) {
@@ -67,8 +66,7 @@ public class Yiew extends YiewBean {
 
 
     public transient Yiew parentNode;
-
-
+    public transient Yiew rootComponet;
     public transient YiewStore yiewStore;
 
 

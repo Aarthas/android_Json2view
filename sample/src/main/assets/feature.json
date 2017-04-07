@@ -97,7 +97,7 @@
           {
             "view": "headComponent",
             "data": {
-              "text": "动态组件"
+              "text": "动态组件a"
             }
           },
           {
@@ -126,18 +126,7 @@
               "isShowArrow": "gone"
             }
           },
-          {
-            "name": "name3",
-            "view": "headComponent2",
-            "data": {
-              "text": "属性覆盖",
-              "textColor": "#fff",
-              "textSize": "15",
-              "tvbackground": "#e1e1e1",
-              "img": "http://onpxz5rdd.bkt.clouddn.com/ic_arrow_right_666.png",
-              "isShowArrow": "gone"
-            }
-          },
+
           {
             "view": "localComponent2",
             "data": {
