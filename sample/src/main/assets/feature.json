@@ -3,22 +3,25 @@
     "process": "AndroidLayout",
     "component": [
       {
-        "name": "headComponent",
+        "name": "pane",
         "template": {
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "48",
-          "background": "#6fa8dc",
-          "child": [
-            {
-              "view": "TextView",
-              "text": "这是一个head的template组件，又叫动态组件",
-              "textColor": "#666666",
-              "marginLeft": "24",
-              "textSize": "14",
-              "layout_centerVertical": true
-            }
-          ]
+          "name": "headComponent",
+          "template": {
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "48",
+            "background": "#6fa8dc",
+            "child": [
+              {
+                "view": "TextView",
+                "text": "这是一个head的template组件，又叫动态组件",
+                "textColor": "#666666",
+                "marginLeft": "24",
+                "textSize": "14",
+                "layout_centerVertical": true
+              }
+            ]
+          }
         }
       },
       {
@@ -33,7 +36,7 @@
               "view": "TextView",
               "text": "&text",
               "textColor": "&textColor",
-              "textSize":  "&textSize",
+              "textSize": "&textSize",
               "marginLeft": "24",
               "background": "&tvbackground",
               "layout_centerVertical": true
@@ -44,6 +47,7 @@
               "height": "20",
               "marginLeft": "44",
               "src": "&img",
+              "visibility": "&isShowArrow",
               "background": "&tvbackground",
               "layout_centerVertical": true,
               "layout_alignParentRight": true
@@ -88,25 +92,50 @@
             "view": "localComponent2",
             "data": {
               "text": "动态组件"
-
             }
           },
           {
             "view": "headComponent",
-
             "data": {
               "text": "动态组件"
             }
           },
           {
+            "name": "name1",
             "view": "headComponent2",
             "background": "#f03838",
             "data": {
               "text": "这是动态组件，属性覆盖",
               "textColor": "#fff",
-              "textSize":"18",
+              "textSize": "18",
               "tvbackground": "#e1e1e1",
-              "img": "http://onpxz5rdd.bkt.clouddn.com/ic_arrow_right_666.png"
+              "img": "http://onpxz5rdd.bkt.clouddn.com/ic_arrow_right_666.png",
+              "isShowArrow": "visible"
+            }
+          },
+          {
+            "name": "name2",
+            "view": "headComponent2",
+            "visibility": "visible",
+            "data": {
+              "text": "属性覆盖",
+              "textColor": "#fff",
+              "textSize": "15",
+              "tvbackground": "#e1e1e1",
+              "img": "http://onpxz5rdd.bkt.clouddn.com/ic_arrow_right_666.png",
+              "isShowArrow": "gone"
+            }
+          },
+          {
+            "name": "name3",
+            "view": "headComponent2",
+            "data": {
+              "text": "属性覆盖",
+              "textColor": "#fff",
+              "textSize": "15",
+              "tvbackground": "#e1e1e1",
+              "img": "http://onpxz5rdd.bkt.clouddn.com/ic_arrow_right_666.png",
+              "isShowArrow": "gone"
             }
           },
           {
@@ -120,7 +149,6 @@
             "background": "#56b0f5",
             "data": {
               "text": "component事件,点击调用activity的showToast方法"
-
             },
             "click": "showToast"
           },
@@ -161,55 +189,7 @@
             "data": {
               "text": "application里，全局定义了一些component组件，查看代码便知",
               "textColor": "#666666"
-
             }
-          },
-          {
-            "view": "localComponent2",
-            "data": {
-              "text": "图片适配"
-            }
-          },
-          {
-            "name": "imagePane",
-            "view": "horizonLayout",
-            "width": "match_parent",
-            "height": "wrap_content",
-            "background": "#ffffff",
-            "paddingLeft": "12dp",
-            "paddingRight": "12dp",
-            "paddingTop": "16",
-            "paddingBottom": "10dp",
-            "child": [
-              {
-                "view": "ImageView",
-                "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
-                "width": "74dp",
-                "height": "74dp",
-                "margin": "5dp"
-              },
-              {
-                "view": "ImageView",
-                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-                "width": "74dp",
-                "height": "74dp",
-                "margin": "5dp"
-              },
-              {
-                "view": "ImageView",
-                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-                "width": "74dp",
-                "height": "74dp",
-                "margin": "5dp"
-              },
-              {
-                "view": "ImageView",
-                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-                "width": "74dp",
-                "height": "74dp",
-                "margin": "5dp"
-              }
-            ]
           }
         ]
       }

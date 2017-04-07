@@ -41,9 +41,11 @@ public class ViewProcess {
             view.setPadding(Utils.meatureWithUnit(yiew.paddingLeft), Utils.meatureWithUnit(yiew.paddingTop), Utils.meatureWithUnit(yiew.paddingRight), Utils.meatureWithUnit(yiew.paddingBottom));
         }
         if (yiew.background != null) {
-
-            yiew.background = Utils.getValueStringIfDataExist(yiew, yiew.background, yiew.background);
-            view.setBackgroundColor(Utils.parseColor(yiew.background));
+            String background = yiew.getBackground();
+            Log.d("syb","background="+background);
+            if (background != null) {
+                view.setBackgroundColor(Utils.parseColor(background));
+            }
 
         }
 
@@ -75,10 +77,18 @@ public class ViewProcess {
 
         }
         if (yiew.visibility != null) {
+//            Log.d("syb", "yiew.visibility1 = " + yiew.visibility);
+//            Log.d("syb", "yiew.visibility1 = " + yiew.data);
+//            Log.d("syb", "yiew.visibility1 = " + yiew);
+//            Log.d("syb", "yiew.visibility1 = " + yiew.rootComponet.data);
+            String visibility = null;
             if (yiew.visibility.startsWith("&")) {
-                yiew.visibility = Utils.getValueStringIfDataExist(yiew, yiew.visibility, "");
+                visibility = Utils.getValueStringIfDataExist(yiew, yiew.visibility, "");
+            } else {
+                visibility = yiew.visibility;
             }
-            switch (yiew.visibility) {
+            Log.d("syb", "yiew.visibility2 = " + yiew.visibility);
+            switch (visibility) {
                 case "gone": {
                     view.setVisibility(View.GONE);
                 }

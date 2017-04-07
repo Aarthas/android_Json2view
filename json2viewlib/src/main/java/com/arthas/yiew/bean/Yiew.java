@@ -1,5 +1,6 @@
 package com.arthas.yiew.bean;
 
+import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
 
@@ -20,48 +21,43 @@ public class Yiew extends YiewBean {
     public static final String scrollView = "scrollView";
     public static final String RelativeLayout = "RelativeLayout";
     public static final String FrameLayout = "FrameLayout";
-    public static final String LinearLayout= "LinearLayout";;
+    public static final String LinearLayout = "LinearLayout";
 
-
+    @Override
+    public String toString() {
+        return "view="+view;
+    }
 
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
+    public Yiew rootComponet;
 
 
-
-
-
-
-    public String getData(String key,String defaultValue) {
-        if (data==null)
-        {
+    public String getData(String key, String defaultValue) {
+        if (data == null) {
             return defaultValue;
-        }else
-        {
+        } else {
             String s = data.get(key);
-            if (s== null){
+            if (s == null) {
                 return defaultValue;
             }
             return s;
         }
     }
-    public int getDataInt(String key,int defaultValue) {
-        if (data==null)
-        {
+
+    public int getDataInt(String key, int defaultValue) {
+        if (data == null) {
             return 0;
-        }else
-        {
+        } else {
             String s = data.get(key);
-            if (s== null){
+            if (s == null) {
                 return defaultValue;
-            }
-            else
-            {
+            } else {
                 try {
                     int i = Integer.parseInt(s);
-                    return  i;
-                }catch (Exception e){
-                    return  defaultValue;
+                    return i;
+                } catch (Exception e) {
+                    return defaultValue;
                 }
 
             }
@@ -77,8 +73,7 @@ public class Yiew extends YiewBean {
 
 
     public void addChild(Yiew yiew) {
-        if (child == null)
-        {
+        if (child == null) {
             child = new ArrayList<>();
 
         }
@@ -86,13 +81,12 @@ public class Yiew extends YiewBean {
     }
 
 
-
     public YiewStore getYiewStore() {
         return yiewStore;
     }
 
 
-    public  android.view.View getView() {
+    public android.view.View getView() {
         return yiewStore.getView(name);
     }
 
@@ -108,5 +102,22 @@ public class Yiew extends YiewBean {
         yiew.width = width;
         yiew.height = height;
         return yiew;
+    }
+
+
+    public String getBackground() {
+        if (background.startsWith("&")) {
+            String a = Utils.getValueStringIfDataExist(this, background, null);
+            return a;
+        } else if (background != null) {
+            return background;
+        }
+        return null;
+    }
+
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

@@ -58,6 +58,7 @@ public class App extends Application {
                         .into(view);
             }
         };
+
         YiewConfig.setImageAdapter(imageAdapter);
 
 

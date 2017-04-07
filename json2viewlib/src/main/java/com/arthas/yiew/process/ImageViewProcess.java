@@ -43,9 +43,9 @@ public class ImageViewProcess {
 //        Log.d("syb", "yiew.src" + yiew.src);
         if (yiew.src != null) {
             if (yiew.src.startsWith("&")) {
-                yiew.src = Utils.getValueStringIfDataExist(yiew, yiew.src, null);
-                if (yiew.src != null) {
-                    YiewConfig.getImageAdapter().display(view, yiew.src, yiew);
+                String src = Utils.getValueStringIfDataExist(yiew, yiew.src, null);
+                if (src != null) {
+                    YiewConfig.getImageAdapter().display(view,src, yiew);
                 }
             }else{
                 YiewConfig.getImageAdapter().display(view, yiew.src, yiew);

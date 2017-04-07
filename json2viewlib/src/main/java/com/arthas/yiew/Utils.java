@@ -214,7 +214,7 @@ public class Utils {
         }
     }
 
-    public static void copy(YiewBean to, YiewBean from) {
+    public static void copy(Yiew to, Yiew from) {
 
 
         if (from.width != null) {
@@ -382,7 +382,12 @@ public class Utils {
         if (from.data != null) {
             to.data = from.data;
         }
-
+        if (from.yiewStore != null) {
+            to.yiewStore = from.yiewStore;
+        }
+        if (from.propertys != null) {
+            to.propertys = from.propertys;
+        }
 
     }
 
@@ -407,9 +412,21 @@ public class Utils {
 
     public static String getValueStringIfDataExist(Yiew yiew, String text, String defaultValue) {
 
-            String keyname = text.substring(1);
-            String data = yiew.getData(keyname, defaultValue);
-            return data;
+        String keyname = text.substring(1);
+        if (yiew.data !=null)
+        {
+            String retValue = yiew.getData(keyname, defaultValue);
+            return retValue;
+        }else   if (yiew.rootComponet !=null&&yiew.rootComponet.data !=null)
+        {
+            String retValue = yiew.rootComponet.getData(keyname, defaultValue);
+            return retValue;
+        }
+
+        else{
+            return defaultValue;
+        }
+
 
 
     }

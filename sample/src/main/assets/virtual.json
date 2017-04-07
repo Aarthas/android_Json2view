@@ -1,67 +1,89 @@
-
 {
   "head": {
     "process": "AndroidLayout"
   },
-  "template":{
-  "view": "verticalLayout",
-  "width": "match",
-  "height": "match",
-  "background": "#f6f6f6",
-  "child": [
-    {
-      "view": "refreshBar"
-    },
-    {
-      "view": "scrollView",
-      "width": "match",
-      "height": "match",
-      "child": [
-        {
-          "view": "group",
-          "background": "#f6f6f6",
-          "text": "普通事件"
-        },
-        {
-          "view": "group",
-          "background": "#56b0f5",
-          "text": "事件,点击更改联系人的电话",
-          "textColor": "#fff",
-          "click": "change"
-        },
-        {
-          "name": "contactPane",
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "48",
-          "background": "#ffffff",
-          "child": [
-            {
-              "name": "contact",
-              "view": "TextView",
-              "text": "联系人",
-              "textColor": "#666666",
-              "marginLeft": "24",
-              "textSize": "14",
-              "layout_centerVertical": true
-            },
-            {
-              "name": "phone",
-              "view": "TextView",
-              "width": "wrap",
-              "text": "电话",
-              "textColor": "#666666",
-              "layout_alignParentRight": true,
-              "marginRight": "24",
-              "layout_centerVertical": true
-            }
-          ]
-        }
-
-
-
-
-      ]
-    }
-  ]
-}}
+  "template": {
+    "view": "verticalLayout",
+    "width": "match",
+    "height": "match",
+    "background": "#f6f6f6",
+    "child": [
+      {
+        "view": "refreshBar"
+      },
+      {
+        "view": "scrollView",
+        "width": "match",
+        "height": "match",
+        "child": [
+          {
+            "view": "View",
+            "width": "match",
+            "height": "20"
+          },
+          {
+            "name": "contactPane",
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "48",
+            "click": "change",
+            "background": "#ffffff",
+            "child": [
+              {
+                "view": "TextView",
+                "text": "联系人",
+                "textColor": "#666666",
+                "marginLeft": "24",
+                "textSize": "14",
+                "layout_centerVertical": true
+              },
+              {
+                "name": "contact",
+                "view": "TextView",
+                "width": "wrap",
+                "text": "shen",
+                "textColor": "#666666",
+                "layout_alignParentRight": true,
+                "marginRight": "24",
+                "layout_centerVertical": true
+              }
+            ]
+          },
+          {
+            "view": "View",
+            "width": "match",
+            "height": "1"
+          },
+          {
+            "name": "mobilePane",
+            "view": "RelativeLayout",
+            "width": "match",
+            "height": "48",
+            "click": "change",
+            "background": "#ffffff",
+            "child": [
+              {
+                "view": "TextView",
+                "text": "电话",
+                "textColor": "#666666",
+                "marginLeft": "24",
+                "textSize": "14",
+                "layout_centerVertical": true
+              },
+              {
+                "name": "mobile",
+                "view": "TextView",
+                "width": "wrap",
+                "text": "",
+                "textColor": "#666666",
+                "layout_alignParentRight": true,
+                "marginRight": "24",
+                "layout_centerVertical": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

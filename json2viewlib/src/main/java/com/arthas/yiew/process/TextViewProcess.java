@@ -1,6 +1,7 @@
 package com.arthas.yiew.process;
 
 import android.content.Context;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -48,21 +49,21 @@ public class TextViewProcess {
     public static void applyTextView(TextView view, Yiew yiew) {
 
         if (yiew.parentNode != null) {
-            if (yiew.textSize == null) {
-                yiew.textSize = yiew.parentNode.textSize;
-            }
-            if (yiew.textColor == null) {
-                yiew.textColor = yiew.parentNode.textColor;
-            }
-            if (yiew.maxLine == 0) {
-                yiew.maxLine = yiew.parentNode.maxLine;
-            }
-            if (yiew.hintColor == null) {
-                yiew.hintColor = yiew.parentNode.hintColor;
-            }
-            if (yiew.lineSpace == null) {
-                yiew.lineSpace = yiew.parentNode.lineSpace;
-            }
+//            if (yiew.textSize == null) {
+//                yiew.textSize = yiew.parentNode.textSize;
+//            }
+//            if (yiew.textColor == null) {
+//                yiew.textColor = yiew.parentNode.textColor;
+//            }
+//            if (yiew.maxLine == 0) {
+//                yiew.maxLine = yiew.parentNode.maxLine;
+//            }
+//            if (yiew.hintColor == null) {
+//                yiew.hintColor = yiew.parentNode.hintColor;
+//            }
+//            if (yiew.lineSpace == null) {
+//                yiew.lineSpace = yiew.parentNode.lineSpace;
+//            }
 
 //            if (yiew.text == null)
 //                yiew.text = yiew.parentNode.text;
@@ -74,16 +75,25 @@ public class TextViewProcess {
 
 
         if (yiew.text != null) {
-            yiew.text = Utils.getValueStringIfDataExist(yiew, yiew.text, yiew.text);
-            view.setText(yiew.text);
+
+            if (yiew.text.startsWith("&")) {
+                Log.d("syb", " componet 1 name=" + yiew.name);
+                Log.d("syb", " componet 1 text=" + yiew.text);
+                Log.d("syb", " componet 1 data=" + yiew.data);
+                Log.d("syb", " componet 1 rootComponet=" + yiew.rootComponet);
+                String a = Utils.getValueStringIfDataExist(yiew, yiew.text, yiew.text);
+                view.setText(a);
+            } else {
+                view.setText(yiew.text);
+            }
         }
 
 
         if (yiew.textColor != null) {
             if (yiew.textColor.startsWith("&")) {
-                yiew.textColor = Utils.getValueStringIfDataExist(yiew, yiew.textColor, null);
-                if (yiew.textColor != null) {
-                    view.setTextColor(Utils.parseColor(yiew.textColor));
+                String textColor = Utils.getValueStringIfDataExist(yiew, yiew.textColor, null);
+                if (textColor != null) {
+                    view.setTextColor(Utils.parseColor(textColor));
                 }
             } else {
                 view.setTextColor(Utils.parseColor(yiew.textColor));
@@ -92,16 +102,16 @@ public class TextViewProcess {
 
         }
         if (yiew.textSize != null) {
-            int textSize = 0;
+
             if (yiew.textSize.startsWith("&")) {
-                yiew.textSize = Utils.getValueStringIfDataExist(yiew, yiew.textSize, null);
-                if (yiew.textSize != null) {
-                    textSize = Integer.parseInt(yiew.textSize.trim());
+                String a = Utils.getValueStringIfDataExist(yiew, yiew.textSize, null);
+                if (a != null) {
+                    int textSize = Integer.parseInt(a.trim());
+                    view.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
                 }
             } else {
-                textSize = Integer.parseInt(yiew.textSize.trim());
-            }
-            if (textSize != 0) {
+                int textSize = Integer.parseInt(yiew.textSize.trim());
+
                 view.setTextSize(TypedValue.COMPLEX_UNIT_SP, textSize);
             }
 

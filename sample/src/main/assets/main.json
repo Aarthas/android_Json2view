@@ -1,6 +1,24 @@
 {
   "head": {
-    "process": "AndroidLayout"
+    "process": "AndroidLayout",
+    "component": [
+      {
+        "name": "pane",
+        "template": {
+          "view": "TextView",
+          "width": "250dp",
+          "height": "60dp",
+          "text": "&text",
+          "gravity": "center",
+          "margin": "10",
+          "textSize": "18",
+          "textColor": "#fff",
+          "background": "&background",
+          "visibility": "&visibility",
+          "click": "jumpToActivity"
+        }
+      }
+    ]
   },
   "template": {
     "view": "scrollView",
@@ -20,85 +38,63 @@
         "width": "match",
         "height": "match",
         "gravity": "center",
-        "textSize": "18",
-        "textColor": "#fff",
         "child": [
           {
-            "view": "TextView",
-            "width": "250dp",
-            "height": "100dp",
-            "text": "从本地加载json文件渲染视图",
-            "gravity": "center",
-            "margin": "10",
-            "background": "#ff03A9F4",
-            "click": "jumpToActivity",
+            "name": "name1",
+            "view": "pane",
             "data": {
-              "name": "com.avocarrot.json2view.sample.JsonFromLocalActivity"
+              "text": "从本地加载json文件渲染视图",
+              "background": "#ff03A9F4",
+              "route": "com.avocarrot.json2view.sample.JsonFromLocalActivity"
             }
           },
           {
-            "view": "TextView",
-            "width": "250dp",
-            "height": "100dp",
-            "text": "从网络加载json文件渲染视图",
-            "margin": "10",
-            "gravity": "center",
-            "background": "#ffF44336",
-            "click": "jumpToActivity",
+            "name": "name2",
+            "view": "pane",
             "data": {
-              "name": "com.avocarrot.json2view.sample.JsonFromNetActivity"
+              "background": "#ffF44336",
+              "text": "从网络加载json文件渲染视图",
+              "route": "com.avocarrot.json2view.sample.JsonFromNetActivity"
             }
           },
           {
-            "view": "TextView",
-            "width": "250dp",
-            "height": "100dp",
-            "text": "使用Yiew代码创建视图",
-            "margin": "10",
-            "gravity": "center",
-            "background": "#ff4CAF50",
-            "click": "jumpToActivity",
+            "view": "pane",
             "data": {
-              "name": "com.avocarrot.json2view.sample.YiewCodeActivity"
+              "background": "#ff4CAF50",
+              "text": "使用Yiew代码创建视图",
+              "route": "com.avocarrot.json2view.sample.YiewCodeActivity"
             }
           },
           {
-            "view": "TextView",
-            "width": "250dp",
-            "height": "100dp",
-            "text": "自定义component 用法 \n与 click事件\n与 图片展示",
-            "margin": "10",
-            "gravity": "center",
-            "background": "#fb9236",
-            "click": "jumpToActivity",
+            "view": "pane",
             "data": {
-              "name": "com.avocarrot.json2view.sample.FeatureActivity"
+              "background": "#fb9236",
+              "text": "自定义component 用法 \n与 click事件",
+              "route": "com.avocarrot.json2view.sample.FeatureActivity"
             }
           },
           {
-            "view": "TextView",
-            "width": "250dp",
-            "height": "100dp",
-            "text": "yiew虚拟节点的使用，更新虚拟节点，就能更新相应的view",
-            "margin": "10",
-            "gravity": "center",
-            "background": "#d9Ff5858",
-            "click": "jumpToActivity",
+            "view": "pane",
             "data": {
-              "name": "com.avocarrot.json2view.sample.VirtualVNodeActivity"
+              "background": "#d9Ff5858",
+              "text": "yiew虚拟节点的使用，更新虚拟节点，就能更新相应的view",
+              "route": "com.avocarrot.json2view.sample.VirtualVNodeActivity"
             }
           },
           {
-            "view": "TextView",
-            "width": "250dp",
-            "height": "100dp",
-            "text": "head 的使用",
-            "margin": "10",
-            "gravity": "center",
-            "background": "#d9Ff5858",
-            "click": "jumpToActivity",
+            "view": "pane",
             "data": {
-              "name": "com.avocarrot.json2view.sample.HeadComponentActivity"
+              "background": "#d9Ff5858",
+              "text": "head 的使用",
+              "route": "com.avocarrot.json2view.sample.HeadComponentActivity"
+            }
+          },
+          {
+            "view": "pane",
+            "data": {
+              "background": "#d9Ff5858",
+              "text": "image 的使用",
+              "route": "com.avocarrot.json2view.sample.JsonImageActivity"
             }
           }
         ]

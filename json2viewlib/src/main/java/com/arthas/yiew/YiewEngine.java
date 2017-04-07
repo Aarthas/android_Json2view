@@ -29,10 +29,10 @@ public class YiewEngine {
             for (YiewBean child : parentYiew.child) {
                 Yiew child1 = (Yiew) child;
                 child1.yiewStore = parentYiew.yiewStore;
-                if (child1.data == null) {
-                    child1.data = parentYiew.data;
+                if (parentYiew.rootComponet!=null)
+                {
+                    child1.rootComponet = parentYiew.rootComponet;
                 }
-
                 child1.parentNode = parentYiew;
                 View childView = createView(context, view, child1, yiewStore);
                 if (childView != null) {

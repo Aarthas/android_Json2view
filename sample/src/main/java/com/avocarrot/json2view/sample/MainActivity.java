@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     public void jumpToActivity(Yiew yiew) {
         HashMap data = yiew.data;
         LogUtils.d(data);
-        Object name = data.get("name");
+        Object name = data.get("route");
         LogUtils.d(name);
         try {
             Class<?> aClass = Class.forName(name.toString());
