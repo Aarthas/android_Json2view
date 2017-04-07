@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.bean.Yiew;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
+
+import java.util.HashMap;
 
 import okhttp3.Call;
 import okhttp3.Response;
@@ -86,6 +89,22 @@ public class MainActivity extends AppCompatActivity {
         load();
 
     }
+
+    public void jumpToActivity(Yiew yiew) {
+        HashMap data = yiew.data;
+        LogUtils.d(data);
+        Object name = data.get("name");
+        LogUtils.d(name);
+        try {
+            Class<?> aClass = Class.forName(name.toString());
+            startActivity(new Intent(context,aClass));
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
     public void goJsonFromLocalActivity() {
         startActivity(new Intent(context,JsonFromLocalActivity.class));

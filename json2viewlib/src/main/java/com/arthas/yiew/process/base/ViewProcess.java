@@ -26,7 +26,6 @@ public class ViewProcess {
         }
 
 
-
         if (yiew.id != 0) {
             view.setId(yiew.id);
 
@@ -44,7 +43,7 @@ public class ViewProcess {
         if (yiew.background != null) {
 
 
-                view.setBackgroundColor(Utils.parseColor(yiew.background));
+            view.setBackgroundColor(Utils.parseColor(yiew.background));
 
         }
 
@@ -54,15 +53,22 @@ public class ViewProcess {
             view.setOnClickListener(new View.OnClickListener() {
                                         @Override
                                         public void onClick(View v) {
+
+                                            Context context = v.getContext();
                                             try {
-                                                Context context = v.getContext();
                                                 Method myClick = context.getClass().getMethod(yiew.click);
-                                                if (myClick != null) {
-                                                    myClick.invoke(context);
-                                                }
-                                            } catch (Exception ee) {
-                                                Log.d("syb", "viewById1002" + ee);
+                                                myClick.invoke(context);
+                                            } catch (Exception e) {
+
                                             }
+                                            try {
+                                                Method myClick2 = context.getClass().getMethod(yiew.click, Yiew.class);
+                                                myClick2.invoke(context, yiew);
+                                            } catch (Exception e) {
+
+                                            }
+
+
                                         }
                                     }
             );

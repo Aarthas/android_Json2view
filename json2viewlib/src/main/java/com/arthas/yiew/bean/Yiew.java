@@ -4,6 +4,7 @@ import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.YiewStore;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by zhangyn on 17/3/31.
@@ -27,6 +28,7 @@ public class Yiew extends YiewBean {
     public static final String MATCH = "match";
     public static final String WRAP = "wrap";
 
+    public HashMap data;
 
     public transient Yiew parentNode;
 
