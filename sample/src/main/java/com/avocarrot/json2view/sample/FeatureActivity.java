@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.IProcess;
+import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Main;
 import com.arthas.yiew.Utils;
+import com.arthas.yiew.YiewComponent;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.bean.YiewResp;
 import com.lzy.okgo.OkGo;
@@ -35,54 +35,54 @@ public class FeatureActivity extends AppCompatActivity {
         context = this;
 
 
-        YiewConfig.Component("localComponent", new IProcess() {
+        YiewConfig.addComponent("localComponent", new YiewComponent() {
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
-                Yiew head = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
+            public Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew) {
+                Yiew template = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
 
-                head.background = "#ffFFEB3B";
-                //原属性覆盖
-                Utils.copy(head, yiew);
 
+                template.background = "#ffFFEB3B";
                 Yiew tv = Yiew.create(Yiew.TextView, Yiew.MATCH, Yiew.MATCH);
-                head.addChild(tv);
+                template.addChild(tv);
 
                 //子控件赋值
 
 
-                tv.text =yiew.getData("text","这是一个组件");
-                tv.textColor = yiew.getData("textColor","#444444");
+                tv.text = yiew.getData("text", "这是一个组件");
+                tv.textColor = yiew.getData("textColor", "#444444");
 
                 tv.marginLeft = "20dp";
-                tv.gravity = yiew.getData("gravity","CENTER_VERTICAL");
+                tv.gravity = yiew.getData("gravity", "CENTER_VERTICAL");
 
-                View yiew1 = YiewEngine.createView(context, parent, head, null);
-                return yiew1;
+                return template;
+
 
             }
         });
-        YiewConfig.Component("localComponent2", new IProcess() {
+        YiewConfig.addComponent("localComponent2", new IComponent() {
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
-                Yiew head = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
+            public View createView(Context context, ViewGroup parent, Yiew yiew) {
+                Yiew template = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
 
-                head.background = "#f6f6f6";
+                template.background = "#f6f6f6";
                 //原属性覆盖
-                Utils.copy(head, yiew);
+
 
                 Yiew tv = Yiew.create(Yiew.TextView, Yiew.MATCH, Yiew.MATCH);
-                head.addChild(tv);
+                template.addChild(tv);
 
                 //子控件赋值
 
 
-                tv.text =yiew.getData("text","这是一个组件");
-                tv.textColor = yiew.getData("textColor","#444444");
+                tv.text = yiew.getData("text", "这是一个组件");
+                tv.textColor = yiew.getData("textColor", "#444444");
 
                 tv.marginLeft = "20dp";
-                tv.gravity = yiew.getData("gravity","CENTER");
+                tv.gravity = yiew.getData("gravity", "CENTER");
 
-                View yiew1 = YiewEngine.createView(context, parent, head, null);
+
+                Utils.merge(yiew, template);
+                View yiew1 = YiewEngine.createView(context, parent, template);
                 return yiew1;
 
             }
@@ -101,7 +101,7 @@ public class FeatureActivity extends AppCompatActivity {
 
                         YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
 
-                        View contentView = Main.startProcess(context,  yiew_1 );
+                        View contentView = Main.startProcess(context, yiew_1);
                         setContentView(contentView);
 
 

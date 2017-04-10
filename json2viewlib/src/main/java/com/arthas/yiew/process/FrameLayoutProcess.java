@@ -16,14 +16,14 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class FrameLayoutProcess {
-    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew) {
         FrameLayout view = new FrameLayout(context);
 
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
-        ViewProcess.applyView(view, yiew,yiewStore);
-        LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
+        ViewProcess.applyView(view, yiew);
+        LayoutProcess.applyaLayout(view, params, yiew);
 
 
 

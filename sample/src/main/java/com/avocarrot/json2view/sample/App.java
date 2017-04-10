@@ -7,11 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.IProcess;
+import com.arthas.yiew.IComponent;
 import com.arthas.yiew.ImageAdapter;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.bean.YiewBean;
 import com.bumptech.glide.Glide;
@@ -62,16 +61,16 @@ public class App extends Application {
         YiewConfig.setImageAdapter(imageAdapter);
 
 
-        YiewConfig.Component("refreshBar", new IProcess() {
+        YiewConfig.addComponent("refreshBar", new IComponent() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew,YiewStore yiewStore) {
+            public View createView(Context context, ViewGroup parent, Yiew yiew ) {
 
 
-                Yiew RelativeLayout =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
+                Yiew template =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
 
                 Yiew TextView =Yiew.create(Yiew.TextView,Yiew.MATCH,Yiew.MATCH) ;
-                RelativeLayout.addChild(TextView);
+                template.addChild(TextView);
                 TextView.layout_centerInParent=true;
                 TextView.text="刷新";
                 TextView.gravity="center";
@@ -81,21 +80,21 @@ public class App extends Application {
 
 
 
-                View yiew1 = YiewEngine.createView(context, parent, RelativeLayout,null);
+                View yiew1 = YiewEngine.createView(context, parent, template);
                 return yiew1;
             }
         });
 
 
 
-        YiewConfig.Component("line", new IProcess() {
+        YiewConfig.addComponent("line", new IComponent() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew,YiewStore yiewStore) {
+            public View createView(Context context, ViewGroup parent, Yiew yiew ) {
 
                 Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
                 dv.background = "#dddddd";
-                View yiew1 = YiewEngine.createView(context, parent, dv,null);
+                View yiew1 = YiewEngine.createView(context, parent, dv);
                 return yiew1;
             }
         });

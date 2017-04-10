@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -16,15 +15,15 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class RelativeLayoutProcess {
-    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew ) {
 
         RelativeLayout view = new RelativeLayout(context);
 
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
-        ViewProcess.applyView(view, yiew,yiewStore);
-        LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
+        ViewProcess.applyView(view, yiew);
+        LayoutProcess.applyaLayout(view, params, yiew);
 
 
 

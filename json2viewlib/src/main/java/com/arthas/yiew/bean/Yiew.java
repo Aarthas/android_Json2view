@@ -66,8 +66,24 @@ public class Yiew extends YiewBean {
 
 
     public transient Yiew parentNode;
-    public transient Yiew rootComponet;
-    public transient YiewStore yiewStore;
+    private transient Yiew rootComponet;
+    private transient YiewStore yiewStore;
+
+    public void setRootComponet(Yiew rootComponet) {
+        this.rootComponet = rootComponet;
+    }
+
+    public Yiew getRootComponet() {
+        return rootComponet;
+    }
+
+    public void setYiewStore(YiewStore yiewStore) {
+        this.yiewStore = yiewStore;
+    }
+
+    public YiewStore getYiewStore() {
+        return yiewStore;
+    }
 
 
     public void addChild(Yiew yiew) {
@@ -79,9 +95,12 @@ public class Yiew extends YiewBean {
     }
 
 
-    public YiewStore getYiewStore() {
-        return yiewStore;
+    public void removeAllYiew() {
+
+        this.child.clear();
+
     }
+
 
 
     public android.view.View getView() {

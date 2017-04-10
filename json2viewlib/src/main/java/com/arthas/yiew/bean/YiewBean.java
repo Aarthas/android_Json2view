@@ -21,9 +21,12 @@ public class YiewBean {
     public String visibility;
 
     public String tag;
+
+
     public ArrayList<PropertyBean> propertys;
     public ArrayList<Yiew> child;
     public HashMap<String,String> data;
+
 
     public String padding;
     public String paddingLeft;

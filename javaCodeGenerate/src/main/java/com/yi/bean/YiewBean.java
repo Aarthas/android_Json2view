@@ -1,6 +1,7 @@
 package com.yi.bean;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by zhangyn on 17/3/29.
@@ -20,8 +21,12 @@ public class YiewBean {
     public String visibility;
 
     public String tag;
+
+
     public ArrayList<PropertyBean> propertys;
     public ArrayList<Yiew> child;
+    public HashMap<String,String> data;
+
 
     public String padding;
     public String paddingLeft;
@@ -45,7 +50,7 @@ public class YiewBean {
     // textview
     public String text;
 
-    public int textSize;
+    public String textSize;
     public String textColor;
 
     public String hint;

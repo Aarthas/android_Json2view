@@ -5,10 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
-import com.arthas.yiew.IProcess;
+import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -17,16 +16,17 @@ import com.arthas.yiew.process.base.ViewProcess;
  * Created by zhangyn on 17/4/5.
  */
 
-public class ScrollProcess  implements IProcess {
+public class ScrollComponent implements IComponent {
+
     @Override
-    public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
+    public View createView(Context context, ViewGroup parent, Yiew yiew) {
         ScrollView view = new ScrollView(context);
 //
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
-        ViewProcess.applyView(view, yiew, yiewStore);
-        LayoutProcess.applyaLayout(view, params, yiew, yiewStore);
+        ViewProcess.applyView(view, yiew);
+        LayoutProcess.applyaLayout(view, params, yiew);
 
 
         view.setVerticalFadingEdgeEnabled(false);
@@ -38,14 +38,14 @@ public class ScrollProcess  implements IProcess {
         verticalLayoutyiew.width = "match";
         verticalLayoutyiew.height = "match";
         verticalLayoutyiew.view = "verticalLayout";
-        ViewGroup verticalLayout = (ViewGroup) YiewEngine.createView(context, view, verticalLayoutyiew,yiewStore);
+        ViewGroup verticalLayout = (ViewGroup) YiewEngine.createView(context, view, verticalLayoutyiew);
         view.addView(verticalLayout);
 
 
 
         if (verticalLayout instanceof ViewGroup) {
             ViewGroup group = (ViewGroup) verticalLayout;
-            YiewEngine.addChild(context, yiew, verticalLayout, yiewStore);
+            YiewEngine.addChild(context, yiew, verticalLayout);
         }
         return view;
     }

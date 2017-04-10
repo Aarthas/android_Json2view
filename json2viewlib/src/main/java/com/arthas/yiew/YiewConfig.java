@@ -1,6 +1,6 @@
 package com.arthas.yiew;
 
-import com.arthas.yiew.process.diy.ScrollProcess2;
+import com.arthas.yiew.process.diy.ScrollComponent2;
 
 import java.util.HashMap;
 
@@ -12,7 +12,7 @@ public class YiewConfig {
 
 
     private static ImageAdapter imageAdapter;
-    private static HashMap<String, IProcess> processMap = new HashMap();
+    private static HashMap<String, IComponent> processMap = new HashMap();
 
 
     public static void setImageAdapter(ImageAdapter imageAdapter) {
@@ -24,20 +24,20 @@ public class YiewConfig {
     }
 
 
-    public static void Component(String name, IProcess line) {
+    public static void addComponent(String name, IComponent line) {
         processMap.put(name, line);
     }
 
 
-    public static IProcess findProcess(String view) {
+    public static IComponent findComponent(String view) {
 
         if ("scrollView".equals(view)) {
-            IProcess iProcess = processMap.get(view);
-            if (iProcess == null) {
-                iProcess = new ScrollProcess2();
-                processMap.put(view, iProcess);
+            IComponent iComponent = processMap.get(view);
+            if (iComponent == null) {
+                iComponent = new ScrollComponent2();
+                processMap.put(view, iComponent);
             }
-            return iProcess;
+            return iComponent;
         }
         return processMap.get(view);
     }

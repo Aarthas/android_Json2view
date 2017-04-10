@@ -5,7 +5,6 @@ import android.util.Log;
 import android.view.View;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.PropertyBean;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.bean.YiewBean;
@@ -18,12 +17,12 @@ import java.util.List;
  */
 
 public class ViewProcess {
-    public static void applyView(final View view, final Yiew yiew, YiewStore yiewStore) {
+    public static void applyView(final View view, final Yiew yiew) {
 
 
-        if (yiewStore != null) {
-            yiewStore.put(yiew, view);
-        }
+//        if (yiewStore != null) {
+//            yiewStore.put(yiew, view);
+//        }
 
 
         if (yiew.id != 0) {
@@ -120,7 +119,7 @@ public class ViewProcess {
 
 
                 String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
-                Log.d("syb", "set method  =" + methodName);
+                Log.d("syb", "set method  = " + methodName);
                 try {
 
                     Class classType = propertyBean.getClassType();

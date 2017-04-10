@@ -207,196 +207,198 @@ public class Utils {
             final int result = sNextGeneratedId.get();
             // aapt-generated IDs have the high byte nonzero; clamp to the range under that.
             int newValue = result + 1;
-            if (newValue > 0x00FFFFFF) newValue = 1; // Roll over to 1, not 0.
+            if (newValue > 0x00FFFFFF) {
+                newValue = 1; // Roll over to 1, not 0.
+            }
             if (sNextGeneratedId.compareAndSet(result, newValue)) {
                 return result;
             }
         }
     }
 
-    public static void copy(Yiew to, Yiew from) {
+    public static void merge(Yiew to, Yiew from) {
 
 
-        if (from.width != null) {
+        if (to.width == null) {
             to.width = from.width;
         }
-        if (from.height != null) {
+        if (to.height == null) {
             to.height = from.height;
         }
-        if (from.id != 0) {
+        if (to.id == 0) {
             to.id = from.id;
         }
-        if (from.click != null) {
+        if (to.click == null) {
             to.click = from.click;
         }
-        if (from.visibility != null) {
+        if (to.visibility == null) {
             to.visibility = from.visibility;
         }
-        if (from.tag != null) {
+        if (to.tag == null) {
             to.tag = from.tag;
         }
-        if (from.padding != null) {
+        if (to.padding == null) {
             to.padding = from.padding;
         }
-        if (from.paddingLeft != null) {
+        if (to.paddingLeft == null) {
             to.paddingLeft = from.paddingLeft;
         }
-        if (from.paddingTop != null) {
+        if (to.paddingTop == null) {
             to.paddingTop = from.paddingTop;
         }
-        if (from.paddingRight != null) {
+        if (to.paddingRight == null) {
             to.paddingRight = from.paddingRight;
         }
-        if (from.paddingBottom != null) {
+        if (to.paddingBottom == null) {
             to.paddingBottom = from.paddingBottom;
         }
-        if (from.margin != null) {
+        if (to.margin == null) {
             to.margin = from.margin;
         }
-        if (from.marginLeft != null) {
+        if (to.marginLeft == null) {
             to.marginLeft = from.marginLeft;
         }
-        if (from.marginTop != null) {
+        if (to.marginTop == null) {
             to.marginTop = from.marginTop;
         }
-        if (from.marginRight != null) {
+        if (to.marginRight == null) {
             to.marginRight = from.marginRight;
         }
-        if (from.marginBottom != null) {
+        if (to.marginBottom == null) {
             to.marginBottom = from.marginBottom;
         }
-        if (from.background != null) {
+        if (to.background == null) {
             to.background = from.background;
         }
-        if (from.gravity != null) {
+        if (to.gravity == null) {
             to.gravity = from.gravity;
         }
-        if (from.layout_gravity != null) {
+        if (to.layout_gravity == null) {
             to.layout_gravity = from.layout_gravity;
         }
-        if (from.weight != 0) {
+        if (to.weight == 0) {
             to.weight = from.weight;
         }
-        if (from.text != null) {
+        if (to.text == null) {
             to.text = from.text;
         }
-        if (from.textSize != null) {
+        if (to.textSize == null) {
             to.textSize = from.textSize;
         }
-        if (from.textColor != null) {
+        if (to.textColor == null) {
             to.textColor = from.textColor;
         }
-        if (from.hint != null) {
+        if (to.hint == null) {
             to.hint = from.hint;
         }
-        if (from.maxLine != 0) {
+        if (to.maxLine == 0) {
             to.maxLine = from.maxLine;
         }
-        if (from.hintColor != null) {
+        if (to.hintColor == null) {
             to.hintColor = from.hintColor;
         }
-        if (from.lineSpace != null) {
+        if (to.lineSpace == null) {
             to.lineSpace = from.lineSpace;
         }
-        if (from.scaleType != null) {
+        if (to.scaleType == null) {
             to.scaleType = from.scaleType;
         }
-        if (from.src != null) {
+        if (to.src == null) {
             to.src = from.src;
         }
-        if (from.layout_alignParentRight) {
+        if (!to.layout_alignParentRight) {
             to.layout_alignParentRight = from.layout_alignParentRight;
         }
-        if (from.layout_alignParentLeft) {
+        if (!to.layout_alignParentLeft) {
             to.layout_alignParentLeft = from.layout_alignParentLeft;
         }
-        if (from.layout_alignParentTop) {
+        if (!to.layout_alignParentTop) {
             to.layout_alignParentTop = from.layout_alignParentTop;
         }
-        if (from.layout_alignParentBottom) {
+        if (!to.layout_alignParentBottom) {
             to.layout_alignParentBottom = from.layout_alignParentBottom;
         }
-        if (from.layout_centerInParent) {
+        if (!to.layout_centerInParent) {
             to.layout_centerInParent = from.layout_centerInParent;
         }
-        if (from.layout_centerHorizontal) {
+        if (!to.layout_centerHorizontal) {
             to.layout_centerHorizontal = from.layout_centerHorizontal;
         }
-        if (from.layout_centerVertical) {
+        if (!to.layout_centerVertical) {
             to.layout_centerVertical = from.layout_centerVertical;
         }
-        if (from.layout_toLeftOf != 0) {
+        if (to.layout_toLeftOf == 0) {
             to.layout_toLeftOf = from.layout_toLeftOf;
         }
-        if (from.layout_toRightOf != 0) {
+        if (to.layout_toRightOf == 0) {
             to.layout_toRightOf = from.layout_toRightOf;
         }
-        if (from.layout_above != 0) {
+        if (to.layout_above == 0) {
             to.layout_above = from.layout_above;
         }
-        if (from.layout_below != 0) {
+        if (to.layout_below == 0) {
             to.layout_below = from.layout_below;
         }
-        if (from.layout_alignLeft != 0) {
+        if (to.layout_alignLeft == 0) {
             to.layout_alignLeft = from.layout_alignLeft;
         }
-        if (from.layout_alignRight != 0) {
+        if (to.layout_alignRight == 0) {
             to.layout_alignRight = from.layout_alignRight;
         }
-        if (from.layout_alignTop != 0) {
+        if (to.layout_alignTop == 0) {
             to.layout_alignTop = from.layout_alignTop;
         }
-        if (from.layout_alignBottom != 0) {
+        if (to.layout_alignBottom == 0) {
             to.layout_alignBottom = from.layout_alignBottom;
         }
-        if (from.layout_alignBaseline != 0) {
+        if (to.layout_alignBaseline == 0) {
             to.layout_alignBaseline = from.layout_alignBaseline;
         }
-        if (from.alignBaseline != null) {
+        if (to.alignBaseline == null) {
             to.alignBaseline = from.alignBaseline;
         }
-        if (from.below != null) {
+        if (to.below == null) {
             to.below = from.below;
         }
-        if (from.alignBottom != null) {
+        if (to.alignBottom == null) {
             to.alignBottom = from.alignBottom;
         }
-        if (from.toLeftOf != null) {
+        if (to.toLeftOf == null) {
             to.toLeftOf = from.toLeftOf;
         }
-        if (from.toRightOf != null) {
+        if (to.toRightOf == null) {
             to.toRightOf = from.toRightOf;
         }
-        if (from.above != null) {
+        if (to.above == null) {
             to.above = from.above;
         }
-        if (from.alignLeft != null) {
+        if (to.alignLeft == null) {
             to.alignLeft = from.alignLeft;
         }
-        if (from.alignRight != null) {
+        if (to.alignRight == null) {
             to.alignRight = from.alignRight;
         }
-        if (from.alignTop != null) {
+        if (to.alignTop == null) {
             to.alignTop = from.alignTop;
         }
-        if (from.data != null) {
-            to.data = from.data;
-        }
-        if (from.yiewStore != null) {
-            to.yiewStore = from.yiewStore;
-        }
-        if (from.propertys != null) {
-            to.propertys = from.propertys;
-        }
+        //list start
+
+
+        //list end
+
+        //id start
+//        to.name = to.name;
+        to.view = from.view;
+        //id end
 
     }
 
 
     public static int parseColor(String background) {
         if (background.startsWith("#")) {
-            if (background.length() == 7 || background.length() == 9)
+            if (background.length() == 7 || background.length() == 9) {
                 return Color.parseColor(background);
-            else if (background.length() == 4) {
+            } else if (background.length() == 4) {
                 background += background.substring(1);
                 return Color.parseColor(background);
             }
@@ -413,20 +415,15 @@ public class Utils {
     public static String getValueStringIfDataExist(Yiew yiew, String text, String defaultValue) {
 
         String keyname = text.substring(1);
-        if (yiew.data !=null)
-        {
+        if (yiew.data != null) {
             String retValue = yiew.getData(keyname, defaultValue);
             return retValue;
-        }else   if (yiew.rootComponet !=null&&yiew.rootComponet.data !=null)
-        {
-            String retValue = yiew.rootComponet.getData(keyname, defaultValue);
+        } else if (yiew.getRootComponet() != null && yiew.getRootComponet().data != null) {
+            String retValue = yiew.getRootComponet().getData(keyname, defaultValue);
             return retValue;
-        }
-
-        else{
+        } else {
             return defaultValue;
         }
-
 
 
     }

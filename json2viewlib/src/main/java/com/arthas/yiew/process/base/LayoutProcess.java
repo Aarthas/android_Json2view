@@ -9,9 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewBean;
 
 /**
  * Created by zhangyn on 17/4/1.
@@ -19,7 +17,7 @@ import com.arthas.yiew.bean.YiewBean;
 
 public class LayoutProcess {
 
-    public static void applyaLayout(View view, ViewGroup.LayoutParams params, YiewBean yiew, YiewStore yiewStore) {
+    public static void applyaLayout(View view, ViewGroup.LayoutParams params, Yiew yiew) {
         if (params instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = ((ViewGroup.MarginLayoutParams) params);
             Log.d("syb", "yiew.margin = " + yiew.margin);
@@ -66,38 +64,38 @@ public class LayoutProcess {
                 params1.addRule(RelativeLayout.CENTER_VERTICAL);
 
 
-//            if (yiew.layout_toLeftOf != 0)
-//                params1.addRule(RelativeLayout.LEFT_OF, yiew.layout_toLeftOf);
-//
-//            if (yiew.layout_toRightOf != 0)
-//                params1.addRule(RelativeLayout.RIGHT_OF, yiew.layout_toRightOf);
-//
-//            if (yiew.layout_above != 0)
-//                params1.addRule(RelativeLayout.ABOVE, yiew.layout_above);
-//
-//            if (yiew.layout_below != 0)
-//                params1.addRule(RelativeLayout.BELOW, yiew.layout_below);
-//
-//
-//            if (yiew.layout_alignLeft != 0)
-//                params1.addRule(RelativeLayout.ALIGN_LEFT, yiew.layout_alignLeft);
-//
-//            if (yiew.layout_alignRight != 0)
-//                params1.addRule(RelativeLayout.ALIGN_RIGHT, yiew.layout_alignRight);
-//
-//            if (yiew.layout_alignTop != 0)
-//                params1.addRule(RelativeLayout.ALIGN_TOP, yiew.layout_alignTop);
-//
-//            if (yiew.layout_alignBottom != 0)
-//                params1.addRule(RelativeLayout.ALIGN_BOTTOM, yiew.layout_alignBottom);
-//
-//            if (yiew.layout_alignBaseline != 0)
-//                params1.addRule(RelativeLayout.ALIGN_BASELINE, yiew.layout_alignBaseline);
+            if (yiew.layout_toLeftOf != 0)
+                params1.addRule(RelativeLayout.LEFT_OF, yiew.layout_toLeftOf);
+
+            if (yiew.layout_toRightOf != 0)
+                params1.addRule(RelativeLayout.RIGHT_OF, yiew.layout_toRightOf);
+
+            if (yiew.layout_above != 0)
+                params1.addRule(RelativeLayout.ABOVE, yiew.layout_above);
+
+            if (yiew.layout_below != 0)
+                params1.addRule(RelativeLayout.BELOW, yiew.layout_below);
+
+
+            if (yiew.layout_alignLeft != 0)
+                params1.addRule(RelativeLayout.ALIGN_LEFT, yiew.layout_alignLeft);
+
+            if (yiew.layout_alignRight != 0)
+                params1.addRule(RelativeLayout.ALIGN_RIGHT, yiew.layout_alignRight);
+
+            if (yiew.layout_alignTop != 0)
+                params1.addRule(RelativeLayout.ALIGN_TOP, yiew.layout_alignTop);
+
+            if (yiew.layout_alignBottom != 0)
+                params1.addRule(RelativeLayout.ALIGN_BOTTOM, yiew.layout_alignBottom);
+
+            if (yiew.layout_alignBaseline != 0)
+                params1.addRule(RelativeLayout.ALIGN_BASELINE, yiew.layout_alignBaseline);
 //
 
             if (yiew.below != null) {
 
-                int advanceId = getAdvanceId(yiew.below, yiewStore);
+                int advanceId = getAdvanceId(yiew.below,yiew);
                 if (advanceId != 0)
                 {
                     params1.addRule(RelativeLayout.BELOW, advanceId);
@@ -106,52 +104,52 @@ public class LayoutProcess {
             }
             if (yiew.toLeftOf != null) {
 
-                int advanceId = getAdvanceId(yiew.toLeftOf, yiewStore);
+                int advanceId = getAdvanceId(yiew.toLeftOf,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.LEFT_OF, advanceId);
             }
 
             if (yiew.toRightOf != null) {
 
-                int advanceId = getAdvanceId(yiew.toRightOf, yiewStore);
+                int advanceId = getAdvanceId(yiew.toRightOf,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.RIGHT_OF, advanceId);
             }
 
             if (yiew.above != null) {
 
-                int advanceId = getAdvanceId(yiew.above, yiewStore);
+                int advanceId = getAdvanceId(yiew.above,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.ABOVE, advanceId);
             }
 
             if (yiew.alignLeft != null) {
 
-                int advanceId = getAdvanceId(yiew.alignLeft, yiewStore);
+                int advanceId = getAdvanceId(yiew.alignLeft,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.ALIGN_LEFT, advanceId);
             }
             if (yiew.alignRight != null) {
 
-                int advanceId = getAdvanceId(yiew.alignRight, yiewStore);
+                int advanceId = getAdvanceId(yiew.alignRight,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.ALIGN_RIGHT, advanceId);
             }
             if (yiew.alignTop != null) {
 
-                int advanceId = getAdvanceId(yiew.alignTop, yiewStore);
+                int advanceId = getAdvanceId(yiew.alignTop,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.ALIGN_TOP, advanceId);
             }
             if (yiew.alignBottom != null) {
 
-                int advanceId = getAdvanceId(yiew.alignBottom, yiewStore);
+                int advanceId = getAdvanceId(yiew.alignBottom,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.ALIGN_BOTTOM, advanceId);
             }
             if (yiew.alignBaseline != null) {
 
-                int advanceId = getAdvanceId(yiew.alignBaseline, yiewStore);
+                int advanceId = getAdvanceId(yiew.alignBaseline,yiew);
                 if (advanceId != 0)
                     params1.addRule(RelativeLayout.ALIGN_BASELINE, advanceId);
             }
@@ -170,14 +168,14 @@ public class LayoutProcess {
 
     }
 
-    private static int getAdvanceId(String verb, YiewStore yiewStore) {
+    private static int getAdvanceId(String verb,Yiew yiew) {
         if (verb.startsWith("#")) {
             int id = Integer.parseInt(verb.substring(1));
 
             return id;
         } else if (verb.startsWith("@")) {
             String name = verb.substring(1);
-            Yiew aa = yiewStore.getYiewByName(name);
+            Yiew aa = yiew.getYiewStore().getYiewByName(name);
             if (aa != null) {
                 return aa.id;
             }

@@ -1,7 +1,6 @@
 package com.arthas.yiew;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -27,34 +26,30 @@ public class Main {
                 for (ComponentBean componentBean : component) {
                     final Yiew template = componentBean.template;
 
-                    IProcess line = new IProcess() {
+                    IComponent line = new IComponent() {
                         @Override
-                        public View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
-                            yiew.view = template.view;
-                            yiew.child = template.child;
+                        public View createView(Context context, ViewGroup parent, Yiew yiew) {
 
-                            Utils.copy(yiew, template);
 
-                            yiew.rootComponet = yiew;
+                            Utils.merge(yiew, template);
 
-                            Log.d("syb","componet_0 "+yiew);
-                            Log.d("syb","componet_0 "+yiew.data);
-                            Log.d("syb","componet_0 "+template.data);
-                            return YiewEngine.createView(context, parent, yiew, yiewStore);
+                            yiew.setRootComponet(yiew);
+
+
+                            return YiewEngine.createView(context, parent, yiew);
 
                         }
                     };
-                    YiewConfig.Component(componentBean.name, line);
+                    YiewConfig.addComponent(componentBean.name, line);
 
                 }
             }
 
 
-            YiewStore yiewStore = new YiewStore();
-            yiewResp.template.yiewStore = yiewStore;
+            yiewResp.template.setYiewStore(new YiewStore());
 
 
-            return YiewEngine.createView(context, null, yiewResp.template, yiewStore);
+            return YiewEngine.createView(context, null, yiewResp.template);
 
 
         }

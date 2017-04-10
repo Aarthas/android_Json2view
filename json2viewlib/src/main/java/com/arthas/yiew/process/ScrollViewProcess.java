@@ -6,7 +6,6 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -16,7 +15,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class ScrollViewProcess {
-    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew) {
         ScrollView view = new ScrollView(context);
 
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
@@ -25,8 +24,8 @@ public class ScrollViewProcess {
         view.setVerticalFadingEdgeEnabled(false);
         view.setOverScrollMode(ScrollView.OVER_SCROLL_NEVER);
         view.setFadingEdgeLength(0);
-        ViewProcess.applyView(view, yiew,yiewStore);
-        LayoutProcess.applyaLayout(view, params, yiew,yiewStore);
+        ViewProcess.applyView(view, yiew);
+        LayoutProcess.applyaLayout(view, params, yiew);
 
 
         view.setVerticalFadingEdgeEnabled(false);

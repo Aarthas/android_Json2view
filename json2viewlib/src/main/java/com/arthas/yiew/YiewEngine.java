@@ -23,18 +23,19 @@ import com.arthas.yiew.process.VerticalLayoutProcess;
 public class YiewEngine {
 
 
-    public static void addChild(Context context, Yiew parentYiew, ViewGroup view, YiewStore yiewStore) {
+    public static void addChild(Context context, Yiew parentYiew, ViewGroup view) {
 
         if (parentYiew.child != null && parentYiew.child.size() > 0) {
             for (YiewBean child : parentYiew.child) {
                 Yiew child1 = (Yiew) child;
-                child1.yiewStore = parentYiew.yiewStore;
-                if (parentYiew.rootComponet!=null)
-                {
-                    child1.rootComponet = parentYiew.rootComponet;
+                if (parentYiew.getYiewStore() != null){
+                    child1.setYiewStore(parentYiew.getYiewStore());
+                }
+                if (parentYiew.getRootComponet() != null) {
+                    child1.setRootComponet(parentYiew.getRootComponet());
                 }
                 child1.parentNode = parentYiew;
-                View childView = createView(context, view, child1, yiewStore);
+                View childView = createView(context, view, child1);
                 if (childView != null) {
                     view.addView(childView);
                 }
@@ -46,7 +47,7 @@ public class YiewEngine {
     }
 
 
-    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew) {
 
 
         switch (yiew.view) {
@@ -54,11 +55,11 @@ public class YiewEngine {
             case Yiew.verticalLayout: {
 
 
-                View view = VerticalLayoutProcess.createView(context, parent, yiew, yiewStore);
+                View view = VerticalLayoutProcess.createView(context, parent, yiew);
 
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
-                    addChild(context, yiew, group, yiewStore);
+                    addChild(context, yiew, group);
                 }
 
 
@@ -67,12 +68,12 @@ public class YiewEngine {
             }
 
             case Yiew.horizonLayout: {
-                View view = HorizonLayoutProcess.createView(context, parent, yiew, yiewStore);
+                View view = HorizonLayoutProcess.createView(context, parent, yiew);
 
 
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
-                    addChild(context, yiew, group, yiewStore);
+                    addChild(context, yiew, group);
                 }
 //                if (yiewStore != null) {
 //                    yiewStore.put(yiew, view);
@@ -83,7 +84,7 @@ public class YiewEngine {
 
 
             case Yiew.TextView: {
-                View view = TextViewProcess.createView(context, parent, yiew, yiewStore);
+                View view = TextViewProcess.createView(context, parent, yiew);
 
 
 //                if (yiewStore != null) {
@@ -93,7 +94,7 @@ public class YiewEngine {
             }
 
             case Yiew.ImageView: {
-                View view = ImageViewProcess.createView(context, parent, yiew, yiewStore);
+                View view = ImageViewProcess.createView(context, parent, yiew);
 
 
 //                if (yiewStore != null) {
@@ -103,7 +104,7 @@ public class YiewEngine {
 
             }
             case Yiew.View: {
-                View view = SimpleViewProcess.createYiew(context, parent, yiew, yiewStore);
+                View view = SimpleViewProcess.createYiew(context, parent, yiew);
 
 //                if (yiewStore != null) {
 //                    yiewStore.put(yiew, view);
@@ -112,39 +113,39 @@ public class YiewEngine {
 
             }
             case Yiew.ScrollView: {
-                View view = ScrollViewProcess.createView(context, parent, yiew, yiewStore);
+                View view = ScrollViewProcess.createView(context, parent, yiew);
 //                if (yiewStore != null) {
 //                    yiewStore.put(yiew, view);
 //                }
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
-                    addChild(context, yiew, group, yiewStore);
+                    addChild(context, yiew, group);
                 }
                 return view;
 
             }
             case Yiew.RelativeLayout: {
-                View view = RelativeLayoutProcess.createView(context, parent, yiew, yiewStore);
+                View view = RelativeLayoutProcess.createView(context, parent, yiew);
 //                if (yiewStore != null) {
 //                    yiewStore.put(yiew, view);
 //                }
 
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
-                    addChild(context, yiew, group, yiewStore);
+                    addChild(context, yiew, group);
                 }
                 return view;
             }
 
             case Yiew.FrameLayout: {
-                View view = FrameLayoutProcess.createView(context, parent, yiew, yiewStore);
+                View view = FrameLayoutProcess.createView(context, parent, yiew);
 
 //                if (yiewStore != null) {
 //                    yiewStore.put(yiew, view);
 //                }
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
-                    addChild(context, yiew, group, yiewStore);
+                    addChild(context, yiew, group);
                 }
                 return view;
             }
@@ -154,13 +155,10 @@ public class YiewEngine {
                 break;
         }
 
-        IProcess process = YiewConfig.findProcess(yiew.view);
-        if (process != null) {
+        IComponent component = YiewConfig.findComponent(yiew.view);
+        if (component != null) {
 
-            View childView = process.createView(context, parent, yiew, yiewStore);
-//            if (yiewStore != null) {
-//                yiewStore.put(yiew, childView);
-//            }
+            View childView = component.createView(context, parent, yiew);
 
             if (childView != null) {
                 return childView;

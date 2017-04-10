@@ -32,7 +32,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         title.textColor="#333333";
         title.background="#ffffff";
 
-        View rootView = YiewEngine.createView(context, null, root,null);
+        View rootView = YiewEngine.createView(context, null, root);
 
         setContentView(rootView);
 
@@ -336,7 +336,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_11_2.height = "36";
 
 
-        View rootView = YiewEngine.createView(context, null, yiew_1,null);
+        View rootView = YiewEngine.createView(context, null, yiew_1);
 
         setContentView(rootView);
 

@@ -1,7 +1,6 @@
 package com.arthas.yiew.process;
 
 import android.content.Context;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.YiewStore;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -19,13 +17,13 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class TextViewProcess {
-    public static View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore) {
+    public static View createView(Context context, ViewGroup parent, Yiew yiew) {
         TextView view = new TextView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
 
-        ViewProcess.applyView(view, yiew, yiewStore);
-        LayoutProcess.applyaLayout(view, params, yiew, yiewStore);
+        ViewProcess.applyView(view, yiew);
+        LayoutProcess.applyaLayout(view, params, yiew);
 
         applyTextView(view, yiew);
 
@@ -37,8 +35,8 @@ public class TextViewProcess {
         TextView view = (TextView) yiew.getYiewStore().getView(yiew.name);
         ViewGroup.LayoutParams params = view.getLayoutParams();
 
-        ViewProcess.applyView(view, yiew, yiew.getYiewStore());
-        LayoutProcess.applyaLayout(view, params, yiew, yiew.getYiewStore());
+        ViewProcess.applyView(view, yiew);
+        LayoutProcess.applyaLayout(view, params, yiew);
 
         applyTextView(view, yiew);
 
@@ -77,10 +75,7 @@ public class TextViewProcess {
         if (yiew.text != null) {
 
             if (yiew.text.startsWith("&")) {
-                Log.d("syb", " componet 1 name=" + yiew.name);
-                Log.d("syb", " componet 1 text=" + yiew.text);
-                Log.d("syb", " componet 1 data=" + yiew.data);
-                Log.d("syb", " componet 1 rootComponet=" + yiew.rootComponet);
+
                 String a = Utils.getValueStringIfDataExist(yiew, yiew.text, yiew.text);
                 view.setText(a);
             } else {

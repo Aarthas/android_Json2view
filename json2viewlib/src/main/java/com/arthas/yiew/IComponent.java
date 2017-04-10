@@ -6,6 +6,6 @@ import android.view.ViewGroup;
 
 import com.arthas.yiew.bean.Yiew;
 
-public  interface IProcess {
-        View createView(Context context, ViewGroup parent, Yiew yiew, YiewStore yiewStore);
+public  interface IComponent {
+        View createView(Context context, ViewGroup parent, Yiew yiew);
     }
