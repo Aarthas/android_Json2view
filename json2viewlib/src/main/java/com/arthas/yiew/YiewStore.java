@@ -15,6 +15,24 @@ public class YiewStore {
     //有name的会缓存Yiew
     public HashMap<String, Yiew> yiews = new HashMap();
 
+    private HashMap<String, IComponent> componentMap = null;
+
+    public void addComponent(String name, IComponent line) {
+        if (componentMap == null){
+            componentMap = new HashMap<>();
+        }
+        componentMap.put(name, line);
+    }
+    public  IComponent findComponent(String view) {
+
+        if (componentMap==null)
+        {
+            return null;
+        }
+        return componentMap.get(view);
+    }
+
+
 
     public Yiew getYiewByName(String name) {
         return yiews.get(name);

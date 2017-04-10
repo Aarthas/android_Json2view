@@ -41,11 +41,20 @@ public class YiewEngine {
 
     public static View createView(Context context, ViewGroup parent, Yiew yiew) {
 
-        IComponent component = YiewConfig.findComponent(yiew.view);
-        if (component != null) {
-            View view = component.createComponentView(context, parent, yiew);
-            return view;
+        if (yiew.getYiewStore() != null) {
+            IComponent component = yiew.getYiewStore().findComponent(yiew.view);
+            if (component != null) {
+                View view = component.createComponentView(context, parent, yiew);
+                return view;
+            }
+        } else {
+            IComponent component = YiewConfig.findComponent(yiew.view);
+            if (component != null) {
+                View view = component.createComponentView(context, parent, yiew);
+                return view;
+            }
         }
+
         return null;
     }
 

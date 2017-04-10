@@ -15,6 +15,5 @@ public class YiewResp {
     public Yiew template;
 
 
-
-
+    public String scope;
 }

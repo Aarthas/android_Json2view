@@ -6,8 +6,16 @@ import android.view.ViewGroup;
 
 import com.arthas.yiew.bean.Yiew;
 
-public abstract class YiewComponent implements   IComponent{
+public  class YiewComponent implements   IComponent{
 
+
+    private  Yiew template;
+    public YiewComponent() {
+
+    }
+    public YiewComponent(Yiew template) {
+        this.template=template;
+    }
 
     @Override
     public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
@@ -19,5 +27,12 @@ public abstract class YiewComponent implements   IComponent{
         return content;
     }
 
-    public abstract Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew);
+    @Override
+    public void render(Yiew yiew) {
+
+    }
+
+    public  Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew){
+        return template;
+    }
 }

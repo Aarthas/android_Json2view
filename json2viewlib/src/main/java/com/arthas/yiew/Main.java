@@ -2,7 +2,6 @@ package com.arthas.yiew;
 
 import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.arthas.yiew.bean.ComponentBean;
 import com.arthas.yiew.bean.Yiew;
@@ -18,31 +17,26 @@ public class Main {
 
     public static View startProcess(Context context, YiewResp yiewResp) {
 
-
+        YiewStore yiewStore = new YiewStore();
         if ("AndroidLayout".equals(yiewResp.head.process)) {
             List<ComponentBean> component = yiewResp.head.component;
             if (component != null) {
                 for (ComponentBean componentBean : component) {
                     final Yiew template = componentBean.template;
+                    YiewComponent yiewComponent = new YiewComponent(template);
 
-                    YiewComponent line = new YiewComponent() {
-                        @Override
-                        public Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew) {
-                            return template;
-                        }
+                    if (yiewResp.scope == null) {
+                        yiewStore.addComponent(componentBean.name, yiewComponent);
+                    } else if ("global".equals(yiewResp.scope)) {
+                        YiewConfig.addComponent(componentBean.name, yiewComponent);
+                    }
 
-                        @Override
-                        public void render(Yiew yiew) {
-
-                        }
-                    };
-                    YiewConfig.addComponent(componentBean.name, line);
 
                 }
             }
 
 
-            yiewResp.template.setYiewStore(new YiewStore());
+            yiewResp.template.setYiewStore(yiewStore);
 
 
             return YiewEngine.createView(context, null, yiewResp.template);

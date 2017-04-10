@@ -20,7 +20,7 @@ public class YiewConfig {
 
 
     private static ImageAdapter imageAdapter;
-    private static HashMap<String, IComponent> processMap = new HashMap();
+    private static HashMap<String, IComponent> componentMap = new HashMap();
 
 
     public static void setImageAdapter(ImageAdapter imageAdapter) {
@@ -33,7 +33,7 @@ public class YiewConfig {
 
 
     public static void addComponent(String name, IComponent line) {
-        processMap.put(name, line);
+        componentMap.put(name, line);
     }
 
     static {
@@ -58,13 +58,13 @@ public class YiewConfig {
 
 
 //        if ("scrollView".equals(view)) {
-//            IComponent iComponent = processMap.get(view);
+//            IComponent iComponent = componentMap.get(view);
 //            if (iComponent == null) {
 //                iComponent = new ScrollComponent();
-//                processMap.put(view, iComponent);
+//                componentMap.put(view, iComponent);
 //            }
 //            return iComponent;
 //        }
-        return processMap.get(view);
+        return componentMap.get(view);
     }
 }
