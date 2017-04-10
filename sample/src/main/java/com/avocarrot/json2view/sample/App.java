@@ -74,7 +74,7 @@ public class App extends Application {
                 TextView.layout_centerInParent=true;
                 TextView.text="刷新";
                 TextView.gravity="center";
-                TextView.click="refresh";
+                TextView.onClick ="refresh";
                 TextView.textColor="#333333";
                 TextView.background="#ffffff";
 

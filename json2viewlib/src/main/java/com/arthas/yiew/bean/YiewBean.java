@@ -17,7 +17,7 @@ public class YiewBean implements Serializable {
     public String height;
 
     public int id;
-    public String click;
+    public String onClick;
     public String visibility;
 
     public String tag;
@@ -98,7 +98,7 @@ public class YiewBean implements Serializable {
 //                ", width='" + width + '\'' +
 //                ", height='" + height + '\'' +
 //                ", id=" + id +
-//                ", click='" + click + '\'' +
+//                ", onClick='" + onClick + '\'' +
 //                ", visibility='" + visibility + '\'' +
 //                ", tag='" + tag + '\'' +
 //                ", propertys=" + propertys +

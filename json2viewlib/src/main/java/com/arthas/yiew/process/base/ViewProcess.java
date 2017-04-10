@@ -54,7 +54,7 @@ public class ViewProcess {
         }
 
 
-        if (yiew.click != null) {
+        if (yiew.onClick != null) {
 
             view.setOnClickListener(new View.OnClickListener() {
                                         @Override
@@ -62,13 +62,13 @@ public class ViewProcess {
 
                                             Context context = v.getContext();
                                             try {
-                                                Method myClick = context.getClass().getMethod(yiew.click);
+                                                Method myClick = context.getClass().getMethod(yiew.onClick);
                                                 myClick.invoke(context);
                                             } catch (Exception e) {
 
                                             }
                                             try {
-                                                Method myClick2 = context.getClass().getMethod(yiew.click, Yiew.class);
+                                                Method myClick2 = context.getClass().getMethod(yiew.onClick, Yiew.class);
                                                 myClick2.invoke(context, yiew);
                                             } catch (Exception e) {
 

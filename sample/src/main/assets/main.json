@@ -15,7 +15,7 @@
           "textColor": "#fff",
           "background": "&background",
           "visibility": "&visibility",
-          "click": "jumpToActivity"
+          "onClick": "jumpToActivity"
         }
       }
     ]
@@ -69,7 +69,7 @@
             "view": "pane",
             "data": {
               "background": "#fb9236",
-              "text": "自定义component 用法 \n与 click事件",
+              "text": "自定义component 用法 \n与 onClick事件",
               "route": "com.avocarrot.json2view.sample.FeatureActivity"
             }
           },

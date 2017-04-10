@@ -195,8 +195,8 @@ public class Yiew extends YiewBean implements Serializable {
             to.height = from.height;
         }
 
-        if (to.click == null) {
-            to.click = from.click;
+        if (to.onClick == null) {
+            to.onClick = from.onClick;
         }
         if (to.visibility == null) {
             to.visibility = from.visibility;

@@ -28,7 +28,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         title.layout_centerInParent=true;
         title.text="刷新";
         title.gravity="center";
-        title.click="refresh";
+        title.onClick ="refresh";
         title.textColor="#333333";
         title.background="#ffffff";
 
@@ -81,7 +81,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         Yiew yiew_1_2_1_2 = new Yiew();
         yiew_1_2_1.addChild(yiew_1_2_1_2);
         yiew_1_2_1_2.view = "TextView";
-        yiew_1_2_1_2.click = "gotoDataSource";
+        yiew_1_2_1_2.onClick = "gotoDataSource";
         yiew_1_2_1_2.padding = "16";
         yiew_1_2_1_2.gravity = "center";
         yiew_1_2_1_2.text = "从assets/complaintDetail.json加载数据";

@@ -47,10 +47,10 @@
             "data": {
               "text": "component事件,点击调用activity的showToast方法"
             },
-            "click": "showToast"
+            "onClick": "showToast"
           },
           {
-            "click": "showToast",
+            "onClick": "showToast",
             "view": "RelativeLayout",
             "width": "match",
             "height": "48",
@@ -67,7 +67,7 @@
                 "marginLeft": "24",
                 "textSize": "14",
                 "gravity": "center",
-                "click": "showToast2",
+                "onClick": "showToast2",
                 "background": "#ffffff",
                 "layout_centerVertical": true
               },

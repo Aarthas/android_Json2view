@@ -37,7 +37,7 @@
                 "padding": "16",
                 "gravity": "center",
                 "textSize": "14",
-                "click": "gotoDataSource"
+                "onClick": "gotoDataSource"
               }
             ]
           },

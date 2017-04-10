@@ -31,7 +31,7 @@
               {
                 "view": "TextView",
                 "text": "changeSelf",
-                "click": "changeSelf",
+                "onClick": "changeSelf",
                 "textColor": "#666666",
                 "marginLeft": "24",
                 "textSize": "14",
@@ -67,7 +67,7 @@
                 "textColor": "#666666",
                 "marginLeft": "24",
                 "textSize": "14",
-                "click": "changeOther",
+                "onClick": "changeOther",
                 "layout_centerVertical": true
               },
               {
