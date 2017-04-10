@@ -26,6 +26,14 @@ public class ViewProcess {
             view.setId(yiew.id);
 
         }
+        render(view, yiew);
+
+
+//        applyProperties(view, yiew);
+
+    }
+
+    public static void render(View view, final Yiew yiew) {
         if (yiew.tag != null) {
             view.setTag(yiew.tag);
         }
@@ -96,11 +104,8 @@ public class ViewProcess {
                 break;
             }
         }
-
-
-//        applyProperties(view, yiew);
-
     }
+
 
 //    public static void applyProperties(View view, YiewBean yiew) {
 //        List<PropertyBean> propertys = yiew.propertys;

@@ -8,8 +8,9 @@ import com.arthas.yiew.bean.Yiew;
 
 public abstract class YiewComponent implements   IComponent{
 
+
     @Override
-    public View createView(Context context, ViewGroup parent, Yiew yiew) {
+    public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
         Yiew template = createTemplate(context, parent, yiew);
 
         yiew.setComponentTemplate(template);

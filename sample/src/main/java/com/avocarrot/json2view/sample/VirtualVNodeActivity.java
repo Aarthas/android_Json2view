@@ -56,27 +56,21 @@ public class VirtualVNodeActivity extends AppCompatActivity {
 
     }
 
-    public void change(Yiew yiew) {
-
-        // 通过得iew对象方式修改view的属性
-
-
-
-        LogUtils.d("change");
-
-        //更新虚拟节点  目前只做了textview
-//        Yiew contact = yiew.getYiewStore().getYiewByName("contact");
-//        contact.text = "arthas";
-//        contact.textColor="#fff";
-//        contact.invalid();
+    public void changeSelf(Yiew yiew) {
+        LogUtils.d("changeSelf");
+        LogUtils.d("changeSelf"+yiew);
+        TextView view = (TextView) yiew.getView();
+        view.setText("asd");
 
 
-        //通过yiew得到View
-        Yiew phoneYiew = yiew.getYiewStore().getYiewByName("mobile");
-        TextView phoneview = (TextView) phoneYiew.getView();
-        phoneview.setText("12933249");
+        yiew.text = "azxczxczxc";
+        yiew.invalid();
+    }
 
-
+    public void changeOther(Yiew yiew) {
+        Yiew otherText = yiew.getYiewStore().getYiewByName("otherText");
+        TextView view = otherText.getView();
+        view.setText("124233434");
     }
 
 

@@ -22,59 +22,59 @@
             "height": "20"
           },
           {
-            "name": "contactPane",
+            "name": "mobilePane",
             "view": "RelativeLayout",
             "width": "match",
             "height": "48",
-            "click": "change",
             "background": "#ffffff",
             "child": [
               {
                 "view": "TextView",
-                "text": "联系人",
+                "text": "changeSelf",
+                "click": "changeSelf",
                 "textColor": "#666666",
                 "marginLeft": "24",
                 "textSize": "14",
                 "layout_centerVertical": true
               },
               {
-                "name": "contact",
                 "view": "TextView",
                 "width": "wrap",
-                "text": "shen",
+                "text": "",
                 "textColor": "#666666",
                 "layout_alignParentRight": true,
                 "marginRight": "24",
                 "layout_centerVertical": true
               }
             ]
-          },
+          }
+          ,
           {
             "view": "View",
             "width": "match",
             "height": "1"
           },
           {
-            "name": "mobilePane",
+            "name": "contactPane",
             "view": "RelativeLayout",
             "width": "match",
             "height": "48",
-            "click": "change",
             "background": "#ffffff",
             "child": [
               {
                 "view": "TextView",
-                "text": "电话",
+                "text": "changeOther",
                 "textColor": "#666666",
                 "marginLeft": "24",
                 "textSize": "14",
+                "click": "changeOther",
                 "layout_centerVertical": true
               },
               {
-                "name": "mobile",
+                "name": "otherText",
                 "view": "TextView",
                 "width": "wrap",
-                "text": "",
+                "text": "shen",
                 "textColor": "#666666",
                 "layout_alignParentRight": true,
                 "marginRight": "24",

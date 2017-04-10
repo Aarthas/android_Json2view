@@ -64,7 +64,7 @@ public class App extends Application {
         YiewConfig.addComponent("refreshBar", new IComponent() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew ) {
+            public View createComponentView(Context context, ViewGroup parent, Yiew yiew ) {
 
 
                 Yiew template =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
@@ -83,6 +83,11 @@ public class App extends Application {
                 View yiew1 = YiewEngine.createView(context, parent, template);
                 return yiew1;
             }
+
+            @Override
+            public void render(Yiew yiew) {
+
+            }
         });
 
 
@@ -90,12 +95,17 @@ public class App extends Application {
         YiewConfig.addComponent("line", new IComponent() {
 
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew ) {
+            public View createComponentView(Context context, ViewGroup parent, Yiew yiew ) {
 
                 Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
                 dv.background = "#dddddd";
                 View yiew1 = YiewEngine.createView(context, parent, dv);
                 return yiew1;
+            }
+
+            @Override
+            public void render(Yiew yiew) {
+
             }
         });
 

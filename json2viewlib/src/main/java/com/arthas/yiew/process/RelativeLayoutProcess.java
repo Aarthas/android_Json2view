@@ -5,17 +5,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.process.base.LayoutProcess;
+import com.arthas.yiew.process.base.ViewGroupProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 
 /**
  * Created by zhangyn on 17/4/5.
  */
 
-public class RelativeLayoutProcess {
-    public static View createView(Context context, ViewGroup parent, Yiew yiew ) {
+public class RelativeLayoutProcess implements IComponent {
+    public  View createComponentView(Context context, ViewGroup parent, Yiew yiew ) {
 
         RelativeLayout view = new RelativeLayout(context);
 
@@ -26,9 +28,14 @@ public class RelativeLayoutProcess {
         LayoutProcess.applyaLayout(view, params, yiew);
 
 
-
+        ViewGroupProcess.applyViewGroup(view,yiew);
 
 
         return view;
+    }
+
+    @Override
+    public void render(Yiew yiew) {
+
     }
 }

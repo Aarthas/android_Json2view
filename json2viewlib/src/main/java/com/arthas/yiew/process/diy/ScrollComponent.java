@@ -3,14 +3,10 @@ package com.arthas.yiew.process.diy;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 
 import com.arthas.yiew.IComponent;
-import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewEngine;
 import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.process.base.LayoutProcess;
-import com.arthas.yiew.process.base.ViewProcess;
 
 /**
  * Created by zhangyn on 17/4/5.
@@ -19,34 +15,22 @@ import com.arthas.yiew.process.base.ViewProcess;
 public class ScrollComponent implements IComponent {
 
     @Override
-    public View createView(Context context, ViewGroup parent, Yiew yiew) {
-        ScrollView view = new ScrollView(context);
-//
-        ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
-        view.setLayoutParams(params);
+    public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
+        Yiew yiscroll = Yiew.create(Yiew.ScrollView, Yiew.MATCH, Yiew.MATCH);
+        Yiew verlayout = Yiew.create(Yiew.verticalLayout, Yiew.MATCH, Yiew.MATCH);
+        yiscroll.addChild(verlayout);
+        verlayout.child = yiew.child;
+        yiew.child = null;
 
-        ViewProcess.applyView(view, yiew);
-        LayoutProcess.applyaLayout(view, params, yiew);
-
-
-        view.setVerticalFadingEdgeEnabled(false);
-        view.setOverScrollMode(ScrollView.OVER_SCROLL_NEVER);
-        view.setFadingEdgeLength(0);
+        yiew.setComponentTemplate(yiscroll);
+        ViewGroup view = (ViewGroup) YiewEngine.createView(context, parent, yiew);
 
 
-        Yiew verticalLayoutyiew = new Yiew();
-        verticalLayoutyiew.width = "match";
-        verticalLayoutyiew.height = "match";
-        verticalLayoutyiew.view = "verticalLayout";
-        ViewGroup verticalLayout = (ViewGroup) YiewEngine.createView(context, view, verticalLayoutyiew);
-        view.addView(verticalLayout);
-
-
-
-        if (verticalLayout instanceof ViewGroup) {
-            ViewGroup group = (ViewGroup) verticalLayout;
-            YiewEngine.addChild(context, yiew, verticalLayout);
-        }
         return view;
+    }
+
+    @Override
+    public void render(Yiew yiew) {
+
     }
 }

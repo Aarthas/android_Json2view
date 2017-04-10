@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("syb","get yiewbean");
 //
 //
-//        View aa = YiewEngine.createView(context, null, yiew, null);
+//        View aa = YiewEngine.createComponentView(context, null, yiew, null);
 
 
 //        setContentView(aa);

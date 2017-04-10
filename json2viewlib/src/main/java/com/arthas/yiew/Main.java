@@ -25,15 +25,14 @@ public class Main {
                 for (ComponentBean componentBean : component) {
                     final Yiew template = componentBean.template;
 
-                    IComponent line = new IComponent() {
+                    YiewComponent line = new YiewComponent() {
                         @Override
-                        public View createView(Context context, ViewGroup parent, Yiew yiew) {
+                        public Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew) {
+                            return template;
+                        }
 
-
-                            yiew.setComponentTemplate(template);
-
-
-                            return YiewEngine.createView(context, parent, yiew);
+                        @Override
+                        public void render(Yiew yiew) {
 
                         }
                     };

@@ -21,15 +21,16 @@ public class YiewStore {
     }
 
     public void cacheNamedYiew(Yiew yiew, View view) {
-
+        yiew.currentView = view;
         if (yiew.name != null) {
 
-            yiew.currentView = view;
+
             yiew.id = Utils.generateViewId();
             view.setId(yiew.id);
             yiews.put(yiew.name, yiew);
 
         }
+
 //        if (yiew.id != 0) {
 //            putId(yiew.name, yiew.id);
 //        }

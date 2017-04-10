@@ -10,7 +10,6 @@ import android.widget.Toast;
 import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Main;
-import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewComponent;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
@@ -37,6 +36,11 @@ public class FeatureActivity extends AppCompatActivity {
 
         YiewConfig.addComponent("localComponent", new YiewComponent() {
             @Override
+            public void render(Yiew yiew) {
+
+            }
+
+            @Override
             public Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew) {
                 Yiew template = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
 
@@ -61,7 +65,7 @@ public class FeatureActivity extends AppCompatActivity {
         });
         YiewConfig.addComponent("localComponent2", new IComponent() {
             @Override
-            public View createView(Context context, ViewGroup parent, Yiew yiew) {
+            public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
                 Yiew template = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
 
                 template.background = "#f6f6f6";
@@ -81,9 +85,14 @@ public class FeatureActivity extends AppCompatActivity {
                 tv.gravity = yiew.getData("gravity", "CENTER");
 
 
-                Utils.merge(yiew, template);
-                View yiew1 = YiewEngine.createView(context, parent, template);
+                yiew.setComponentTemplate(template);
+                View yiew1 = YiewEngine.createView(context, parent, yiew);
                 return yiew1;
+
+            }
+
+            @Override
+            public void render(Yiew yiew) {
 
             }
         });

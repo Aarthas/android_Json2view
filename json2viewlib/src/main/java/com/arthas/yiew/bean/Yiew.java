@@ -1,6 +1,8 @@
 package com.arthas.yiew.bean;
 
+import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Utils;
+import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewStore;
 
 import java.io.ByteArrayInputStream;
@@ -19,14 +21,17 @@ public class Yiew extends YiewBean implements Serializable {
 
     public static final String verticalLayout = "verticalLayout";
     public static final String horizonLayout = "horizonLayout";
+
+    public static final String ScrollView = "ScrollView";
+    public static final String scrollView = "scrollView";
+
+    public static final String RelativeLayout = "RelativeLayout";
+    public static final String FrameLayout = "FrameLayout";
+
+
     public static final String TextView = "TextView";
     public static final String ImageView = "ImageView";
     public static final String View = "View";
-    public static final String ScrollView = "ScrollView";
-    public static final String scrollView = "scrollView";
-    public static final String RelativeLayout = "RelativeLayout";
-    public static final String FrameLayout = "FrameLayout";
-    public static final String LinearLayout = "LinearLayout";
 
 
     @Override
@@ -70,7 +75,7 @@ public class Yiew extends YiewBean implements Serializable {
         }
     }
 
-    public HashMap<String,String> data;
+    public HashMap<String, String> data;
     public transient Yiew parentNode;
     private transient Yiew rootComponet;
     private transient YiewStore yiewStore;
@@ -110,14 +115,21 @@ public class Yiew extends YiewBean implements Serializable {
     }
 
 
-    public android.view.View getView() {
-        return this.currentView;
+
+
+    public <T extends android.view.View> T getView() {
+        return (T) currentView;
     }
 
-//    public void invalid() {
-//        YiewEngine.invalid(this);
-//
-//    }
+    public void invalid() {
+
+        IComponent component = YiewConfig.findComponent(view);
+        if (component != null) {
+            component.render(this);
+        }
+
+
+    }
 //
 
     public static Yiew create(String type, String width, String height) {
@@ -139,11 +151,6 @@ public class Yiew extends YiewBean implements Serializable {
         return null;
     }
 
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
 
     public Yiew deepClone() {
 

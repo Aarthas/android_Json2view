@@ -85,7 +85,7 @@
             "view": "pane",
             "data": {
               "background": "#d9Ff5858",
-              "text": "head 的使用",
+              "text": "head组件 的使用",
               "route": "com.avocarrot.json2view.sample.HeadComponentActivity"
             }
           },
