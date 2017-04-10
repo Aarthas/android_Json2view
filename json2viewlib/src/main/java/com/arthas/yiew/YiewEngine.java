@@ -47,16 +47,17 @@ public class YiewEngine {
                 View view = component.createComponentView(context, parent, yiew);
                 return view;
             }
-        } else {
-            IComponent component = YiewConfig.findComponent(yiew.view);
-            if (component != null) {
-                View view = component.createComponentView(context, parent, yiew);
-                return view;
-            }
         }
 
-        return null;
-    }
+        IComponent component = YiewConfig.findComponent(yiew.view);
+        if (component != null) {
+            View view = component.createComponentView(context, parent, yiew);
+            return view;
+        }
+
+
+    return null;
+}
 
 
 //    public static void invalid(Yiew yiewBean) {
