@@ -1,6 +1,6 @@
 package com.arthas.yiew;
 
-import com.arthas.yiew.process.diy.ScrollComponent2;
+import com.arthas.yiew.process.diy.ScrollComponent;
 
 import java.util.HashMap;
 
@@ -34,7 +34,7 @@ public class YiewConfig {
         if ("scrollView".equals(view)) {
             IComponent iComponent = processMap.get(view);
             if (iComponent == null) {
-                iComponent = new ScrollComponent2();
+                iComponent = new ScrollComponent();
                 processMap.put(view, iComponent);
             }
             return iComponent;

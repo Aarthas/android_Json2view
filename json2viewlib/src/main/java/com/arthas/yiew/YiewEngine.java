@@ -76,7 +76,7 @@ public class YiewEngine {
                     addChild(context, yiew, group);
                 }
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
                 return view;
 
@@ -88,7 +88,7 @@ public class YiewEngine {
 
 
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
                 return view;
             }
@@ -98,7 +98,7 @@ public class YiewEngine {
 
 
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
                 return view;
 
@@ -107,7 +107,7 @@ public class YiewEngine {
                 View view = SimpleViewProcess.createYiew(context, parent, yiew);
 
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
                 return view;
 
@@ -115,7 +115,7 @@ public class YiewEngine {
             case Yiew.ScrollView: {
                 View view = ScrollViewProcess.createView(context, parent, yiew);
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
@@ -127,7 +127,7 @@ public class YiewEngine {
             case Yiew.RelativeLayout: {
                 View view = RelativeLayoutProcess.createView(context, parent, yiew);
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
 
                 if (view instanceof ViewGroup) {
@@ -141,7 +141,7 @@ public class YiewEngine {
                 View view = FrameLayoutProcess.createView(context, parent, yiew);
 
 //                if (yiewStore != null) {
-//                    yiewStore.put(yiew, view);
+//                    yiewStore.cacheNamedYiew(yiew, view);
 //                }
                 if (view instanceof ViewGroup) {
                     ViewGroup group = (ViewGroup) view;
@@ -170,10 +170,10 @@ public class YiewEngine {
     }
 
 
-    public static void invalid(Yiew yiewBean) {
-
-        TextViewProcess.refresh(yiewBean);
-    }
+//    public static void invalid(Yiew yiewBean) {
+//
+//        TextViewProcess.refresh(yiewBean);
+//    }
 
 
 }

@@ -54,16 +54,16 @@ public class Utils {
     }
 
     private static int getHeight(YiewBean yiew) {
-        Log.d("syb", "getHeight=" + yiew.height);
+//        Log.d("syb", "getHeight=" + yiew.height);
         int meature = meature(yiew.height);
-        Log.d("syb", "getHeight=" + meature);
+//        Log.d("syb", "getHeight=" + meature);
         return meature;
     }
 
     private static int getWidth(YiewBean yiew) {
-        Log.d("syb", "getWidth=" + yiew.width);
+//        Log.d("syb", "getWidth=" + yiew.width);
         int meature = meature(yiew.width);
-        Log.d("syb", "getWidth=" + meature);
+//        Log.d("syb", "getWidth=" + meature);
         return meature;
     }
 
@@ -327,33 +327,7 @@ public class Utils {
         if (!to.layout_centerVertical) {
             to.layout_centerVertical = from.layout_centerVertical;
         }
-        if (to.layout_toLeftOf == 0) {
-            to.layout_toLeftOf = from.layout_toLeftOf;
-        }
-        if (to.layout_toRightOf == 0) {
-            to.layout_toRightOf = from.layout_toRightOf;
-        }
-        if (to.layout_above == 0) {
-            to.layout_above = from.layout_above;
-        }
-        if (to.layout_below == 0) {
-            to.layout_below = from.layout_below;
-        }
-        if (to.layout_alignLeft == 0) {
-            to.layout_alignLeft = from.layout_alignLeft;
-        }
-        if (to.layout_alignRight == 0) {
-            to.layout_alignRight = from.layout_alignRight;
-        }
-        if (to.layout_alignTop == 0) {
-            to.layout_alignTop = from.layout_alignTop;
-        }
-        if (to.layout_alignBottom == 0) {
-            to.layout_alignBottom = from.layout_alignBottom;
-        }
-        if (to.layout_alignBaseline == 0) {
-            to.layout_alignBaseline = from.layout_alignBaseline;
-        }
+
         if (to.alignBaseline == null) {
             to.alignBaseline = from.alignBaseline;
         }
@@ -436,4 +410,7 @@ public class Utils {
         }
         return defaultValue;
     }
+
+
+
 }

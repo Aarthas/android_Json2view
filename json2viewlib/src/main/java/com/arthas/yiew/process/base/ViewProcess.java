@@ -5,12 +5,9 @@ import android.util.Log;
 import android.view.View;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.PropertyBean;
 import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewBean;
 
 import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * Created by zhangyn on 17/4/1.
@@ -20,9 +17,9 @@ public class ViewProcess {
     public static void applyView(final View view, final Yiew yiew) {
 
 
-//        if (yiewStore != null) {
-//            yiewStore.put(yiew, view);
-//        }
+        if (yiew.getYiewStore() != null) {
+            yiew.getYiewStore().cacheNamedYiew(yiew, view);
+        }
 
 
         if (yiew.id != 0) {
@@ -41,7 +38,7 @@ public class ViewProcess {
         }
         if (yiew.background != null) {
             String background = yiew.getBackground();
-            Log.d("syb","background="+background);
+//            Log.d("syb","background="+background);
             if (background != null) {
                 view.setBackgroundColor(Utils.parseColor(background));
             }
@@ -76,13 +73,10 @@ public class ViewProcess {
 
         }
         if (yiew.visibility != null) {
-//            Log.d("syb", "yiew.visibility1 = " + yiew.visibility);
-//            Log.d("syb", "yiew.visibility1 = " + yiew.data);
-//            Log.d("syb", "yiew.visibility1 = " + yiew);
-//            Log.d("syb", "yiew.visibility1 = " + yiew.rootComponet.data);
+
             String visibility = null;
             if (yiew.visibility.startsWith("&")) {
-                visibility = Utils.getValueStringIfDataExist(yiew, yiew.visibility, "");
+                visibility = Utils.getValueStringIfDataExist(yiew, yiew.visibility, "visible");
             } else {
                 visibility = yiew.visibility;
             }
@@ -104,34 +98,34 @@ public class ViewProcess {
         }
 
 
-        applyProperties(view, yiew);
+//        applyProperties(view, yiew);
 
     }
 
-    public static void applyProperties(View view, YiewBean yiew) {
-        List<PropertyBean> propertys = yiew.propertys;
-        Log.d("syb", "set property" + propertys);
-        if (propertys != null && propertys.size() > 0) {
-            Class<? extends View> aClass = view.getClass();
-            Log.d("syb", " aClass  =" + aClass);
-            for (PropertyBean propertyBean : propertys) {
-                String name = propertyBean.name;
-
-
-                String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
-                Log.d("syb", "set method  = " + methodName);
-                try {
-
-                    Class classType = propertyBean.getClassType();
-                    Method method = aClass.getMethod(methodName, classType);
-                    method.invoke(view, propertyBean.getValueClassType(classType));
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    Log.d("syb", "e" + e);
-                }
-            }
-        }
-
-
-    }
+//    public static void applyProperties(View view, YiewBean yiew) {
+//        List<PropertyBean> propertys = yiew.propertys;
+//        Log.d("syb", "set property" + propertys);
+//        if (propertys != null && propertys.size() > 0) {
+//            Class<? extends View> aClass = view.getClass();
+//            Log.d("syb", " aClass  =" + aClass);
+//            for (PropertyBean propertyBean : propertys) {
+//                String name = propertyBean.name;
+//
+//
+//                String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+//                Log.d("syb", "set method  = " + methodName);
+//                try {
+//
+//                    Class classType = propertyBean.getClassType();
+//                    Method method = aClass.getMethod(methodName, classType);
+//                    method.invoke(view, propertyBean.getValueClassType(classType));
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                    Log.d("syb", "e" + e);
+//                }
+//            }
+//        }
+//
+//
+//    }
 }

@@ -31,18 +31,18 @@ public class TextViewProcess {
         return view;
     }
 
-    public static View refresh(Yiew yiew) {
-        TextView view = (TextView) yiew.getYiewStore().getView(yiew.name);
-        ViewGroup.LayoutParams params = view.getLayoutParams();
-
-        ViewProcess.applyView(view, yiew);
-        LayoutProcess.applyaLayout(view, params, yiew);
-
-        applyTextView(view, yiew);
-
-
-        return view;
-    }
+//    public static View refresh(Yiew yiew) {
+////        View view = yiew.getView();
+////        ViewGroup.LayoutParams params = view.getLayoutParams();
+////
+////        ViewProcess.applyView(view, yiew);
+////        LayoutProcess.applyaLayout(view, params, yiew);
+////
+////        applyTextView(view, yiew);
+//
+//
+//        return view;
+//    }
 
     public static void applyTextView(TextView view, Yiew yiew) {
 

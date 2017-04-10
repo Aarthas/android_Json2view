@@ -19,7 +19,6 @@ public class Main {
     public static View startProcess(Context context, YiewResp yiewResp) {
 
 
-
         if ("AndroidLayout".equals(yiewResp.head.process)) {
             List<ComponentBean> component = yiewResp.head.component;
             if (component != null) {
@@ -31,9 +30,7 @@ public class Main {
                         public View createView(Context context, ViewGroup parent, Yiew yiew) {
 
 
-                            Utils.merge(yiew, template);
-
-                            yiew.setRootComponet(yiew);
+                            yiew.setComponentTemplate(template);
 
 
                             return YiewEngine.createView(context, parent, yiew);

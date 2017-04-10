@@ -12,8 +12,8 @@ public abstract class YiewComponent implements   IComponent{
     public View createView(Context context, ViewGroup parent, Yiew yiew) {
         Yiew template = createTemplate(context, parent, yiew);
 
-        Utils.merge(yiew, template);
-        yiew.setRootComponet(yiew);
+        yiew.setComponentTemplate(template);
+
         View content = YiewEngine.createView(context, parent, yiew);
         return content;
     }

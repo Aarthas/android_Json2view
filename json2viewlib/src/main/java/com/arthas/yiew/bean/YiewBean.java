@@ -1,14 +1,14 @@
 package com.arthas.yiew.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  * Created by zhangyn on 17/3/29.
  */
 
 
-public class YiewBean {
+public class YiewBean implements Serializable {
     public String name;
 
     // view
@@ -23,9 +23,9 @@ public class YiewBean {
     public String tag;
 
 
-    public ArrayList<PropertyBean> propertys;
+//    public ArrayList<PropertyBean> propertys;
     public ArrayList<Yiew> child;
-    public HashMap<String,String> data;
+
 
 
     public String padding;
@@ -74,21 +74,9 @@ public class YiewBean {
     public boolean layout_centerHorizontal;
     public boolean layout_centerVertical;
 
-    public int layout_toLeftOf;
-    public int layout_toRightOf;
-    public int layout_above;
-    public int layout_below;
-
-    public int layout_alignLeft;
-    public int layout_alignRight;
-    public int layout_alignTop;
-    public int layout_alignBottom;
 
 
 
-
-
-    public int layout_alignBaseline;
 
 
     //advance

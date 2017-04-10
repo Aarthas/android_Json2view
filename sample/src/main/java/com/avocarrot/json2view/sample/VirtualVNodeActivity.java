@@ -65,10 +65,10 @@ public class VirtualVNodeActivity extends AppCompatActivity {
         LogUtils.d("change");
 
         //更新虚拟节点  目前只做了textview
-        Yiew contact = yiew.getYiewStore().getYiewByName("contact");
-        contact.text = "arthas";
-        contact.textColor="#fff";
-        contact.invalid();
+//        Yiew contact = yiew.getYiewStore().getYiewByName("contact");
+//        contact.text = "arthas";
+//        contact.textColor="#fff";
+//        contact.invalid();
 
 
         //通过yiew得到View

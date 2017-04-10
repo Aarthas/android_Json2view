@@ -11,39 +11,23 @@ import java.util.HashMap;
  */
 public class YiewStore {
 
-    //有name的会缓存View
-    HashMap<String, View> hashMap = new HashMap();
 
     //有name的会缓存Yiew
     public HashMap<String, Yiew> yiews = new HashMap();
-
-
-    public void putView(String name, View view) {
-
-        hashMap.put(name, view);
-
-    }
-
-
-    public View getView(String name) {
-        return hashMap.get(name);
-    }
 
 
     public Yiew getYiewByName(String name) {
         return yiews.get(name);
     }
 
-    public void put(Yiew yiew, View view) {
+    public void cacheNamedYiew(Yiew yiew, View view) {
 
         if (yiew.name != null) {
-            putView(yiew.name, view);
 
-            if (yiew.id == 0) {
-                yiew.id = Utils.generateViewId();
-            }
-            view.setId( yiew.id);
-            yiews.put(yiew.name,yiew);
+            yiew.currentView = view;
+            yiew.id = Utils.generateViewId();
+            view.setId(yiew.id);
+            yiews.put(yiew.name, yiew);
 
         }
 //        if (yiew.id != 0) {
