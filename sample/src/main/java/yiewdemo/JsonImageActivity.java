@@ -1,4 +1,4 @@
-package com.avocarrot.json2view.sample;
+package yiewdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

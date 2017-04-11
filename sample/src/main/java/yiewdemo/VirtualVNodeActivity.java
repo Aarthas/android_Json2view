@@ -1,10 +1,13 @@
-package com.avocarrot.json2view.sample;
+package yiewdemo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
+import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.Main;
+import com.arthas.yiew.bean.Yiew;
 import com.arthas.yiew.bean.YiewResp;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -12,10 +15,11 @@ import com.lzy.okgo.callback.StringCallback;
 import okhttp3.Call;
 import okhttp3.Response;
 
-public class JsonFromLocalActivity extends AppCompatActivity {
+public class VirtualVNodeActivity extends AppCompatActivity {
 
 
-    private JsonFromLocalActivity context;
+    private VirtualVNodeActivity context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +28,12 @@ public class JsonFromLocalActivity extends AppCompatActivity {
 
         context = this;
 
-        String s = Util.readFile(context, "complaintDetail.json");
-        YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
 
-        View contentView = Main.startProcess(context,  yiew_1 );
-
-        setContentView(contentView);
-
-
-
-//        load();
+        load();
     }
 
     private void load() {
-        OkGo.get("http://193.0.1.157:8080/complaintDetail.json")     // 请求方式和请求url
+        OkGo.get("http://193.0.1.157:8080/virtual.json")     // 请求方式和请求url
 
                 .execute(new StringCallback() {
                     @Override
@@ -49,12 +45,9 @@ public class JsonFromLocalActivity extends AppCompatActivity {
                         setContentView(contentView);
 
 
-
                     }
                 });
     }
-
-
 
 
     public void refresh() {
@@ -62,9 +55,23 @@ public class JsonFromLocalActivity extends AppCompatActivity {
         load();
 
     }
-//    public void gotoDataSource() {
-//        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://onzew89e9.bkt.clouddn.com/complaintDetail.json")));
-//    }
+
+    public void changeSelf(Yiew yiew) {
+        LogUtils.d("changeSelf");
+        LogUtils.d("changeSelf"+yiew);
+        TextView view = (TextView) yiew.getView();
+        view.setText("asd");
+
+
+        yiew.text = "azxczxczxc";
+        yiew.invalid();
+    }
+
+    public void changeOther(Yiew yiew) {
+        Yiew otherText = yiew.getYiewStore().getYiewByName("otherText");
+        TextView view = otherText.getView();
+        view.setText("124233434");
+    }
 
 
 }

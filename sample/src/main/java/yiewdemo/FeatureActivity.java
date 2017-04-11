@@ -1,4 +1,4 @@
-package com.avocarrot.json2view.sample;
+package yiewdemo;
 
 import android.content.Context;
 import android.os.Bundle;

@@ -1,27 +1,78 @@
 <com.google.android.flexbox.FlexboxLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:flexWrap="wrap"
-    app:alignItems="stretch"
+
     app:flexDirection="column"
-    app:alignContent="stretch" >
+    >
+
+    <com.google.android.flexbox.FlexboxLayout
+
+
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:flexDirection="row"
+app:flexWrap="nowrap"
+        app:justifyContent="flex_start"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center"
+            android:text="aaaaa"
+app:layout_order="2"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="center"
+            android:text="bbb"
+            app:layout_flexGrow="1"
+            app:layout_order="1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#888888"
+            android:gravity="right|center"
+            android:text="cccc"
+            app:layout_flexGrow="2"
+            app:layout_order="3"
+            app:layout_alignSelf="auto"
+            />
+    </com.google.android.flexbox.FlexboxLayout>
 
     <TextView
-        android:id="@+id/textview1"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:text="aaaaa"
-        android:background="#999999"
-        app:layout_flexBasisPercent="20%"
-        />
 
+        android:id="@+id/textview1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#888888"
+        android:text="cccc"
+        app:layout_alignSelf="flex_start"
+
+        />
+    <TextView
+
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#888888"
+        android:text="dddd"
+
+        />
     <TextView
         android:id="@+id/textview2"
         android:layout_width="80dp"
-        android:text="vvvv"
         android:layout_height="80dp"
+        android:background="#333333"
+        android:text="vvvv"
         app:layout_alignSelf="center"
         />
 
@@ -29,6 +80,8 @@
         android:id="@+id/textview3"
         android:layout_width="160dp"
         android:layout_height="80dp"
+        android:background="#aaaaaa
+        "
         android:text="ccc"
         app:layout_alignSelf="flex_end"
         />
