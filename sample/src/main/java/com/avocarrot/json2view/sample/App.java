@@ -11,8 +11,8 @@ import com.arthas.yiew.IComponent;
 import com.arthas.yiew.ImageAdapter;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewBean;
+import com.arthas.yiew.bean.XViewBody;
+import com.arthas.yiew.bean.XViewBase;
 import com.bumptech.glide.Glide;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
@@ -50,7 +50,7 @@ public class App extends Application {
         ImageAdapter imageAdapter = new ImageAdapter() {
 
             @Override
-            public void display(ImageView view, String src, YiewBean yiew) {
+            public void display(ImageView view, String src, XViewBase yiew) {
                 Glide.with(view.getContext()).
                         load(yiew.src).
                         crossFade(400)
@@ -64,12 +64,12 @@ public class App extends Application {
         YiewConfig.addComponent("refreshBar", new IComponent() {
 
             @Override
-            public View createComponentView(Context context, ViewGroup parent, Yiew yiew ) {
+            public View createComponentView(Context context, ViewGroup parent, XViewBody yiew ) {
 
 
-                Yiew template =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
+                XViewBody template = XViewBody.create(XViewBody.RelativeLayout, XViewBody.MATCH,"48dp") ;
 
-                Yiew TextView =Yiew.create(Yiew.TextView,Yiew.MATCH,Yiew.MATCH) ;
+                XViewBody TextView = XViewBody.create(XViewBody.TextView, XViewBody.MATCH, XViewBody.MATCH) ;
                 template.addChild(TextView);
                 TextView.layout_centerInParent=true;
                 TextView.text="刷新";
@@ -85,7 +85,7 @@ public class App extends Application {
             }
 
             @Override
-            public void render(Yiew yiew) {
+            public void render(XViewBody yiew) {
 
             }
         });
@@ -95,16 +95,16 @@ public class App extends Application {
         YiewConfig.addComponent("line", new IComponent() {
 
             @Override
-            public View createComponentView(Context context, ViewGroup parent, Yiew yiew ) {
+            public View createComponentView(Context context, ViewGroup parent, XViewBody yiew ) {
 
-                Yiew dv =Yiew.create(Yiew.View,Yiew.MATCH,"1px") ;
+                XViewBody dv = XViewBody.create(XViewBody.View, XViewBody.MATCH,"1px") ;
                 dv.background = "#dddddd";
                 View yiew1 = YiewEngine.createView(context, parent, dv);
                 return yiew1;
             }
 
             @Override
-            public void render(Yiew yiew) {
+            public void render(XViewBody yiew) {
 
             }
         });

@@ -4,23 +4,23 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 public  class YiewComponent implements   IComponent{
 
 
-    private  Yiew template;
+    private XViewBody template;
     public YiewComponent() {
 
     }
-    public YiewComponent(Yiew template) {
+    public YiewComponent(XViewBody template) {
         this.template=template;
     }
 
     @Override
-    public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
-        Yiew template = createTemplate(context, parent, yiew);
-        Yiew clone = template.deepClone();
+    public View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
+        XViewBody template = createTemplate(context, parent, yiew);
+        XViewBody clone = template.deepClone();
         yiew.setComponentTemplate(clone);
 
         View content = YiewEngine.createView(context, parent, yiew);
@@ -28,11 +28,11 @@ public  class YiewComponent implements   IComponent{
     }
 
     @Override
-    public void render(Yiew yiew) {
+    public void render(XViewBody yiew) {
 
     }
 
-    public  Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew){
+    public XViewBody createTemplate(Context context, ViewGroup parent, XViewBody yiew){
         return template;
     }
 }

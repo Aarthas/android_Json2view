@@ -13,8 +13,8 @@ import com.arthas.yiew.Main;
 import com.arthas.yiew.YiewComponent;
 import com.arthas.yiew.YiewConfig;
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewResp;
+import com.arthas.yiew.bean.XViewBody;
+import com.arthas.yiew.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -36,17 +36,17 @@ public class FeatureActivity extends AppCompatActivity {
 
         YiewConfig.addComponent("localComponent", new YiewComponent() {
             @Override
-            public void render(Yiew yiew) {
+            public void render(XViewBody yiew) {
 
             }
 
             @Override
-            public Yiew createTemplate(Context context, ViewGroup parent, Yiew yiew) {
-                Yiew template = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
+            public XViewBody createTemplate(Context context, ViewGroup parent, XViewBody yiew) {
+                XViewBody template = XViewBody.create(XViewBody.RelativeLayout, XViewBody.MATCH, "48dp");
 
 
                 template.background = "#ffFFEB3B";
-                Yiew tv = Yiew.create(Yiew.TextView, Yiew.MATCH, Yiew.MATCH);
+                XViewBody tv = XViewBody.create(XViewBody.TextView, XViewBody.MATCH, XViewBody.MATCH);
                 template.addChild(tv);
 
                 //子控件赋值
@@ -65,14 +65,14 @@ public class FeatureActivity extends AppCompatActivity {
         });
         YiewConfig.addComponent("localComponent2", new IComponent() {
             @Override
-            public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
-                Yiew template = Yiew.create(Yiew.RelativeLayout, Yiew.MATCH, "48dp");
+            public View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
+                XViewBody template = XViewBody.create(XViewBody.RelativeLayout, XViewBody.MATCH, "48dp");
 
                 template.background = "#f6f6f6";
                 //原属性覆盖
 
 
-                Yiew tv = Yiew.create(Yiew.TextView, Yiew.MATCH, Yiew.MATCH);
+                XViewBody tv = XViewBody.create(XViewBody.TextView, XViewBody.MATCH, XViewBody.MATCH);
                 template.addChild(tv);
 
                 //子控件赋值
@@ -92,7 +92,7 @@ public class FeatureActivity extends AppCompatActivity {
             }
 
             @Override
-            public void render(Yiew yiew) {
+            public void render(XViewBody yiew) {
 
             }
         });
@@ -108,7 +108,7 @@ public class FeatureActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
+                        XView yiew_1 = Util.gson.fromJson(s, XView.class);
 
                         View contentView = Main.startProcess(context, yiew_1);
                         setContentView(contentView);

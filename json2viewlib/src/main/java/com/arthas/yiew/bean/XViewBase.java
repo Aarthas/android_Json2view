@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 
 
-public class YiewBean implements Serializable {
+public class XViewBase implements Serializable {
     public String name;
 
     // view
@@ -24,7 +24,7 @@ public class YiewBean implements Serializable {
 
 
 //    public ArrayList<PropertyBean> propertys;
-    public ArrayList<Yiew> child;
+    public ArrayList<XViewBody> child;
 
 
 

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 
@@ -18,7 +18,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class TextViewProcess implements IComponent {
-    public  View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
+    public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
         TextView view = new TextView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);
         view.setLayoutParams(params);
@@ -36,7 +36,7 @@ public class TextViewProcess implements IComponent {
     }
 
     @Override
-    public void render(Yiew yiew) {
+    public void render(XViewBody yiew) {
         applyTextView((TextView) yiew.getView(), yiew);
     }
 
@@ -53,7 +53,7 @@ public class TextViewProcess implements IComponent {
 //        return view;
 //    }
 
-    public static void applyTextView(TextView view, Yiew yiew) {
+    public static void applyTextView(TextView view, XViewBody yiew) {
 
         if (yiew.parentNode != null) {
 //            if (yiew.textSize == null) {

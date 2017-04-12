@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.arthas.yiew.Main;
-import com.arthas.yiew.bean.YiewResp;
+import com.arthas.yiew.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -37,7 +37,7 @@ public class JsonImageActivity extends AppCompatActivity {
                 .execute(new StringCallback() {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
-                        YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
+                        XView yiew_1 = Util.gson.fromJson(s, XView.class);
 
                         View contentView = Main.startProcess(context,  yiew_1 );
                         setContentView(contentView);

@@ -3,9 +3,9 @@ package com.arthas.yiew;
 import android.content.Context;
 import android.view.View;
 
-import com.arthas.yiew.bean.ComponentBean;
-import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewResp;
+import com.arthas.yiew.bean.XViewComponent;
+import com.arthas.yiew.bean.XViewBody;
+import com.arthas.yiew.bean.XView;
 
 import java.util.List;
 
@@ -15,20 +15,20 @@ import java.util.List;
 
 public class Main {
 
-    public static View startProcess(Context context, YiewResp yiewResp) {
+    public static View startProcess(Context context, XView yiewResp) {
 
         YiewStore yiewStore = new YiewStore();
         if ("AndroidLayout".equals(yiewResp.head.process)) {
-            List<ComponentBean> components = yiewResp.head.components;
+            List<XViewComponent> components = yiewResp.head.components;
             if (components != null) {
-                for (ComponentBean componentBean : components) {
-                    final Yiew template = componentBean.template;
+                for (XViewComponent XViewComponent : components) {
+                    final XViewBody template = XViewComponent.template;
                     YiewComponent yiewComponent = new YiewComponent(template);
 
                     if (yiewResp.scope == null) {
-                        yiewStore.addComponent(componentBean.name, yiewComponent);
+                        yiewStore.addComponent(XViewComponent.name, yiewComponent);
                     } else if ("global".equals(yiewResp.scope)) {
-                        YiewConfig.addComponent(componentBean.name, yiewComponent);
+                        YiewConfig.addComponent(XViewComponent.name, yiewComponent);
                     }
 
 

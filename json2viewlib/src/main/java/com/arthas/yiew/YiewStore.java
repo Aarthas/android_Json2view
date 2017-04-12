@@ -2,7 +2,7 @@ package com.arthas.yiew;
 
 import android.view.View;
 
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 import java.util.HashMap;
 
@@ -13,7 +13,7 @@ public class YiewStore {
 
 
     //有name的会缓存Yiew
-    public HashMap<String, Yiew> yiews = new HashMap();
+    public HashMap<String, XViewBody> yiews = new HashMap();
 
     private HashMap<String, IComponent> componentMap = null;
 
@@ -34,11 +34,11 @@ public class YiewStore {
 
 
 
-    public Yiew getYiewByName(String name) {
+    public XViewBody getYiewByName(String name) {
         return yiews.get(name);
     }
 
-    public void cacheNamedYiew(Yiew yiew, View view) {
+    public void cacheNamedYiew(XViewBody yiew, View view) {
         yiew.currentView = view;
         if (yiew.name != null) {
 

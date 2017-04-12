@@ -8,8 +8,8 @@ import android.view.View;
 
 import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.Main;
-import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewResp;
+import com.arthas.yiew.bean.XViewBody;
+import com.arthas.yiew.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        YiewResp yiew_1 = Util.gson.fromJson(s, YiewResp.class);
+                        XView yiew_1 = Util.gson.fromJson(s, XView.class);
 
                         View aa = Main.startProcess(context,  yiew_1 );
 
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void jumpToActivity(Yiew yiew) {
+    public void jumpToActivity(XViewBody yiew) {
         LogUtils.d("jumpToActivity");
         HashMap data = yiew.data;
         LogUtils.d(data);

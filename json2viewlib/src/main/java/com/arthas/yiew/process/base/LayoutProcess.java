@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 /**
  * Created by zhangyn on 17/4/1.
@@ -16,7 +16,7 @@ import com.arthas.yiew.bean.Yiew;
 
 public class LayoutProcess {
 
-    public static void applyaLayout(View view, ViewGroup.LayoutParams params, Yiew yiew) {
+    public static void applyaLayout(View view, ViewGroup.LayoutParams params, XViewBody yiew) {
         if (params instanceof ViewGroup.MarginLayoutParams) {
             ViewGroup.MarginLayoutParams p = ((ViewGroup.MarginLayoutParams) params);
 //            Log.d("syb", "yiew.margin = " + yiew.margin);
@@ -140,14 +140,14 @@ public class LayoutProcess {
 
     }
 
-    private static int getAdvanceId(String verb,Yiew yiew) {
+    private static int getAdvanceId(String verb,XViewBody yiew) {
         if (verb.startsWith("#")) {
             int id = Integer.parseInt(verb.substring(1));
 
             return id;
         } else if (verb.startsWith("@")) {
             String name = verb.substring(1);
-            Yiew aa = yiew.getYiewStore().getYiewByName(name);
+            XViewBody aa = yiew.getYiewStore().getYiewByName(name);
             if (aa != null) {
                 return aa.id;
             }

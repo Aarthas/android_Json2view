@@ -7,8 +7,8 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 
-import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewBean;
+import com.arthas.yiew.bean.XViewBody;
+import com.arthas.yiew.bean.XViewBase;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -27,7 +27,7 @@ public class Utils {
     }
 
 
-    public static ViewGroup.LayoutParams createLayoutParams(ViewGroup viewGroup, YiewBean yiew) {
+    public static ViewGroup.LayoutParams createLayoutParams(ViewGroup viewGroup, XViewBase yiew) {
         ViewGroup.LayoutParams params = null;
         if (viewGroup != null) {
             try {
@@ -53,14 +53,14 @@ public class Utils {
         return params;
     }
 
-    private static int getHeight(YiewBean yiew) {
+    private static int getHeight(XViewBase yiew) {
 //        Log.d("syb", "getHeight=" + yiew.height);
         int meature = meature(yiew.height);
 //        Log.d("syb", "getHeight=" + meature);
         return meature;
     }
 
-    private static int getWidth(YiewBean yiew) {
+    private static int getWidth(XViewBase yiew) {
 //        Log.d("syb", "getWidth=" + yiew.width);
         int meature = meature(yiew.width);
 //        Log.d("syb", "getWidth=" + meature);
@@ -236,7 +236,7 @@ public class Utils {
         return 0;
     }
 
-    public static String getValueStringIfDataExist(Yiew yiew, String text, String defaultValue) {
+    public static String getValueStringIfDataExist(XViewBody yiew, String text, String defaultValue) {
 
         String keyname = text.substring(1);
         if (yiew.data != null) {
@@ -252,7 +252,7 @@ public class Utils {
 
     }
 
-    public static int getValueIntIfDataExist(Yiew yiew, String text, int defaultValue) {
+    public static int getValueIntIfDataExist(XViewBody yiew, String text, int defaultValue) {
         if (text.startsWith("&")) {
             String keyname = text.substring(1);
             int data = yiew.getDataInt(keyname, defaultValue);

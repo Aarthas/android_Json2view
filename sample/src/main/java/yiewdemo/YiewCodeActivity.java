@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 public class YiewCodeActivity extends AppCompatActivity {
 
@@ -19,11 +19,11 @@ public class YiewCodeActivity extends AppCompatActivity {
 
         context = this;
 
-        Yiew root =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,Yiew.MATCH) ;
+        XViewBody root = XViewBody.create(XViewBody.RelativeLayout, XViewBody.MATCH, XViewBody.MATCH) ;
         root.background="#f7f7f7";
-        Yiew head =Yiew.create(Yiew.RelativeLayout,Yiew.MATCH,"48dp") ;
+        XViewBody head = XViewBody.create(XViewBody.RelativeLayout, XViewBody.MATCH,"48dp") ;
         root.addChild(head);
-        Yiew title =Yiew.create(Yiew.TextView,Yiew.MATCH,Yiew.MATCH) ;
+        XViewBody title = XViewBody.create(XViewBody.TextView, XViewBody.MATCH, XViewBody.MATCH) ;
         head.addChild(title);
         title.layout_centerInParent=true;
         title.text="刷新";
@@ -41,26 +41,26 @@ public class YiewCodeActivity extends AppCompatActivity {
     }
 
     private void load() {
-        Yiew yiew_1 = new Yiew();
+        XViewBody yiew_1 = new XViewBody();
         yiew_1.view = "verticalLayout";
         yiew_1.width = "match";
         yiew_1.height = "match";
         yiew_1.background = "#f6f6f6";
 
 
-        Yiew yiew_1_1 = new Yiew();
+        XViewBody yiew_1_1 = new XViewBody();
         yiew_1.addChild(yiew_1_1);
         yiew_1_1.view = "refreshBar";
 
 
-        Yiew yiew_1_2 = new Yiew();
+        XViewBody yiew_1_2 = new XViewBody();
         yiew_1.addChild(yiew_1_2);
         yiew_1_2.view = "scrollView";
         yiew_1_2.width = "match";
         yiew_1_2.height = "match";
 
 
-        Yiew yiew_1_2_1 = new Yiew();
+        XViewBody yiew_1_2_1 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_1);
         yiew_1_2_1.view = "verticalLayout";
         yiew_1_2_1.width = "match";
@@ -69,7 +69,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_1.gravity = "center";
 
 
-        Yiew yiew_1_2_1_1 = new Yiew();
+        XViewBody yiew_1_2_1_1 = new XViewBody();
         yiew_1_2_1.addChild(yiew_1_2_1_1);
         yiew_1_2_1_1.view = "TextView";
         yiew_1_2_1_1.padding = "16";
@@ -78,7 +78,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_1_1.textColor = "#444444";
 
 
-        Yiew yiew_1_2_1_2 = new Yiew();
+        XViewBody yiew_1_2_1_2 = new XViewBody();
         yiew_1_2_1.addChild(yiew_1_2_1_2);
         yiew_1_2_1_2.view = "TextView";
         yiew_1_2_1_2.onClick = "gotoDataSource";
@@ -89,7 +89,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_1_2.textColor = "#444444";
 
 
-        Yiew yiew_1_2_2 = new Yiew();
+        XViewBody yiew_1_2_2 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_2);
         yiew_1_2_2.name = "head1";
         yiew_1_2_2.view = "RelativeLayout";
@@ -100,7 +100,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_2.background = "#ffffff";
 
 
-        Yiew yiew_1_2_2_1 = new Yiew();
+        XViewBody yiew_1_2_2_1 = new XViewBody();
         yiew_1_2_2.addChild(yiew_1_2_2_1);
         yiew_1_2_2_1.view = "ImageView";
         yiew_1_2_2_1.width = "16dp";
@@ -109,7 +109,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_2_1.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_2_2 = new Yiew();
+        XViewBody yiew_1_2_2_2 = new XViewBody();
         yiew_1_2_2.addChild(yiew_1_2_2_2);
         yiew_1_2_2_2.view = "TextView";
         yiew_1_2_2_2.marginLeft = "24";
@@ -119,7 +119,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_2_2.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_2_3 = new Yiew();
+        XViewBody yiew_1_2_2_3 = new XViewBody();
         yiew_1_2_2.addChild(yiew_1_2_2_3);
         yiew_1_2_2_3.view = "TextView";
         yiew_1_2_2_3.width = "wrap";
@@ -129,12 +129,12 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_2_3.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_3 = new Yiew();
+        XViewBody yiew_1_2_3 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_3);
         yiew_1_2_3.view = "line";
 
 
-        Yiew yiew_1_2_4 = new Yiew();
+        XViewBody yiew_1_2_4 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_4);
         yiew_1_2_4.name = "pane";
         yiew_1_2_4.view = "RelativeLayout";
@@ -147,7 +147,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4.background = "#ffffff";
 
 
-        Yiew yiew_1_2_4_1 = new Yiew();
+        XViewBody yiew_1_2_4_1 = new XViewBody();
         yiew_1_2_4.addChild(yiew_1_2_4_1);
         yiew_1_2_4_1.name = "platform";
         yiew_1_2_4_1.view = "TextView";
@@ -156,7 +156,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4_1.textColor = "#666666";
 
 
-        Yiew yiew_1_2_4_2 = new Yiew();
+        XViewBody yiew_1_2_4_2 = new XViewBody();
         yiew_1_2_4.addChild(yiew_1_2_4_2);
         yiew_1_2_4_2.name = "content1";
         yiew_1_2_4_2.view = "TextView";
@@ -168,7 +168,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4_2.below = "@platform";
 
 
-        Yiew yiew_1_2_4_3 = new Yiew();
+        XViewBody yiew_1_2_4_3 = new XViewBody();
         yiew_1_2_4.addChild(yiew_1_2_4_3);
         yiew_1_2_4_3.view = "TextView";
         yiew_1_2_4_3.text = "对于给您造成的不便我们深表抱歉。您的本次投诉已处理完成，如对处理结果不满意您可以再次投诉，谢谢！";
@@ -179,7 +179,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_4_3.alignTop = "@content1";
 
 
-        Yiew yiew_1_2_5 = new Yiew();
+        XViewBody yiew_1_2_5 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_5);
         yiew_1_2_5.name = "imagePane";
         yiew_1_2_5.view = "horizonLayout";
@@ -192,7 +192,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_5.background = "#ffffff";
 
 
-        Yiew yiew_1_2_5_1 = new Yiew();
+        XViewBody yiew_1_2_5_1 = new XViewBody();
         yiew_1_2_5.addChild(yiew_1_2_5_1);
         yiew_1_2_5_1.view = "ImageView";
         yiew_1_2_5_1.width = "74dp";
@@ -201,7 +201,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_5_1.src = "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg";
 
 
-        Yiew yiew_1_2_5_2 = new Yiew();
+        XViewBody yiew_1_2_5_2 = new XViewBody();
         yiew_1_2_5.addChild(yiew_1_2_5_2);
         yiew_1_2_5_2.view = "ImageView";
         yiew_1_2_5_2.width = "74dp";
@@ -210,7 +210,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_5_2.src = "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58";
 
 
-        Yiew yiew_1_2_5_3 = new Yiew();
+        XViewBody yiew_1_2_5_3 = new XViewBody();
         yiew_1_2_5.addChild(yiew_1_2_5_3);
         yiew_1_2_5_3.view = "ImageView";
         yiew_1_2_5_3.width = "74dp";
@@ -219,7 +219,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_5_3.src = "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58";
 
 
-        Yiew yiew_1_2_5_4 = new Yiew();
+        XViewBody yiew_1_2_5_4 = new XViewBody();
         yiew_1_2_5.addChild(yiew_1_2_5_4);
         yiew_1_2_5_4.view = "ImageView";
         yiew_1_2_5_4.width = "74dp";
@@ -228,7 +228,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_5_4.src = "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58";
 
 
-        Yiew yiew_1_2_6 = new Yiew();
+        XViewBody yiew_1_2_6 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_6);
         yiew_1_2_6.name = "dv";
         yiew_1_2_6.view = "View";
@@ -237,7 +237,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_6.background = "#f6f6f6";
 
 
-        Yiew yiew_1_2_7 = new Yiew();
+        XViewBody yiew_1_2_7 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_7);
         yiew_1_2_7.name = "contact";
         yiew_1_2_7.view = "RelativeLayout";
@@ -246,7 +246,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_7.background = "#ffffff";
 
 
-        Yiew yiew_1_2_7_1 = new Yiew();
+        XViewBody yiew_1_2_7_1 = new XViewBody();
         yiew_1_2_7.addChild(yiew_1_2_7_1);
         yiew_1_2_7_1.view = "TextView";
         yiew_1_2_7_1.marginLeft = "24";
@@ -256,7 +256,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_7_1.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_7_2 = new Yiew();
+        XViewBody yiew_1_2_7_2 = new XViewBody();
         yiew_1_2_7.addChild(yiew_1_2_7_2);
         yiew_1_2_7_2.view = "TextView";
         yiew_1_2_7_2.width = "wrap";
@@ -267,12 +267,12 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_7_2.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_8 = new Yiew();
+        XViewBody yiew_1_2_8 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_8);
         yiew_1_2_8.view = "line";
 
 
-        Yiew yiew_1_2_9 = new Yiew();
+        XViewBody yiew_1_2_9 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_9);
         yiew_1_2_9.name = "mobile";
         yiew_1_2_9.view = "RelativeLayout";
@@ -281,7 +281,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_9.background = "#ffffff";
 
 
-        Yiew yiew_1_2_9_1 = new Yiew();
+        XViewBody yiew_1_2_9_1 = new XViewBody();
         yiew_1_2_9.addChild(yiew_1_2_9_1);
         yiew_1_2_9_1.view = "TextView";
         yiew_1_2_9_1.marginLeft = "24";
@@ -291,7 +291,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_9_1.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_9_2 = new Yiew();
+        XViewBody yiew_1_2_9_2 = new XViewBody();
         yiew_1_2_9.addChild(yiew_1_2_9_2);
         yiew_1_2_9_2.view = "TextView";
         yiew_1_2_9_2.width = "wrap";
@@ -302,7 +302,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_9_2.layout_centerVertical = true;
 
 
-        Yiew yiew_1_2_10 = new Yiew();
+        XViewBody yiew_1_2_10 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_10);
         yiew_1_2_10.view = "View";
         yiew_1_2_10.width = "match";
@@ -310,7 +310,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_10.background = "#f6f6f6";
 
 
-        Yiew yiew_1_2_11 = new Yiew();
+        XViewBody yiew_1_2_11 = new XViewBody();
         yiew_1_2.addChild(yiew_1_2_11);
         yiew_1_2_11.view = "verticalLayout";
         yiew_1_2_11.width = "match";
@@ -319,7 +319,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_11.background = "#ffffff";
 
 
-        Yiew yiew_1_2_11_1 = new Yiew();
+        XViewBody yiew_1_2_11_1 = new XViewBody();
         yiew_1_2_11.addChild(yiew_1_2_11_1);
         yiew_1_2_11_1.name = "attach1";
         yiew_1_2_11_1.view = "TextView";
@@ -329,7 +329,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_11_1.lineSpace = "18dp";
 
 
-        Yiew yiew_1_2_11_2 = new Yiew();
+        XViewBody yiew_1_2_11_2 = new XViewBody();
         yiew_1_2_11.addChild(yiew_1_2_11_2);
         yiew_1_2_11_2.view = "View";
         yiew_1_2_11_2.width = "match";

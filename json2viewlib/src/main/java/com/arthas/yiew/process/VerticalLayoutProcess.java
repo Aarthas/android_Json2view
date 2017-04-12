@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 
 import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.Yiew;
-import com.arthas.yiew.bean.YiewBean;
+import com.arthas.yiew.bean.XViewBody;
+import com.arthas.yiew.bean.XViewBase;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewGroupProcess;
 import com.arthas.yiew.process.base.ViewProcess;
@@ -20,7 +20,7 @@ import static com.arthas.yiew.Utils.getValueInt;
  * Created by zhangyn on 17/4/5.
  */
 public class VerticalLayoutProcess implements IComponent {
-    public  View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
+    public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
 
         LinearLayout view = new LinearLayout(context);
         view.setOrientation(LinearLayout.VERTICAL);
@@ -41,14 +41,14 @@ public class VerticalLayoutProcess implements IComponent {
 
     }
 
-    public static void applyLinearLayout(LinearLayout view, YiewBean yiew) {
+    public static void applyLinearLayout(LinearLayout view, XViewBase yiew) {
         if (yiew.gravity != null)
             view.setGravity((Integer) getValueInt(Gravity.class, yiew.gravity.toUpperCase()));
 
 
     }
 
-    public  void render(Yiew yiew) {
+    public  void render(XViewBody yiew) {
 
     }
 }

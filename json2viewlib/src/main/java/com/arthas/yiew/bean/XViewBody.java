@@ -17,7 +17,7 @@ import java.util.HashMap;
  * Created by zhangyn on 17/3/31.
  */
 
-public class Yiew extends YiewBean implements Serializable {
+public class XViewBody extends XViewBase implements Serializable {
 
     public static final String verticalLayout = "verticalLayout";
     public static final String horizonLayout = "horizonLayout";
@@ -76,17 +76,17 @@ public class Yiew extends YiewBean implements Serializable {
     }
 
     public HashMap<String, String> data;
-    public transient Yiew parentNode;
-    private transient Yiew rootComponet;
+    public transient XViewBody parentNode;
+    private transient XViewBody rootComponet;
     private transient YiewStore yiewStore;
     public transient android.view.View currentView;
 
 
-    public void setRootComponet(Yiew rootComponet) {
+    public void setRootComponet(XViewBody rootComponet) {
         this.rootComponet = rootComponet;
     }
 
-    public Yiew getRootComponet() {
+    public XViewBody getRootComponet() {
         return rootComponet;
     }
 
@@ -99,7 +99,7 @@ public class Yiew extends YiewBean implements Serializable {
     }
 
 
-    public void addChild(Yiew yiew) {
+    public void addChild(XViewBody yiew) {
         if (child == null) {
             child = new ArrayList<>();
 
@@ -132,8 +132,8 @@ public class Yiew extends YiewBean implements Serializable {
     }
 //
 
-    public static Yiew create(String type, String width, String height) {
-        Yiew yiew = new Yiew();
+    public static XViewBody create(String type, String width, String height) {
+        XViewBody yiew = new XViewBody();
         yiew.view = type;
         yiew.width = width;
         yiew.height = height;
@@ -152,7 +152,7 @@ public class Yiew extends YiewBean implements Serializable {
     }
 
 
-    public Yiew deepClone() {
+    public XViewBody deepClone() {
 
 
         try {
@@ -164,7 +164,7 @@ public class Yiew extends YiewBean implements Serializable {
             Object o = oi.readObject();
             oi.close();
             bi.close();
-            return (Yiew) o;
+            return (XViewBody) o;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -173,11 +173,11 @@ public class Yiew extends YiewBean implements Serializable {
 
     }
 
-    public void setComponentTemplate(Yiew template) {
+    public void setComponentTemplate(XViewBody template) {
 
         setRootComponet(this);
-        Yiew to = this;
-        Yiew from = template;
+        XViewBody to = this;
+        XViewBody from = template;
 
         to.view = from.view;
         to.child = from.child;

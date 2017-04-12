@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
 import com.arthas.yiew.Main;
-import com.arthas.yiew.bean.YiewResp;
+import com.arthas.yiew.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
@@ -38,7 +38,7 @@ public class HeadComponentActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String s, Call call, Response response) {
 
-                        YiewResp yiewResp = Util.gson.fromJson(s, YiewResp.class);
+                        XView yiewResp = Util.gson.fromJson(s, XView.class);
 
                         View contentView = Main.startProcess(context, yiewResp);
 

@@ -2,11 +2,11 @@ package com.arthas.yiew.bean;
 
 import java.util.List;
 
-public  class HeadBean {
+public  class XViewHead {
 
 
         public String process;
-        public List<ComponentBean> components;
+        public List<XViewComponent> components;
 
 
     }

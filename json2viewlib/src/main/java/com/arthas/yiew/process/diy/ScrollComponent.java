@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import com.arthas.yiew.IComponent;
 import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 /**
  * Created by zhangyn on 17/4/5.
@@ -15,9 +15,9 @@ import com.arthas.yiew.bean.Yiew;
 public class ScrollComponent implements IComponent {
 
     @Override
-    public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
-        Yiew yiscroll = Yiew.create(Yiew.ScrollView, Yiew.MATCH, Yiew.MATCH);
-        Yiew verlayout = Yiew.create(Yiew.verticalLayout, Yiew.MATCH, Yiew.MATCH);
+    public View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
+        XViewBody yiscroll = XViewBody.create(XViewBody.ScrollView, XViewBody.MATCH, XViewBody.MATCH);
+        XViewBody verlayout = XViewBody.create(XViewBody.verticalLayout, XViewBody.MATCH, XViewBody.MATCH);
         yiscroll.addChild(verlayout);
         verlayout.child = yiew.child;
         yiew.child = null;
@@ -30,7 +30,7 @@ public class ScrollComponent implements IComponent {
     }
 
     @Override
-    public void render(Yiew yiew) {
+    public void render(XViewBody yiew) {
 
     }
 }

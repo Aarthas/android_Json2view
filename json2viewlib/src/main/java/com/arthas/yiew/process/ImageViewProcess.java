@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import com.arthas.yiew.IComponent;
 import com.arthas.yiew.Utils;
 import com.arthas.yiew.YiewConfig;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 import com.arthas.yiew.process.base.LayoutProcess;
 import com.arthas.yiew.process.base.ViewProcess;
 
@@ -17,7 +17,7 @@ import com.arthas.yiew.process.base.ViewProcess;
  */
 
 public class ImageViewProcess implements IComponent {
-    public  View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
+    public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
 
 
         ImageView view = new ImageView(context);
@@ -36,12 +36,12 @@ public class ImageViewProcess implements IComponent {
     }
 
     @Override
-    public void render(Yiew yiew) {
+    public void render(XViewBody yiew) {
 
     }
 
 
-    public static void applyImageView(ImageView view, Yiew yiew) {
+    public static void applyImageView(ImageView view, XViewBody yiew) {
 //        Log.d("syb", "yiew.src" + yiew.src);
         if (yiew.src != null) {
             if (yiew.src.startsWith("&")) {

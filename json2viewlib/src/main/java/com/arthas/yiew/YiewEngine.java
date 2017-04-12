@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 
 /**
@@ -14,10 +14,10 @@ import com.arthas.yiew.bean.Yiew;
 public class YiewEngine {
 
 
-    public static void addChild(Context context, ViewGroup view, Yiew parentYiew) {
+    public static void addChild(Context context, ViewGroup view, XViewBody parentYiew) {
 
         if (parentYiew.child != null && parentYiew.child.size() > 0) {
-            for (Yiew child : parentYiew.child) {
+            for (XViewBody child : parentYiew.child) {
 
                 if (parentYiew.getYiewStore() != null) {
                     child.setYiewStore(parentYiew.getYiewStore());
@@ -39,7 +39,7 @@ public class YiewEngine {
     }
 
 
-    public static View createView(Context context, ViewGroup parent, Yiew yiew) {
+    public static View createView(Context context, ViewGroup parent, XViewBody yiew) {
 
         if (yiew.getYiewStore() != null) {
             IComponent component = yiew.getYiewStore().findComponent(yiew.view);

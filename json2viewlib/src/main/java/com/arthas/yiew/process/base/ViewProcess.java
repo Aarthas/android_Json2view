@@ -5,7 +5,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.Yiew;
+import com.arthas.yiew.bean.XViewBody;
 
 import java.lang.reflect.Method;
 
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
  */
 
 public class ViewProcess {
-    public static void applyView(final View view, final Yiew yiew) {
+    public static void applyView(final View view, final XViewBody yiew) {
 
 
         if (yiew.getYiewStore() != null) {
@@ -33,7 +33,7 @@ public class ViewProcess {
 
     }
 
-    public static void render(View view, final Yiew yiew) {
+    public static void render(View view, final XViewBody yiew) {
         if (yiew.tag != null) {
             view.setTag(yiew.tag);
         }
@@ -68,7 +68,7 @@ public class ViewProcess {
 
                                             }
                                             try {
-                                                Method myClick2 = context.getClass().getMethod(yiew.onClick, Yiew.class);
+                                                Method myClick2 = context.getClass().getMethod(yiew.onClick, XViewBody.class);
                                                 myClick2.invoke(context, yiew);
                                             } catch (Exception e) {
 
