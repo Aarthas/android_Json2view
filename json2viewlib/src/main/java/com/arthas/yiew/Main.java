@@ -19,9 +19,9 @@ public class Main {
 
         YiewStore yiewStore = new YiewStore();
         if ("AndroidLayout".equals(yiewResp.head.process)) {
-            List<ComponentBean> component = yiewResp.head.component;
-            if (component != null) {
-                for (ComponentBean componentBean : component) {
+            List<ComponentBean> components = yiewResp.head.components;
+            if (components != null) {
+                for (ComponentBean componentBean : components) {
                     final Yiew template = componentBean.template;
                     YiewComponent yiewComponent = new YiewComponent(template);
 

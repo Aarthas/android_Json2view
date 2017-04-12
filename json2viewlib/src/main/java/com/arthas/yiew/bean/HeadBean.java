@@ -6,7 +6,7 @@ public  class HeadBean {
 
 
         public String process;
-        public List<ComponentBean> component;
+        public List<ComponentBean> components;
 
 
     }

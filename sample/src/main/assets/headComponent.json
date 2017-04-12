@@ -1,7 +1,7 @@
 {
   "head": {
     "process": "AndroidLayout",
-    "component": [
+    "components": [
       {
         "name": "headComponent",
         "template": {
