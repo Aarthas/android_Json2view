@@ -7,10 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.xjsonview.IComponent;
-import com.arthas.xjsonview.ImageAdapter;
-import com.arthas.xjsonview.YiewConfig;
-import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.XViewComponent;
+import com.arthas.xjsonview.XViewImageAdapter;
+import com.arthas.xjsonview.XiewConfig;
+import com.arthas.xjsonview.XViewEngine;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XViewBase;
 import com.bumptech.glide.Glide;
@@ -47,7 +47,7 @@ public class App extends Application {
                 .configShowBorders(true)
                 .configFormatTag("%d{HH:mm:ss:SSS} %t %c{-5}");
 
-        ImageAdapter imageAdapter = new ImageAdapter() {
+        XViewImageAdapter imageAdapter = new XViewImageAdapter() {
 
             @Override
             public void display(ImageView view, String src, XViewBase yiew) {
@@ -58,10 +58,10 @@ public class App extends Application {
             }
         };
 
-        YiewConfig.setImageAdapter(imageAdapter);
+        XiewConfig.setImageAdapter(imageAdapter);
 
 
-        YiewConfig.addComponent("refreshBar", new IComponent() {
+        XiewConfig.addComponent("refreshBar", new XViewComponent() {
 
             @Override
             public View createComponentView(Context context, ViewGroup parent, XViewBody yiew ) {
@@ -80,7 +80,7 @@ public class App extends Application {
 
 
 
-                View yiew1 = YiewEngine.createView(context, parent, template);
+                View yiew1 = XViewEngine.createView(context, parent, template);
                 return yiew1;
             }
 
@@ -92,14 +92,14 @@ public class App extends Application {
 
 
 
-        YiewConfig.addComponent("line", new IComponent() {
+        XiewConfig.addComponent("line", new XViewComponent() {
 
             @Override
             public View createComponentView(Context context, ViewGroup parent, XViewBody yiew ) {
 
                 XViewBody dv = XViewBody.create(XViewBody.View, XViewBody.MATCH,"1px") ;
                 dv.background = "#dddddd";
-                View yiew1 = YiewEngine.createView(context, parent, dv);
+                View yiew1 = XViewEngine.createView(context, parent, dv);
                 return yiew1;
             }
 

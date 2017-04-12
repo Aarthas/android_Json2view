@@ -1,9 +1,9 @@
 package com.arthas.xjsonview.bean;
 
-import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.Utils;
-import com.arthas.xjsonview.YiewConfig;
-import com.arthas.xjsonview.YiewStore;
+import com.arthas.xjsonview.XiewConfig;
+import com.arthas.xjsonview.XViewStore;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -78,7 +78,7 @@ public class XViewBody extends XViewBase implements Serializable {
     public HashMap<String, String> data;
     public transient XViewBody parentNode;
     private transient XViewBody rootComponet;
-    private transient YiewStore yiewStore;
+    private transient XViewStore yiewStore;
     public transient android.view.View currentView;
 
 
@@ -90,11 +90,11 @@ public class XViewBody extends XViewBase implements Serializable {
         return rootComponet;
     }
 
-    public void setYiewStore(YiewStore yiewStore) {
+    public void setYiewStore(XViewStore yiewStore) {
         this.yiewStore = yiewStore;
     }
 
-    public YiewStore getYiewStore() {
+    public XViewStore getYiewStore() {
         return yiewStore;
     }
 
@@ -123,7 +123,7 @@ public class XViewBody extends XViewBase implements Serializable {
 
     public void invalid() {
 
-        IComponent component = YiewConfig.findComponent(view);
+        XViewComponent component = XiewConfig.findComponent(view);
         if (component != null) {
             component.render(this);
         }

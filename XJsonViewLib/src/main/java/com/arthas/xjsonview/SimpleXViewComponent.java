@@ -6,14 +6,14 @@ import android.view.ViewGroup;
 
 import com.arthas.xjsonview.bean.XViewBody;
 
-public  class YiewComponent implements   IComponent{
+public  class SimpleXViewComponent implements XViewComponent {
 
 
     private XViewBody template;
-    public YiewComponent() {
+    public SimpleXViewComponent() {
 
     }
-    public YiewComponent(XViewBody template) {
+    public SimpleXViewComponent(XViewBody template) {
         this.template=template;
     }
 
@@ -23,7 +23,7 @@ public  class YiewComponent implements   IComponent{
         XViewBody clone = template.deepClone();
         yiew.setComponentTemplate(clone);
 
-        View content = YiewEngine.createView(context, parent, yiew);
+        View content = XViewEngine.createView(context, parent, yiew);
         return content;
     }
 

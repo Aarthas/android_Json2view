@@ -9,21 +9,21 @@ import java.util.HashMap;
 /**
  * Created by zhangyn on 17/4/5.
  */
-public class YiewStore {
+public class XViewStore {
 
 
     //有name的会缓存Yiew
     public HashMap<String, XViewBody> yiews = new HashMap();
 
-    private HashMap<String, IComponent> componentMap = null;
+    private HashMap<String, XViewComponent> componentMap = null;
 
-    public void addComponent(String name, IComponent line) {
+    public void addComponent(String name, XViewComponent line) {
         if (componentMap == null){
             componentMap = new HashMap<>();
         }
         componentMap.put(name, line);
     }
-    public  IComponent findComponent(String view) {
+    public XViewComponent findComponent(String view) {
 
         if (componentMap==null)
         {

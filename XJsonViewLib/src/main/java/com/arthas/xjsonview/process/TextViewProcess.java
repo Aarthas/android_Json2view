@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.Utils;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.process.base.LayoutProcess;
@@ -17,7 +17,7 @@ import com.arthas.xjsonview.process.base.ViewProcess;
  * Created by zhangyn on 17/4/5.
  */
 
-public class TextViewProcess implements IComponent {
+public class TextViewProcess implements XViewComponent {
     public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
         TextView view = new TextView(context);
         ViewGroup.LayoutParams params = Utils.createLayoutParams(parent, yiew);

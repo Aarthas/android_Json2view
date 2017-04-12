@@ -13,22 +13,22 @@ import java.util.List;
  * Created by zhangyn on 17/4/7.
  */
 
-public class Main {
+public class XViewMain {
 
     public static View startProcess(Context context, XView yiewResp) {
 
-        YiewStore yiewStore = new YiewStore();
+        XViewStore yiewStore = new XViewStore();
         if ("AndroidLayout".equals(yiewResp.head.process)) {
             List<XViewComponent> components = yiewResp.head.components;
             if (components != null) {
                 for (XViewComponent XViewComponent : components) {
                     final XViewBody template = XViewComponent.template;
-                    YiewComponent yiewComponent = new YiewComponent(template);
+                    SimpleXViewComponent yiewComponent = new SimpleXViewComponent(template);
 
                     if (yiewResp.scope == null) {
                         yiewStore.addComponent(XViewComponent.name, yiewComponent);
                     } else if ("global".equals(yiewResp.scope)) {
-                        YiewConfig.addComponent(XViewComponent.name, yiewComponent);
+                        XiewConfig.addComponent(XViewComponent.name, yiewComponent);
                     }
 
 
@@ -39,7 +39,7 @@ public class Main {
             yiewResp.template.setYiewStore(yiewStore);
 
 
-            return YiewEngine.createView(context, null, yiewResp.template);
+            return XViewEngine.createView(context, null, yiewResp.template);
 
 
         }

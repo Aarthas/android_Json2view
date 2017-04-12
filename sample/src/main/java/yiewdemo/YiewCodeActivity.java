@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.XViewEngine;
 import com.arthas.xjsonview.bean.XViewBody;
 
 public class YiewCodeActivity extends AppCompatActivity {
@@ -32,7 +32,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         title.textColor="#333333";
         title.background="#ffffff";
 
-        View rootView = YiewEngine.createView(context, null, root);
+        View rootView = XViewEngine.createView(context, null, root);
 
         setContentView(rootView);
 
@@ -336,7 +336,7 @@ public class YiewCodeActivity extends AppCompatActivity {
         yiew_1_2_11_2.height = "36";
 
 
-        View rootView = YiewEngine.createView(context, null, yiew_1);
+        View rootView = XViewEngine.createView(context, null, yiew_1);
 
         setContentView(rootView);
 

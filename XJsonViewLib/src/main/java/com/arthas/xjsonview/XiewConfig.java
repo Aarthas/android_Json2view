@@ -16,23 +16,23 @@ import java.util.HashMap;
  * Created by zhangyn on 17/3/30.
  */
 
-public class YiewConfig {
+public class XiewConfig {
 
 
-    private static ImageAdapter imageAdapter;
-    private static HashMap<String, IComponent> componentMap = new HashMap();
+    private static XViewImageAdapter imageAdapter;
+    private static HashMap<String, XViewComponent> componentMap = new HashMap();
 
 
-    public static void setImageAdapter(ImageAdapter imageAdapter) {
-        YiewConfig.imageAdapter = imageAdapter;
+    public static void setImageAdapter(XViewImageAdapter imageAdapter) {
+        XiewConfig.imageAdapter = imageAdapter;
     }
 
-    public static ImageAdapter getImageAdapter() {
+    public static XViewImageAdapter getImageAdapter() {
         return imageAdapter;
     }
 
 
-    public static void addComponent(String name, IComponent line) {
+    public static void addComponent(String name, XViewComponent line) {
         componentMap.put(name, line);
     }
 
@@ -54,7 +54,7 @@ public class YiewConfig {
         addComponent("View", new SimpleViewProcess());
     }
 
-    public static IComponent findComponent(String view) {
+    public static XViewComponent findComponent(String view) {
 
 
 //        if ("scrollView".equals(view)) {

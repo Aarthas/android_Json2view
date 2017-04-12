@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.xjsonview.IComponent;
-import com.arthas.xjsonview.Main;
-import com.arthas.xjsonview.YiewComponent;
-import com.arthas.xjsonview.YiewConfig;
-import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.XViewComponent;
+import com.arthas.xjsonview.XViewMain;
+import com.arthas.xjsonview.SimpleXViewComponent;
+import com.arthas.xjsonview.XiewConfig;
+import com.arthas.xjsonview.XViewEngine;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
@@ -34,7 +34,7 @@ public class FeatureActivity extends AppCompatActivity {
         context = this;
 
 
-        YiewConfig.addComponent("localComponent", new YiewComponent() {
+        XiewConfig.addComponent("localComponent", new SimpleXViewComponent() {
             @Override
             public void render(XViewBody yiew) {
 
@@ -63,7 +63,7 @@ public class FeatureActivity extends AppCompatActivity {
 
             }
         });
-        YiewConfig.addComponent("localComponent2", new IComponent() {
+        XiewConfig.addComponent("localComponent2", new XViewComponent() {
             @Override
             public View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
                 XViewBody template = XViewBody.create(XViewBody.RelativeLayout, XViewBody.MATCH, "48dp");
@@ -86,7 +86,7 @@ public class FeatureActivity extends AppCompatActivity {
 
 
                 yiew.setComponentTemplate(template);
-                View yiew1 = YiewEngine.createView(context, parent, yiew);
+                View yiew1 = XViewEngine.createView(context, parent, yiew);
                 return yiew1;
 
             }
@@ -110,7 +110,7 @@ public class FeatureActivity extends AppCompatActivity {
 
                         XView yiew_1 = Util.gson.fromJson(s, XView.class);
 
-                        View contentView = Main.startProcess(context, yiew_1);
+                        View contentView = XViewMain.startProcess(context, yiew_1);
                         setContentView(contentView);
 
 

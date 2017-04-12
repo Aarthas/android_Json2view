@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.xjsonview.Main;
+import com.arthas.xjsonview.XViewMain;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
@@ -41,7 +41,7 @@ public class VirtualVNodeActivity extends AppCompatActivity {
 
                         XView yiew_1 = Util.gson.fromJson(s, XView.class);
 
-                        View contentView = Main.startProcess(context,  yiew_1 );
+                        View contentView = XViewMain.startProcess(context,  yiew_1 );
                         setContentView(contentView);
 
 

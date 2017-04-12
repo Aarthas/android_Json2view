@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 
 import com.arthas.xjsonview.bean.XViewBody;
 
-public interface IComponent {
+public interface XViewComponent {
     View createComponentView(Context context, ViewGroup parent, XViewBody yiew);
 
     public void render(XViewBody yiew);

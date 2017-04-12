@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.Utils;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.process.base.LayoutProcess;
@@ -13,7 +13,7 @@ import com.arthas.xjsonview.process.base.ViewProcess;
 /**
  * Created by zhangyn on 17/4/5.
  */
-public class SimpleViewProcess implements IComponent {
+public class SimpleViewProcess implements XViewComponent {
     public  View createYiew(Context context, ViewGroup parent, XViewBody yiew) {
 
         View view = new View(context);

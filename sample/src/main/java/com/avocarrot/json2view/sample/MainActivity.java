@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.xjsonview.Main;
+import com.arthas.xjsonview.XViewMain;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
                         XView yiew_1 = Util.gson.fromJson(s, XView.class);
 
-                        View aa = Main.startProcess(context,  yiew_1 );
+                        View aa = XViewMain.startProcess(context,  yiew_1 );
 
                         setContentView(aa);
 

@@ -4,15 +4,15 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arthas.xjsonview.IComponent;
-import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.XViewComponent;
+import com.arthas.xjsonview.XViewEngine;
 import com.arthas.xjsonview.bean.XViewBody;
 
 /**
  * Created by zhangyn on 17/4/5.
  */
 
-public class ScrollComponent implements IComponent {
+public class ScrollComponent implements XViewComponent {
 
     @Override
     public View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
@@ -23,7 +23,7 @@ public class ScrollComponent implements IComponent {
         yiew.child = null;
 
         yiew.setComponentTemplate(yiscroll);
-        ViewGroup view = (ViewGroup) YiewEngine.createView(context, parent, yiew);
+        ViewGroup view = (ViewGroup) XViewEngine.createView(context, parent, yiew);
 
 
         return view;

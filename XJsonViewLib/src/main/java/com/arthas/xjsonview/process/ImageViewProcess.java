@@ -5,9 +5,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.Utils;
-import com.arthas.xjsonview.YiewConfig;
+import com.arthas.xjsonview.XiewConfig;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.process.base.LayoutProcess;
 import com.arthas.xjsonview.process.base.ViewProcess;
@@ -16,7 +16,7 @@ import com.arthas.xjsonview.process.base.ViewProcess;
  * Created by zhangyn on 17/4/5.
  */
 
-public class ImageViewProcess implements IComponent {
+public class ImageViewProcess implements XViewComponent {
     public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
 
 
@@ -48,10 +48,10 @@ public class ImageViewProcess implements IComponent {
                 String src = Utils.getValueStringIfDataExist(yiew, yiew.src, null);
                 if (src != null) {
                     yiew.src =src;
-                    YiewConfig.getImageAdapter().display(view,src, yiew);
+                    XiewConfig.getImageAdapter().display(view,src, yiew);
                 }
             }else{
-                YiewConfig.getImageAdapter().display(view, yiew.src, yiew);
+                XiewConfig.getImageAdapter().display(view, yiew.src, yiew);
             }
 
 

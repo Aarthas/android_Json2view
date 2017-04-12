@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.xjsonview.Main;
+import com.arthas.xjsonview.XViewMain;
 import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
@@ -40,7 +40,7 @@ public class HeadComponentActivity extends AppCompatActivity {
 
                         XView yiewResp = Util.gson.fromJson(s, XView.class);
 
-                        View contentView = Main.startProcess(context, yiewResp);
+                        View contentView = XViewMain.startProcess(context, yiewResp);
 
                         setContentView(contentView);
 

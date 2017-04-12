@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.Utils;
 import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XViewBase;
@@ -19,7 +19,7 @@ import static com.arthas.xjsonview.Utils.getValueInt;
 /**
  * Created by zhangyn on 17/4/5.
  */
-public class VerticalLayoutProcess implements IComponent {
+public class VerticalLayoutProcess implements XViewComponent {
     public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
 
         LinearLayout view = new LinearLayout(context);

@@ -11,7 +11,7 @@ import com.arthas.xjsonview.bean.XViewBody;
  * Created by zhangyn on 17/3/28.
  */
 
-public class YiewEngine {
+public class XViewEngine {
 
 
     public static void addChild(Context context, ViewGroup view, XViewBody parentYiew) {
@@ -42,14 +42,14 @@ public class YiewEngine {
     public static View createView(Context context, ViewGroup parent, XViewBody yiew) {
 
         if (yiew.getYiewStore() != null) {
-            IComponent component = yiew.getYiewStore().findComponent(yiew.view);
+            XViewComponent component = yiew.getYiewStore().findComponent(yiew.view);
             if (component != null) {
                 View view = component.createComponentView(context, parent, yiew);
                 return view;
             }
         }
 
-        IComponent component = YiewConfig.findComponent(yiew.view);
+        XViewComponent component = XiewConfig.findComponent(yiew.view);
         if (component != null) {
             View view = component.createComponentView(context, parent, yiew);
             return view;
