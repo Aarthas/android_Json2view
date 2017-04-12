@@ -48,15 +48,7 @@
               "route": "yiewdemo.JsonFromLocalActivity"
             }
           },
-          {
-            "name": "name2",
-            "view": "pane",
-            "data": {
-              "background": "#ffF44336",
-              "text": "从网络加载json文件渲染视图",
-              "route": "yiewdemo.JsonFromNetActivity"
-            }
-          },
+
           {
             "view": "pane",
             "data": {
@@ -84,7 +76,7 @@
           {
             "view": "pane",
             "data": {
-              "background": "#d9Ff5858",
+              "background": "#ffF44336",
               "text": "head组件 的使用",
               "route": "yiewdemo.HeadComponentActivity"
             }
@@ -101,7 +93,7 @@
             "view": "pane",
             "data": {
               "background": "#d9Ff5858",
-              "text": "image 的使用",
+              "text": "list 的使用",
               "route": "yiewdemo.SalesActivity"
             }
           }

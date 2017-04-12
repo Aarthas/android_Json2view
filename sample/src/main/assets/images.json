@@ -1,9 +1,28 @@
 {
   "head": {
-    "process": "AndroidLayout"
+    "process": "AndroidLayout",
+    "component": [
+      {
+        "name": "sale",
+        "template": {
+          "view": "RelativeLayout",
+          "width": "match",
+          "height": "120dp",
+          "margin": "8dp",
+          "child": [
+            {
+              "view": "ImageView",
+              "width": "match",
+              "height": "match",
+              "src": "&src"
+            }
+          ]
+        }
+      }
+    ]
   },
   "template": {
-    "view": "verticalLayout",
+    "view": "scrollView",
     "width": "match",
     "height": "match",
     "background": "#f6f6f6",
@@ -12,43 +31,71 @@
         "view": "refreshBar"
       },
       {
-        "name": "imagePane",
-        "view": "horizonLayout",
-        "width": "match_parent",
-        "height": "wrap_content",
-        "background": "#ffffff",
-        "paddingLeft": "12dp",
-        "paddingRight": "12dp",
-        "paddingTop": "16",
-        "paddingBottom": "10dp",
+        "view": "line"
+      },
+      {
+        "name": "ver",
+        "view": "verticalLayout",
+        "width": "match",
+        "height": "match",
+        "gravity": "center",
         "child": [
           {
-            "view": "ImageView",
-            "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
-            "width": "74dp",
-            "height": "74dp",
-            "margin": "5dp"
+            "name": "imagePane",
+            "view": "horizonLayout",
+            "width": "match_parent",
+            "height": "wrap_content",
+            "background": "#ffffff",
+            "paddingLeft": "12dp",
+            "paddingRight": "12dp",
+            "paddingTop": "16",
+            "paddingBottom": "10dp",
+            "child": [
+              {
+                "view": "ImageView",
+                "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              },
+              {
+                "view": "ImageView",
+                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              }
+            ]
           },
           {
-            "view": "ImageView",
-            "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-            "width": "74dp",
-            "height": "74dp",
-            "margin": "5dp"
+            "view": "sale",
+            "data": {
+              "src": "http://img5.imgtn.bdimg.com/it/u=611483611,2895064642&fm=23&gp=0.jpg"
+            }
           },
           {
-            "view": "ImageView",
-            "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-            "width": "74dp",
-            "height": "74dp",
-            "margin": "5dp"
+            "view": "sale",
+            "data": {
+              "src": "http://img0.imgtn.bdimg.com/it/u=1679155983,1401231999&fm=23&gp=0.jpg"
+            }
           },
           {
-            "view": "ImageView",
-            "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
-            "width": "74dp",
-            "height": "74dp",
-            "margin": "5dp"
+            "view": "sale",
+            "data": {
+              "src": "http://img4.imgtn.bdimg.com/it/u=1192943581,2431673841&fm=23&gp=0.jpg"
+            }
+          },
+          {
+            "view": "sale",
+            "data": {
+              "src": "http://img4.imgtn.bdimg.com/it/u=270564085,356446953&fm=23&gp=0.jpg"
+            }
+          },
+          {
+            "view": "sale",
+            "data": {
+              "src": "http://img1.imgtn.bdimg.com/it/u=2452165850,2398553721&fm=23&gp=0.jpg"
+            }
           }
         ]
       }

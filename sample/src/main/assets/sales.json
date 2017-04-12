@@ -41,6 +41,33 @@
         "gravity": "center",
         "child": [
           {
+            "name": "imagePane",
+            "view": "horizonLayout",
+            "width": "match_parent",
+            "height": "wrap_content",
+            "background": "#ffffff",
+            "paddingLeft": "12dp",
+            "paddingRight": "12dp",
+            "paddingTop": "16",
+            "paddingBottom": "10dp",
+            "child": [
+              {
+                "view": "ImageView",
+                "src": "http://img.sanjiang.com/image/20173/1/image1488349927926.jpg",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              },
+              {
+                "view": "ImageView",
+                "src": "https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=232163874,2153671052&fm=58",
+                "width": "74dp",
+                "height": "74dp",
+                "margin": "5dp"
+              }
+            ]
+          },
+          {
             "view": "sale",
             "data": {
               "src": "http://img5.imgtn.bdimg.com/it/u=611483611,2895064642&fm=23&gp=0.jpg"
