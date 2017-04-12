@@ -45,7 +45,7 @@
             "data": {
               "text": "从本地加载json文件渲染视图",
               "background": "#ff03A9F4",
-              "route": "com.avocarrot.json2view.sample.JsonFromLocalActivity"
+              "route": "yiewdemo.JsonFromLocalActivity"
             }
           },
           {
@@ -54,7 +54,7 @@
             "data": {
               "background": "#ffF44336",
               "text": "从网络加载json文件渲染视图",
-              "route": "com.avocarrot.json2view.sample.JsonFromNetActivity"
+              "route": "yiewdemo.JsonFromNetActivity"
             }
           },
           {
@@ -62,7 +62,7 @@
             "data": {
               "background": "#ff4CAF50",
               "text": "使用Yiew代码创建视图",
-              "route": "com.avocarrot.json2view.sample.YiewCodeActivity"
+              "route": "yiewdemo.YiewCodeActivity"
             }
           },
           {
@@ -70,7 +70,7 @@
             "data": {
               "background": "#fb9236",
               "text": "自定义component 用法 \n与 onClick事件",
-              "route": "com.avocarrot.json2view.sample.FeatureActivity"
+              "route": "yiewdemo.FeatureActivity"
             }
           },
           {
@@ -78,7 +78,7 @@
             "data": {
               "background": "#d9Ff5858",
               "text": "yiew虚拟节点的使用，更新虚拟节点，就能更新相应的view",
-              "route": "com.avocarrot.json2view.sample.VirtualVNodeActivity"
+              "route": "yiewdemo.VirtualVNodeActivity"
             }
           },
           {
@@ -86,7 +86,7 @@
             "data": {
               "background": "#d9Ff5858",
               "text": "head组件 的使用",
-              "route": "com.avocarrot.json2view.sample.HeadComponentActivity"
+              "route": "yiewdemo.HeadComponentActivity"
             }
           },
           {
@@ -94,7 +94,15 @@
             "data": {
               "background": "#d9Ff5858",
               "text": "image 的使用",
-              "route": "com.avocarrot.json2view.sample.JsonImageActivity"
+              "route": "yiewdemo.JsonImageActivity"
+            }
+          },
+          {
+            "view": "pane",
+            "data": {
+              "background": "#d9Ff5858",
+              "text": "image 的使用",
+              "route": "yiewdemo.SalesActivity"
             }
           }
         ]

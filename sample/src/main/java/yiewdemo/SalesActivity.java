@@ -1,4 +1,4 @@
-package com.avocarrot.json2view.sample;
+package yiewdemo;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,11 +15,10 @@ import com.lzy.okgo.callback.StringCallback;
 
 import java.util.HashMap;
 
-import yiewdemo.Util;
 import okhttp3.Call;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class SalesActivity extends AppCompatActivity {
 
 
     private Context context;
@@ -31,26 +30,12 @@ public class MainActivity extends AppCompatActivity {
 
         context = this;
 
-//        LogUtils.d("aaaa");
-//        String s = Util.readFile(context, "main.json");
-//        LogUtils.d("aaaa"+s);
-//        Yiew yiew = gson.fromJson(s, Yiew.class);
-//
-//
-//
-//        Log.d("syb","get yiewbean");
-//
-//
-//        View aa = YiewEngine.createComponentView(context, null, yiew, null);
-
-
-//        setContentView(aa);
 
        load();
     }
 
     private void load() {
-        OkGo.get("http://193.0.1.157:8080/main.json")     // 请求方式和请求url
+        OkGo.get("http://193.0.1.157:8080/sales.json")     // 请求方式和请求url
 
                 .execute(new StringCallback() {
                     @Override

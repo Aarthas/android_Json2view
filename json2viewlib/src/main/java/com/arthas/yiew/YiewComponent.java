@@ -20,8 +20,8 @@ public  class YiewComponent implements   IComponent{
     @Override
     public View createComponentView(Context context, ViewGroup parent, Yiew yiew) {
         Yiew template = createTemplate(context, parent, yiew);
-
-        yiew.setComponentTemplate(template);
+        Yiew clone = template.deepClone();
+        yiew.setComponentTemplate(clone);
 
         View content = YiewEngine.createView(context, parent, yiew);
         return content;

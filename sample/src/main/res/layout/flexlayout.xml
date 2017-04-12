@@ -80,8 +80,7 @@ app:layout_order="2"
         android:id="@+id/textview3"
         android:layout_width="160dp"
         android:layout_height="80dp"
-        android:background="#aaaaaa
-        "
+        android:background="#aaaaaa"
         android:text="ccc"
         app:layout_alignSelf="flex_end"
         />
