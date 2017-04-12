@@ -1,14 +1,14 @@
-package com.arthas.yiew;
+package com.arthas.xjsonview;
 
-import com.arthas.yiew.process.FrameLayoutProcess;
-import com.arthas.yiew.process.HorizonLayoutProcess;
-import com.arthas.yiew.process.ImageViewProcess;
-import com.arthas.yiew.process.RelativeLayoutProcess;
-import com.arthas.yiew.process.ScrollViewProcess;
-import com.arthas.yiew.process.SimpleViewProcess;
-import com.arthas.yiew.process.TextViewProcess;
-import com.arthas.yiew.process.VerticalLayoutProcess;
-import com.arthas.yiew.process.diy.ScrollComponent;
+import com.arthas.xjsonview.process.FrameLayoutProcess;
+import com.arthas.xjsonview.process.HorizonLayoutProcess;
+import com.arthas.xjsonview.process.ImageViewProcess;
+import com.arthas.xjsonview.process.RelativeLayoutProcess;
+import com.arthas.xjsonview.process.ScrollViewProcess;
+import com.arthas.xjsonview.process.SimpleViewProcess;
+import com.arthas.xjsonview.process.TextViewProcess;
+import com.arthas.xjsonview.process.VerticalLayoutProcess;
+import com.arthas.xjsonview.process.diy.ScrollComponent;
 
 import java.util.HashMap;
 

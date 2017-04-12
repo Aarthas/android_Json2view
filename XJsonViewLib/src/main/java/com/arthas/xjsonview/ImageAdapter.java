@@ -1,8 +1,8 @@
-package com.arthas.yiew;
+package com.arthas.xjsonview;
 
 import android.widget.ImageView;
 
-import com.arthas.yiew.bean.XViewBase;
+import com.arthas.xjsonview.bean.XViewBase;
 
 /**
  * Created by zhangyn on 17/3/30.

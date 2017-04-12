@@ -1,9 +1,9 @@
-package com.arthas.yiew.bean;
+package com.arthas.xjsonview.bean;
 
-import com.arthas.yiew.IComponent;
-import com.arthas.yiew.Utils;
-import com.arthas.yiew.YiewConfig;
-import com.arthas.yiew.YiewStore;
+import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.Utils;
+import com.arthas.xjsonview.YiewConfig;
+import com.arthas.xjsonview.YiewStore;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

@@ -1,10 +1,10 @@
-package com.arthas.yiew.process.base;
+package com.arthas.xjsonview.process.base;
 
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.XViewBody;
+import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.bean.XViewBody;
 
 /**
  * Created by zhangyn on 17/4/1.

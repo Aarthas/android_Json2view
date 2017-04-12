@@ -1,4 +1,4 @@
-package com.arthas.yiew.process;
+package com.arthas.xjsonview.process;
 
 import android.content.Context;
 import android.view.Gravity;
@@ -6,15 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.arthas.yiew.IComponent;
-import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.bean.XViewBase;
-import com.arthas.yiew.process.base.LayoutProcess;
-import com.arthas.yiew.process.base.ViewGroupProcess;
-import com.arthas.yiew.process.base.ViewProcess;
+import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.Utils;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.bean.XViewBase;
+import com.arthas.xjsonview.process.base.LayoutProcess;
+import com.arthas.xjsonview.process.base.ViewGroupProcess;
+import com.arthas.xjsonview.process.base.ViewProcess;
 
-import static com.arthas.yiew.Utils.getValueInt;
+import static com.arthas.xjsonview.Utils.getValueInt;
 
 /**
  * Created by zhangyn on 17/4/5.

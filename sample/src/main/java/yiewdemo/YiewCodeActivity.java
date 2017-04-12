@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.XViewBody;
+import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.bean.XViewBody;
 
 public class YiewCodeActivity extends AppCompatActivity {
 

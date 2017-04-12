@@ -1,4 +1,4 @@
-package com.arthas.yiew.bean;
+package com.arthas.xjsonview.bean;
 
 import java.util.List;
 

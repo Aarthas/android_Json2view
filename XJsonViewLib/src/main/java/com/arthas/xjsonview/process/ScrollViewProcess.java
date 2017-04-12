@@ -1,16 +1,16 @@
-package com.arthas.yiew.process;
+package com.arthas.xjsonview.process;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
-import com.arthas.yiew.IComponent;
-import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.process.base.LayoutProcess;
-import com.arthas.yiew.process.base.ViewGroupProcess;
-import com.arthas.yiew.process.base.ViewProcess;
+import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.Utils;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.process.base.LayoutProcess;
+import com.arthas.xjsonview.process.base.ViewGroupProcess;
+import com.arthas.xjsonview.process.base.ViewProcess;
 
 /**
  * Created by zhangyn on 17/4/5.

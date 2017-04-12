@@ -1,11 +1,11 @@
-package com.arthas.yiew.process.base;
+package com.arthas.xjsonview.process.base;
 
 import android.content.Context;
 import android.util.Log;
 import android.view.View;
 
-import com.arthas.yiew.Utils;
-import com.arthas.yiew.bean.XViewBody;
+import com.arthas.xjsonview.Utils;
+import com.arthas.xjsonview.bean.XViewBody;
 
 import java.lang.reflect.Method;
 

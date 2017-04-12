@@ -7,12 +7,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.IComponent;
-import com.arthas.yiew.ImageAdapter;
-import com.arthas.yiew.YiewConfig;
-import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.bean.XViewBase;
+import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.ImageAdapter;
+import com.arthas.xjsonview.YiewConfig;
+import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.bean.XViewBase;
 import com.bumptech.glide.Glide;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;

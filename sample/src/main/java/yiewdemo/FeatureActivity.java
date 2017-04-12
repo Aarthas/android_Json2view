@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.IComponent;
-import com.arthas.yiew.Main;
-import com.arthas.yiew.YiewComponent;
-import com.arthas.yiew.YiewConfig;
-import com.arthas.yiew.YiewEngine;
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.bean.XView;
+import com.arthas.xjsonview.IComponent;
+import com.arthas.xjsonview.Main;
+import com.arthas.xjsonview.YiewComponent;
+import com.arthas.xjsonview.YiewConfig;
+import com.arthas.xjsonview.YiewEngine;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 

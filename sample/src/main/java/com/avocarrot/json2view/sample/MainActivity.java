@@ -7,9 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.apkfuns.logutils.LogUtils;
-import com.arthas.yiew.Main;
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.bean.XView;
+import com.arthas.xjsonview.Main;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 

@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.arthas.yiew.Main;
-import com.arthas.yiew.bean.XView;
+import com.arthas.xjsonview.Main;
+import com.arthas.xjsonview.bean.XView;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 

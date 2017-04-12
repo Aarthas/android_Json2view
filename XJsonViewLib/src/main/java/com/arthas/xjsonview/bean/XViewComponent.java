@@ -1,4 +1,4 @@
-package com.arthas.yiew.bean;
+package com.arthas.xjsonview.bean;
 
 public class XViewComponent {
 

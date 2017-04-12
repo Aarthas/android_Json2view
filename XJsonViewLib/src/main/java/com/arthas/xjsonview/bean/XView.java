@@ -1,4 +1,4 @@
-package com.arthas.yiew.bean;
+package com.arthas.xjsonview.bean;
 
 /**
  * Created by zhangyn on 17/4/7.

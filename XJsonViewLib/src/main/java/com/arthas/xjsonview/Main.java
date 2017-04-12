@@ -1,11 +1,11 @@
-package com.arthas.yiew;
+package com.arthas.xjsonview;
 
 import android.content.Context;
 import android.view.View;
 
-import com.arthas.yiew.bean.XViewComponent;
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.bean.XView;
+import com.arthas.xjsonview.bean.XViewComponent;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.bean.XView;
 
 import java.util.List;
 

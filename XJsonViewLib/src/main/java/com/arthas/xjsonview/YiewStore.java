@@ -1,8 +1,8 @@
-package com.arthas.yiew;
+package com.arthas.xjsonview;
 
 import android.view.View;
 
-import com.arthas.yiew.bean.XViewBody;
+import com.arthas.xjsonview.bean.XViewBody;
 
 import java.util.HashMap;
 

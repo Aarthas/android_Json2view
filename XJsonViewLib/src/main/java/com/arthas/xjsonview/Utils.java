@@ -1,4 +1,4 @@
-package com.arthas.yiew;
+package com.arthas.xjsonview;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -7,8 +7,8 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.ViewGroup;
 
-import com.arthas.yiew.bean.XViewBody;
-import com.arthas.yiew.bean.XViewBase;
+import com.arthas.xjsonview.bean.XViewBody;
+import com.arthas.xjsonview.bean.XViewBase;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
