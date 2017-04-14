@@ -59,7 +59,7 @@ public class VirtualVNodeActivity extends AppCompatActivity {
     public void changeSelf(XViewBody yiew) {
         LogUtils.d("changeSelf");
         LogUtils.d("changeSelf"+yiew);
-        TextView view = (TextView) yiew.getView();
+        TextView view = (TextView) yiew.getCurrentView();
         view.setText("asd");
 
 
@@ -69,7 +69,7 @@ public class VirtualVNodeActivity extends AppCompatActivity {
 
     public void changeOther(XViewBody yiew) {
         XViewBody otherText = yiew.getYiewStore().getYiewByName("otherText");
-        TextView view = otherText.getView();
+        TextView view = otherText.getCurrentView();
         view.setText("124233434");
     }
 

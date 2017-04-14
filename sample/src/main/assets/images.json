@@ -4,20 +4,18 @@
     "component": [
       {
         "name": "sale",
-        "template": {
-          "view": "RelativeLayout",
-          "width": "match",
-          "height": "120dp",
-          "margin": "8dp",
-          "child": [
-            {
-              "view": "ImageView",
-              "width": "match",
-              "height": "match",
-              "src": "&src"
-            }
-          ]
-        }
+        "view": "RelativeLayout",
+        "width": "match",
+        "height": "120dp",
+        "margin": "8dp",
+        "child": [
+          {
+            "view": "ImageView",
+            "width": "match",
+            "height": "match",
+            "src": "&src"
+          }
+        ]
       }
     ]
   },

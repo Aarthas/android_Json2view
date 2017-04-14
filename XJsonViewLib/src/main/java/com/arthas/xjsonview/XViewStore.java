@@ -12,26 +12,25 @@ import java.util.HashMap;
 public class XViewStore {
 
 
-    //有name的会缓存Yiew
+    //有name的会缓存XView
     public HashMap<String, XViewBody> yiews = new HashMap();
 
     private HashMap<String, XViewComponent> componentMap = null;
 
     public void addComponent(String name, XViewComponent line) {
-        if (componentMap == null){
+        if (componentMap == null) {
             componentMap = new HashMap<>();
         }
         componentMap.put(name, line);
     }
+
     public XViewComponent findComponent(String view) {
 
-        if (componentMap==null)
-        {
+        if (componentMap == null) {
             return null;
         }
         return componentMap.get(view);
     }
-
 
 
     public XViewBody getYiewByName(String name) {
@@ -39,7 +38,7 @@ public class XViewStore {
     }
 
     public void cacheNamedYiew(XViewBody yiew, View view) {
-        yiew.currentView = view;
+        yiew.setCurrentView(view);
         if (yiew.name != null) {
 
 

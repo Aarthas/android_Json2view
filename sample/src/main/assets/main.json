@@ -3,8 +3,9 @@
     "process": "AndroidLayout",
     "components": [
       {
-        "name": "pane",
-        "template": {
+
+
+          "name": "pane",
           "view": "TextView",
           "width": "250dp",
           "height": "60dp",
@@ -17,7 +18,7 @@
           "visibility": "&visibility",
           "onClick": "jumpToActivity"
         }
-      }
+
     ]
   },
   "template": {

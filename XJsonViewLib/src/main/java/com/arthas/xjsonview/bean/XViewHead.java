@@ -6,7 +6,7 @@ public  class XViewHead {
 
 
         public String process;
-        public List<XViewComponent> components;
+        public List<XViewBody> components;
 
 
     }

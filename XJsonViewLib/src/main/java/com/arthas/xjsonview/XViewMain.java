@@ -3,9 +3,8 @@ package com.arthas.xjsonview;
 import android.content.Context;
 import android.view.View;
 
-import com.arthas.xjsonview.bean.XViewComponent;
-import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XView;
+import com.arthas.xjsonview.bean.XViewBody;
 
 import java.util.List;
 
@@ -19,17 +18,14 @@ public class XViewMain {
 
         XViewStore yiewStore = new XViewStore();
         if ("AndroidLayout".equals(yiewResp.head.process)) {
-            List<XViewComponent> components = yiewResp.head.components;
+            List<XViewBody> components = yiewResp.head.components;
             if (components != null) {
-                for (XViewComponent XViewComponent : components) {
-                    final XViewBody template = XViewComponent.template;
-                    SimpleXViewComponent yiewComponent = new SimpleXViewComponent(template);
+                for (XViewBody xViewComponentBean : components) {
 
-                    if (yiewResp.scope == null) {
-                        yiewStore.addComponent(XViewComponent.name, yiewComponent);
-                    } else if ("global".equals(yiewResp.scope)) {
-                        XiewConfig.addComponent(XViewComponent.name, yiewComponent);
-                    }
+                    SimpleXViewComponent yiewComponent = new SimpleXViewComponent(xViewComponentBean);
+
+                    ComponentManager.addSimpleXViewComponent(yiewResp,yiewComponent,yiewStore);
+
 
 
                 }

@@ -2,13 +2,14 @@ package com.arthas.xjsonview;
 
 import com.arthas.xjsonview.process.FrameLayoutProcess;
 import com.arthas.xjsonview.process.HorizonLayoutProcess;
-import com.arthas.xjsonview.process.ImageViewProcess;
+import com.arthas.xjsonview.process.ImageViewComponent;
 import com.arthas.xjsonview.process.RelativeLayoutProcess;
 import com.arthas.xjsonview.process.ScrollViewProcess;
 import com.arthas.xjsonview.process.SimpleViewProcess;
 import com.arthas.xjsonview.process.TextViewProcess;
 import com.arthas.xjsonview.process.VerticalLayoutProcess;
 import com.arthas.xjsonview.process.diy.ScrollComponent;
+import com.arthas.xjsonview.process.list.RecyclerViewComponent;
 
 import java.util.HashMap;
 
@@ -50,8 +51,10 @@ public class XiewConfig {
 
 
         addComponent("TextView", new TextViewProcess());
-        addComponent("ImageView", new ImageViewProcess());
+        addComponent("ImageView", new ImageViewComponent());
         addComponent("View", new SimpleViewProcess());
+        addComponent("RecyclerView", new RecyclerViewComponent());
+
     }
 
     public static XViewComponent findComponent(String view) {

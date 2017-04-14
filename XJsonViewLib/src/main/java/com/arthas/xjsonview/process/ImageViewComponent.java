@@ -16,7 +16,7 @@ import com.arthas.xjsonview.process.base.ViewProcess;
  * Created by zhangyn on 17/4/5.
  */
 
-public class ImageViewProcess implements XViewComponent {
+public class ImageViewComponent implements XViewComponent {
     public  View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
 
 
@@ -38,10 +38,15 @@ public class ImageViewProcess implements XViewComponent {
     @Override
     public void render(XViewBody yiew) {
 
+        applyImageView((ImageView) yiew.getCurrentView(), yiew);
     }
 
 
     public static void applyImageView(ImageView view, XViewBody yiew) {
+        if (view == null)
+        {
+            System.out.println();
+        }
 //        Log.d("syb", "yiew.src" + yiew.src);
         if (yiew.src != null) {
             if (yiew.src.startsWith("&")) {
@@ -58,6 +63,7 @@ public class ImageViewProcess implements XViewComponent {
 
 
         }
+
 
 
         if (yiew.scaleType != null)

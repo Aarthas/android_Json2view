@@ -37,11 +37,11 @@ public class TextViewProcess implements XViewComponent {
 
     @Override
     public void render(XViewBody yiew) {
-        applyTextView((TextView) yiew.getView(), yiew);
+        applyTextView((TextView) yiew.getCurrentView(), yiew);
     }
 
 //    public static View refresh(Yiew yiew) {
-////        View view = yiew.getView();
+////        View view = yiew.getCurrentView();
 ////        ViewGroup.LayoutParams params = view.getLayoutParams();
 ////
 ////        ViewProcess.applyView(view, yiew);

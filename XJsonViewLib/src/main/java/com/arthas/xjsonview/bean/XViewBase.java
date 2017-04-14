@@ -90,6 +90,8 @@ public class XViewBase implements Serializable {
     public String alignRight;
     public String alignTop;
 
+//recyclerView
+    public String itemLayout;
 
 //    @Override
 //    public String toString() {

@@ -3,8 +3,9 @@
     "process": "AndroidLayout",
     "components": [
       {
-        "name": "headComponent",
-        "template": {
+
+
+          "name": "headComponent",
           "view": "RelativeLayout",
           "width": "match",
           "height": "48",
@@ -19,7 +20,7 @@
               "layout_centerVertical": true
             }
           ]
-        }
+
       },
       {
         "name": "headComponent2",

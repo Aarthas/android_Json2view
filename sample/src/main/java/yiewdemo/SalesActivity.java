@@ -8,12 +8,12 @@ import android.view.View;
 
 import com.apkfuns.logutils.LogUtils;
 import com.arthas.xjsonview.XViewMain;
-import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XView;
+import com.arthas.xjsonview.bean.XViewBody;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.callback.StringCallback;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.Call;
 import okhttp3.Response;
@@ -35,7 +35,7 @@ public class SalesActivity extends AppCompatActivity {
     }
 
     private void load() {
-        OkGo.get("http://193.0.1.157:8080/sales.json")     // 请求方式和请求url
+        OkGo.get("http://193.0.1.157:9999/sales.json")     // 请求方式和请求url
 
                 .execute(new StringCallback() {
                     @Override
@@ -64,7 +64,7 @@ public class SalesActivity extends AppCompatActivity {
 
     public void jumpToActivity(XViewBody yiew) {
         LogUtils.d("jumpToActivity");
-        HashMap data = yiew.data;
+        Map data = yiew.data;
         LogUtils.d(data);
         Object name = data.get("route");
         LogUtils.d(name);

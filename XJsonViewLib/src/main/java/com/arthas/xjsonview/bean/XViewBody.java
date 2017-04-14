@@ -1,9 +1,9 @@
 package com.arthas.xjsonview.bean;
 
-import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.Utils;
-import com.arthas.xjsonview.XiewConfig;
+import com.arthas.xjsonview.XViewComponent;
 import com.arthas.xjsonview.XViewStore;
+import com.arthas.xjsonview.XiewConfig;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -11,7 +11,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by zhangyn on 17/3/31.
@@ -47,11 +47,11 @@ public class XViewBody extends XViewBase implements Serializable {
         if (data == null) {
             return defaultValue;
         } else {
-            String s = data.get(key);
+            Object s = data.get(key);
             if (s == null) {
                 return defaultValue;
             }
-            return s;
+            return s.toString();
         }
     }
 
@@ -59,12 +59,12 @@ public class XViewBody extends XViewBase implements Serializable {
         if (data == null) {
             return 0;
         } else {
-            String s = data.get(key);
+            Object s = data.get(key);
             if (s == null) {
                 return defaultValue;
             } else {
                 try {
-                    int i = Integer.parseInt(s);
+                    int i = Integer.parseInt(s.toString());
                     return i;
                 } catch (Exception e) {
                     return defaultValue;
@@ -75,11 +75,18 @@ public class XViewBody extends XViewBase implements Serializable {
         }
     }
 
-    public HashMap<String, String> data;
+    public Map<String, Object> getData() {
+        return data;
+    }
+
+    public Map<String, Object> data;
+
+
+
     public transient XViewBody parentNode;
     private transient XViewBody rootComponet;
     private transient XViewStore yiewStore;
-    public transient android.view.View currentView;
+    private transient android.view.View currentView;
 
 
     public void setRootComponet(XViewBody rootComponet) {
@@ -117,8 +124,12 @@ public class XViewBody extends XViewBase implements Serializable {
 
 
 
-    public <T extends android.view.View> T getView() {
+    public <T extends android.view.View> T getCurrentView() {
         return (T) currentView;
+    }
+
+    public void setCurrentView(android.view.View currentView) {
+        this.currentView = currentView;
     }
 
     public void invalid() {
@@ -127,7 +138,6 @@ public class XViewBody extends XViewBase implements Serializable {
         if (component != null) {
             component.render(this);
         }
-
 
     }
 //

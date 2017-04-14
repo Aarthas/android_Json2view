@@ -17,10 +17,22 @@ public  class SimpleXViewComponent implements XViewComponent {
         this.template=template;
     }
 
+    public XViewBody getTemplate() {
+        return template;
+    }
+
     @Override
     public View createComponentView(Context context, ViewGroup parent, XViewBody yiew) {
         XViewBody template = createTemplate(context, parent, yiew);
         XViewBody clone = template.deepClone();
+
+//       if (yiew == null)
+//       {
+//           yiew = clone;
+//       }else
+//       {
+//           yiew.setComponentTemplate(clone);
+//       }
         yiew.setComponentTemplate(clone);
 
         View content = XViewEngine.createView(context, parent, yiew);
@@ -29,6 +41,20 @@ public  class SimpleXViewComponent implements XViewComponent {
 
     @Override
     public void render(XViewBody yiew) {
+
+        recu(yiew);
+    }
+
+    private void recu(XViewBody yiew) {
+
+        XViewComponent component = ComponentManager.findComponent(yiew.view,yiew.getYiewStore());
+
+        component.render(yiew);
+        if (yiew.child!= null && yiew.child.size()>0){
+            for (XViewBody xViewBody : yiew.child) {
+                recu(xViewBody);
+            }
+        }
 
     }
 
