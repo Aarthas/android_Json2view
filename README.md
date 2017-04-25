@@ -5,7 +5,8 @@
 
 >#####  简介
 
-    json2view is a simple library that can convert a compatible JSON file to an Android view so you can load dynamically the view in your Android app without the need to update the APK.
+    json2view is a simple library that can convert a compatible JSON file to an Android view
+    so you can load dynamically the view in your Android app without the need to update the APK.
     根据https://github.com/Avocarrot/json2view 自己手动修改成自己所需要的数据结构
 
 >##### 使用场景
@@ -14,7 +15,8 @@
       2. 根据服务器返回的json view数据动态创建视图，若需要界面的更改，一定程度上更改服务器代码即可更改界面。
 	  3. 搭建静态服务器，请求json文件渲染本地视图，可以达到更改json，一秒钟更新界面，达到敏捷开发的目的。
 	  4. 搭配使用热更新框架，如andfix，json2view来改变视图，andfix更改逻辑，可以动态改变整个activity的大多数需求。
-      5. 后期若加上flexboxlayout的布局，Android和ios 各有一个flexboxlayout的布局库，ios再实现一套json2view的引擎，可以达到写一次json文件，就可以产生ios和Android两个原生界面，且布局相差不大，减少开发工作量。
+      5. 后期若加上flexboxlayout的布局，Android和ios 各有一个flexboxlayout的布局库，ios再实现一套json2view的引擎，
+      可以达到写一次json文件，就可以产生ios和Android两个原生界面，且布局相差不大，减少开发工作量。
       缺点：
       1. 不能更改逻辑，只有视图功能。
       2. json文件没有提示功能。
@@ -138,6 +140,7 @@ RelativeLayout
 |alignBaseline  |String       |                |    |
 
 ScrollView
+
 |属性      |     Type    |  说明          | 可选值|
 |:-----   |:----------|:-----------|:------  |
 |无属性  |int       |     默认scrollbar=none           |    |
@@ -146,6 +149,7 @@ ScrollView
 
 
 扩展字段
+
 |属性      |     Type    |  说明          | 可选值|
 |:-----   |:----------|:-----------|:------  |
 |name  |String       |     组件的名字，把RelativeLayout的相关越约束用name代替id          |    |
@@ -160,7 +164,7 @@ gravity 取值TOP,BOTTOM,LEFT,RIGHT,CENTER_VERTICAL,FILL_VERTICAL,CENTER_HORIZON
 
 >##### 后续
 
-     1. 实现flexbos
+     1. 实现flexboxlayout
      2. 与热更新同时使用
 
 
