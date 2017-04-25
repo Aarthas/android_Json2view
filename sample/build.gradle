@@ -38,4 +38,11 @@ dependencies {
     compile 'com.google.android:flexbox:0.2.6'
 //    compile project(path: ':yiewlib')
     compile 'com.apkfuns.logutils:library:1.5.1.1'
+
+
+
+    compile 'com.android.support:recyclerview-v7:24.2.1'
+
+    compile 'com.alibaba:fastjson:1.1.46.android'
+    compile 'com.taobao.android:weex_sdk:0.5.1@aar'
 }

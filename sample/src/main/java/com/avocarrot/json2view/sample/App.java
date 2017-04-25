@@ -8,14 +8,16 @@ import android.widget.ImageView;
 
 import com.apkfuns.logutils.LogUtils;
 import com.arthas.xjsonview.XViewComponent;
+import com.arthas.xjsonview.XViewEngine;
 import com.arthas.xjsonview.XViewImageAdapter;
 import com.arthas.xjsonview.XiewConfig;
-import com.arthas.xjsonview.XViewEngine;
-import com.arthas.xjsonview.bean.XViewBody;
 import com.arthas.xjsonview.bean.XViewBase;
+import com.arthas.xjsonview.bean.XViewBody;
 import com.bumptech.glide.Glide;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheMode;
+import com.taobao.weex.InitConfig;
+import com.taobao.weex.WXSDKEngine;
 
 import java.util.logging.Level;
 
@@ -27,6 +29,10 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        InitConfig config=new InitConfig.Builder().setImgAdapter(new ImageAdapter()).build();
+        WXSDKEngine.initialize(this,config);
+
         OkGo.init(this);
         OkGo.getInstance()
 
