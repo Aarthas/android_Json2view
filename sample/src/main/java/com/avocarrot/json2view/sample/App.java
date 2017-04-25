@@ -53,18 +53,18 @@ public class App extends Application {
                 .configShowBorders(true)
                 .configFormatTag("%d{HH:mm:ss:SSS} %t %c{-5}");
 
-        XViewImageAdapter imageAdapter = new XViewImageAdapter() {
+            XViewImageAdapter imageAdapter = new XViewImageAdapter() {
 
-            @Override
-            public void display(ImageView view, String src, XViewBase yiew) {
-                Glide.with(view.getContext()).
-                        load(yiew.src).
-                        crossFade(400)
-                        .into(view);
-            }
-        };
+                @Override
+                public void display(ImageView view, String src, XViewBase yiew) {
+                    Glide.with(view.getContext()).
+                            load(yiew.src).
+                            crossFade(400)
+                            .into(view);
+                }
+            };
 
-        XiewConfig.setImageAdapter(imageAdapter);
+            XiewConfig.setImageAdapter(imageAdapter);
 
 
         XiewConfig.addComponent("refreshBar", new XViewComponent() {

@@ -10,45 +10,158 @@
 
 >##### 使用场景
 
-  1. 使用场景1：使用json创建本地视图，
+      1. 使用json创建本地视图，json文件放置在assets，可以使用子文件夹，分门别类管理。
+      2. 根据服务器返回的json view数据动态创建视图，若需要界面的更改，一定程度上更改服务器代码即可更改界面。
+	  3. 搭建静态服务器，请求json文件渲染本地视图，可以达到更改json，一秒钟更新界面，达到敏捷开发的目的。
+	  4. 搭配使用热更新框架，如andfix，json2view来改变视图，andfix更改逻辑，可以动态改变整个activity的大多数需求。
+      5. 后期若加上flexboxlayout的布局，Android和ios 各有一个flexboxlayout的布局库，ios再实现一套json2view的引擎，可以达到写一次json文件，就可以产生ios和Android两个原生界面，且布局相差不大，减少开发工作量。
+      缺点：
+      1. 不能更改逻辑，只有视图功能。
+      2. json文件没有提示功能。
+      3. 暂不支持list。
+      4. 目前支持的功能比较简单，用作简单的展示界面或简单逻辑的界面，不能应用于逻辑复杂的界面。
 
-  2. 场景2：根据服务器返回的json数据创建视图。
+>##### 使用
 
-  3. 配合andfix等热修复，可以达到不需要更新版本而更新app的目的。
-  因为json2view更新视图，andfix更新逻辑。
+>    1.创建json文件
+
+    {
+      "head": {
+        "process": "AndroidLayout"
+      },
+      "template": {
+        "view": "verticalLayout",
+        "width": "match",
+        "height": "match",
+        "background": "#f6f6f6",
+        "child": [
+          {
+            "view": "TextView",
+            "text": "页面的简单使用",
+            "width": "120dp",
+            "height": "30dp",
+            "textColor": "#444444",
+            "padding": "16dp",
+            "textSize": "16"
+          }
+        ]
+      }
+    }
+>    2.把json bean 转为View
+
+    XView xview = gson.fromJson(jsonString, XView.class);
+
+    View contentView = XViewMain.startProcess(context,  xview );
+
+    setContentView(contentView);
+
+
+>##### 组件
+
+
+View 组件
+
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|id       |int       |         |  id >=1  |
+|tag  |String       |                |   |
+|padding  |String       |           默认单位dp,10dp,10px    |   |
+|background  |String       |      网络图片          |   |
+|onClick  |String       |          方法名      |   |
+|visibility  |String       |                | gone  visible  invisible  |
+
+
+ViewGroup 属性
+
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|padding  |String       |           默认单位dp , 10dp,10px   |  |
+
+
+TextView 属性
+
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|text  |String       |                |   |
+|textColor  |String       |        #123443       |   |
+|textSize  |String       |       默认单位sp         |   |
+|maxLine  |int       |               |   |
+|hint  |String       |               |   |
+|hintColor  |String       |               |   |
+|lineSpace  |String       |        android:lineSpacingExtra="4dp"        |   |
+|gravity  |String       |       大小写不敏感        |  CENTER_VERTICAL等 |
+
+
+ImageView 属性
+
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|src  |String       |       网络图片         |   |
+|scaleType  |String       |  默认FIT_XY       |  MATRIX，FIT_XY，FIT_START，FIT_CENTER等 |
+
+
+FrameLayout
+
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|gravity  |String       |         大小写不敏感       |   CENTER_VERTICAL等 |
+
+
+LinearLayout 分为 VerticalLayout ，HorizonLayout
+
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|gravity  |String       |         大小写不敏感       |   CENTER_VERTICAL等 |
+|weight  |int       |                |    |
 
 
 
->##### 优点
+RelativeLayout
 
-    1. 使用场景1：使用json创建本地视图，
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|layout_alignParentLeft  |bool       |                |    |
+|layout_alignParentTop  |bool       |                |    |
+|layout_alignParentRight  |bool       |                |    |
+|layout_alignParentBottom  |bool       |                |    |
+|layout_centerInParent  |bool       |                |    |
+|layout_centerHorizontal  |bool       |                |    |
+|layout_centerVertical  |bool       |                |    |
+|below  |String       |                |    |
+|toLeftOf  |String       |                |    |
+|toRightOf  |String       |                |    |
+|above  |String       |                |    |
+|alignLeft  |String       |                |    |
+|alignRight  |String       |                |    |
+|alignTop  |String       |                |    |
+|alignBottom  |String       |                |    |
+|alignBaseline  |String       |                |    |
 
-    2. 场景2：根据服务器返回的json数据创建视图。
+ScrollView
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|无属性  |int       |     默认scrollbar=none           |    |
 
-    3. 配合andfix等热修复，可以达到不需要更新版本而更新app的目的。
-     因为json2view更新视图，andfix更新逻辑。
 
->##### 原理
 
-     1. 根据当前branch更新代码
-     2. 查找port的端口号占用的进程pid
-     3. clean chche，compile code，kill pid ，restart service
 
->##### 测试
+扩展字段
+|属性      |     Type    |  说明          | 可选值|
+|:-----   |:----------|:-----------|:------  |
+|name  |String       |     组件的名字，把RelativeLayout的相关越约束用name代替id          |    |
+|child  |数组       |     子控件列表          |    |
+|data  |数组       |     组件的数据          |    |
 
-    运行稳定。
+gravity 取值TOP,BOTTOM,LEFT,RIGHT,CENTER_VERTICAL,FILL_VERTICAL,CENTER_HORIZONTAL,FILL_HORIZONTAL,CENTER
+
+>#####  性能与测试
+
+    运用比较稳定，运用反射的地方不多，性能的影响微乎其微。
 
 >##### 后续
 
-    1. 如果有10个spring boot 服务，每个spring boot 工程下都放置一个makefile.py,可以批量一键部署系统。
-    2. 增加自动输入密码模块，用expect模块自动输入密码，不需要手输，一键启动。但需要每台服务器安装Pexpect模块。
-
->##### 附： 因为现在linux大多数内置python 2.0+，部署不需要安装额外软件，所以python的版本也是2.0+。
-
-
-
-
-**，**
+     1. 实现flexbos
+     2. 与热更新同时使用
 
 
 
@@ -56,7 +169,8 @@
 
 
 
->you can create view use json data like this
+
+>example 例子
 
 ```markdown
 {

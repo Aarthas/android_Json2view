@@ -1,0 +1,22 @@
+{
+  "head": {
+    "process": "AndroidLayout"
+  },
+  "template": {
+    "view": "verticalLayout",
+    "width": "match",
+    "height": "match",
+    "background": "#f6f6f6",
+    "child": [
+      {
+        "view": "TextView",
+        "text": "页面的简单使用",
+        "width": "120dp",
+        "height": "30dp",
+        "textColor": "#444444",
+        "padding": "16dp",
+        "textSize": "16"
+      }
+    ]
+  }
+}
